@@ -1,0 +1,78 @@
+/*
+    modal_component: definimos visibility: hidden para ocultar el modal
+*/
+.loader_component {
+    visibility: hidden;
+    
+    /*
+        .js_show_laoder: clase añadida con javascript en 'src/js/contacts.js',
+        .definimos visibility: visible para hacer visible el modal
+    */
+    &.js_show_loader { 
+        visibility: visible;
+    }
+
+    /*
+        box_loader_content: definimos position: relative debido a que en el
+        pseudo elemento :before definimos position: absolute.
+        este box_loader_content viene siendo la barra del loader
+    */
+    .box_loader_content {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $mainPageBackgroundColor;
+        animation: loaderMove 2s linear infinite;
+
+        /*
+            loaderMove: en 0% implementamos un transform: rotate(0deg)
+            finalmente en 100% un rotate(360deg) para que el loader
+            gire completamente 
+        */
+        @keyframes loaderMove {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /*
+            .:before: definimos position: absolute y sus propiedades top y
+            .left para posicionar este elemento. tambien definimos un widht y
+            .height en porcentage relacionado a tamaño de su contenedor padre,
+            .finalmente con las propiedades background le damos forma.
+            .este pseudo elemento viene siendo el spacio del laoder
+        */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to top, transparent, #00000080);
+            background-size: 50px 60px;
+            background-repeat: no-repeat;
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+
+        /*
+            span: definimos position: absolute y sus propiedades top,
+            left, right y bottom para posicionar este elemento. Este
+            span viene siendo la tapa frontal del loader
+        */
+        span {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background-color: #5d5c5c;
+            border-radius: 50%;
+        }
+    }
+}

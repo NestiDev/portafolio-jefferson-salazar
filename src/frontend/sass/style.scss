@@ -1,0 +1,262 @@
+/*
+    @imports: importacion de los archivos fonts, variables, mixins y layout  
+    ruta de los archivos src\sass\shared
+*/
+@import './shared/fonts';
+@import './shared/variables';
+@import './shared/mixins';
+
+/**/
+@import './layout/main';
+
+/*
+    reseteo de las propiedades que traen por defecto los navegadores
+*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    tag-body: definimos variables css para aplicar a los elementos 
+    hijos de tag-body para cuando este tiene el color de fondo light
+*/
+body {
+    --textColor: #7e7b7c;
+    --backgroundColor: #fff;
+    --iconColor: #f5f5f5;
+    --shadowColor: #cccccc;
+    background-color: #f9f9f9;
+
+    /*
+        js_body_dark_mode: clase añadida desde 'src/js/header.js',
+        modificamos las variables css aplicadas a los elementos 
+        hijos de tag-body para cuando este tiene el color de fondo dark
+    */
+    &.js_body_dark_mode { 
+        --textColor: #f1f1f1;
+        --backgroundColor: #46484A;
+        --iconColor: #4C4F51;
+        --shadowColor: #333333;
+        background-color: #3c4042ea;
+    };
+
+    /*
+        js_hidden_scroll: clase añadida desde 'src/js/header.js',
+        definimos overflow-y: clip para remover el scroll cuando 
+        desplegamos el menu de navegacion
+    */
+    &.js_hidden_scroll {
+        overflow-y: clip;
+    }
+}
+
+/*
+    tag-h1 y tag-h2: definimos como color de fuente el color que tenga definido 
+    el sitio web
+*/
+h1, h2 {
+    color: $mainPageColor;
+}
+
+/*
+    tag-h1, tag-h2 y tag-h3 : definimos una fuente personalizada
+*/
+h1, h2, h3 {
+    font-family: "ubuntu-bold", sans-serif;
+}
+
+/*
+    tag-h2: estos estilos son tomados por todas las tag-h2 definidas
+    en html
+*/
+h2 {
+    text-align: center;
+    
+    /*
+        _@query 499px <== : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (max-width: 499px) { 
+        font-size: 43px;
+    }
+
+    /*
+        _@query 500px ==> : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (min-width: 500px) { 
+        font-size: 50px;
+    }
+
+    /*
+        _@query 1000px ==> : definimos un tamaño de fuente para este 
+        _elemento en esta medida
+    */
+    @media (min-width: 1000px) { 
+        font-size: 60px;
+    }
+}
+
+/*
+    tag-h5 y tag-h6: definimos una fuente personalizada 
+    para estos elementos
+*/
+h5, h6 {
+    font-family: "ubuntu-regular", sans-serif;  
+}
+
+/*
+    tag-p: estos estilos son tomados por todas las tag-p definidas
+    en html
+*/
+p {
+    color: var(--textColor);
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/*
+    tag-p, tag-li, tag-input, tag-textarea y tag-label: definimos una fuente 
+    personalizada para estos elementos
+*/
+p, li, input, textarea, label {
+    font-family: 'poppin-regular', sans-serif;
+}
+
+/* 
+    box_btn: estos estilos son tomados por todas las clases box_btn 
+    definidas en html
+*/
+.box_btn {
+    /* 
+        tag-button: definimos vertical-align: top para remover un espaciado
+        que genera el navegador en los botones
+    */
+    button {  
+        vertical-align: top;
+        background-color: $mainPageBackgroundColor;
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: .5px;
+        border-radius: 5px;
+        padding: 10px 50px;
+        transition: transform .2s, box-shadow .5s;
+
+        /*
+            .cuando hacemos :hover definimos transform: translateY() para
+            .desplazar el boton -8px hacia arriba
+        */
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 8px 0 var(--shadowColor);
+        }
+    }
+}
+
+/* 
+    tag-button: definimos outline y border none para remover los bordes
+    que añade el navegador en los botones y background-color: transparent
+    para remover el color de fondo que tienen los botones por defecto
+*/
+button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*
+    tag-a: estos estilos son tomados por todas las tag-a definidas
+    en html
+*/
+a {
+    text-decoration: none;
+    color: $mainPageColor;
+    font-size: 1.1rem;
+}
+
+/*
+    tag-button y tag-a: definimos una fuente personalizada para estos elementos
+*/
+button, a {
+    font-family: 'baloo2-bold', sans-serif;
+}
+
+/*
+    tag-svg, tag-img y tag-textarea: implementamos vertical-align para 
+    remover un espaciado que genera el navegador en estas etiquetas
+*/
+svg, img, textarea {
+    vertical-align: top;
+}
+
+/*
+    all_components: definimos color de fondo, un margen en la parte superior
+    y finalmente un espaciado para separar el contenido de los bordes de los
+    diferentes componentes
+*/
+.banner_component, .skills_component, 
+.certificates_component, .projects_component, 
+.customers_component, .contacts_component {
+    background-color: var(--backgroundColor);
+    margin-top: 100px;
+    padding: 60px 20px;
+};
+
+/*
+    modal_component, loader_component: definimos position: fixed y sus propiedades 
+    top, bottom, left, right y z-index para fijar este elemento y darle tamaño. tambien 
+    implementamos flexbox y sus propiedades justify-content y align-items para 
+    centrar de manera horizontal y vertical los elementos que este contiene
+*/
+.modal_component, .loader_component {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+    box_title_border: estos estilos son tomados por todas las clases
+    box_title_border definidas en html, definimos un ancho de 200px
+*/
+.box_title_border {
+    width: 200px;
+    
+    /*
+        _@query 999px <== : definimos un un margen auto para centrar
+        _de manera horizontal e lborde y un margen en la parte inferior
+        _para este elemento en esta medida
+    */
+    @media (max-width: 999px) {
+        margin: 0 auto 30px;
+    }
+    
+    /*
+        _@query 1000px ==> : definimos un un margen auto para centrar
+        _de manera horizontal el borde y un margen en la parte inferior
+        _para este elemento en esta medida
+    */
+    @media (min-width: 1000px) {
+        margin: 0 auto 50px;
+    }
+}
+
+/*
+    box_img_border: definimos position: absolute e implementamos width 
+    y height para darle tamaño a este elemento
+*/
+.box_img_border {
+    border: 5px solid $mainPageBackgroundColor;
+    border-radius: 5px;
+}

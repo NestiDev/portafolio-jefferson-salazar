@@ -1,0 +1,68 @@
+<!-- 
+    _footer_component: contenedor de la seccion,
+    _hoja de estilos 'src\sass\layout\_footer.scss',
+-->
+<footer class="footer_component">
+    <!--  
+        box_footer_icon: contenedor de 1 tag-svg
+    -->
+    <div class="box_footer_icon">
+        <!--  
+            .tag-svg: en esta definimos el icono go-top del footer, la clase
+            .js_background_change es para implementar en 'src/js/navbar.js'
+            .le definimos un ID para manejar este elemento desde 'src\js\footer.js'
+        -->
+        <svg viewBox="0 0 24 24" class="js_background_change" id="footer-icon-gotop">
+            <path d="M11 8.414V18h2V8.414l4.293 4.293 1.414-1.414L12 4.586l-6.707 6.707 1.414 1.414z"></path>
+        </svg>
+    </div>
+
+    <!--  
+        footer_flags: contenedor de espanish_flag y english_flag
+    -->
+    <div class="footer_flags">
+        <!--  
+            espanish_flag: contenedor de 1 tag-img, la clase 
+            'js_languages_flags' es para implementar en 'src\js\footer.js',
+            el atributo data-language los implementamos para el cambio 
+            de lenguaje desde 'src\js\footer.js'
+        -->
+        <div class="espanish_flag js_languages_flags" data-language="es">
+            <!--  
+                .tag-img: en esta definimos la imagen de la bandera del idioma
+            -->
+            <img src="./assets/images/es.png" alt="espanish flag" title="es" loading="lazy">
+        </div>
+
+        <div class="english_flag js_languages_flags" data-language="en">
+            <img src="./assets/images/en.png" alt="english flag" title="en" loading="lazy">
+        </div>
+    </div>
+
+    <!--  
+        .tag-p: definida para añadir el año actual de la pagina, definimos un ID 
+        .para manejar este elemento desde 'src\js\footer.js', los atributos 
+        .data-section y data-value los implementamos para el cambio de lenguaje
+    -->
+    <p id="footer-year" data-section="footerComponent" data-value="footerCopyright"></p>
+</footer>
+
+<!-- 
+    swiper js 
+-->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- 
+    sweetalert js
+-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!--  
+    main js
+-->
+<script src="./js/main.js"></script>
+
+<!--  
+    custom js shared to index.ejs and portfolio.ejs
+-->
+<script src="./js/portfolio/footer.js"></script>

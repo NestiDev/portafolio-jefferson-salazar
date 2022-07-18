@@ -1,0 +1,328 @@
+/*
+  skills_component
+*/
+.skills_component {
+    /*
+        skills_container
+    */
+    .skills_container {
+        /*
+            skills_grid: definimos display: grid y su propiedad
+            gap para generar espaciado entre los elementos, finalmente
+            overflow-x: scroll para generar un efecto slider sin tener 
+            problemas de scroll
+        */
+        .skills_grid {
+            display: grid;
+            gap: 16px;
+            padding: 20px 30px;
+            overflow-x: scroll;
+  
+            /*
+                _@query 499px <== : definimos una grilla de 12 columnas 
+                _para esta medida
+            */
+            @media (max-width: 499px) {
+                grid-template-columns: repeat(12, 200px);
+            }
+  
+            /*
+                _@query 500px ==> : definimos una grilla de 2 columnas 
+                _para esta medida
+            */
+            @media (min-width: 500px) {
+                grid-template-columns: repeat(2, 1fr);
+    
+                /*
+                    ::-webkit-scrollbar: esta propiedad me permite remover el
+                    scroll que se genera por la porpiedad overflow-x: scroll
+                */
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+  
+            /*
+                _@query 700px ==> : definimos una grilla de 3 columnas 
+                _para esta medida
+            */
+            @media (min-width: 700px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+    
+            /*
+                _@query 1000px ==> : definimos una grilla de 4 columnas 
+                _para esta medida
+            */
+            @media (min-width: 1000px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+  
+            /*
+                _@query 1200px ==> : definimos una grilla de 6 columnas 
+                _para esta medida
+            */
+            @media (min-width: 1200px) {
+                grid-template-columns: repeat(6, 1fr);
+            }
+          
+            /*
+                box_skill_cards: definimos position: relative debido a que uno de sus 
+                elementos hijos tiene definido position: absolute, finalmente un espaciado 
+                para separar el contenido de los bordes
+            */
+            .box_skill_cards { 
+                position: relative;
+                text-align: center;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                padding: 10px 12px;
+
+                /*
+                    .cuando hacemos :hover en box_skill_cards
+                */
+                &:hover {
+                    /*
+                        .agregamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de pseudo elementos
+                    */
+                    &::before, &::after {
+                        transform: scale(0.9);
+                    }
+
+                    /*
+                        .modificamos la propiedad transform: scale() para aumentar el 
+                        .tamaño de las imagenes
+                    */
+                    img {
+                        transform: scale(1);
+                    }
+                }
+    
+                /*
+                    .::before y ::after: haecmos uso de estos pseudo elementos para crear animaciones,
+                    .definimos display: block para que estos tomen propiedades como widht y height.
+                    .finalmente position: absolute para darle poscion a los elementos y opacity: 0
+                    .para removerlos de la vista
+                */
+                &::before, &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    opacity: .2;
+                    transition:  transform .3s;
+                }
+    
+                /*
+                    .::before: hacemos uso de las propiedades left y top para darle posicion a este
+                    .elemento, finalmente le damos tamaño con las propiedades width y height
+                */
+                &::before {
+                    left: 10px;
+                    top: 10px;
+                    border-radius: 0 0 50% 0;
+                    width: 40px;
+                    height: 40px;
+                }
+    
+                /*
+                    .::before: hacemos uso de las propiedades right y bottom para darle posicion a este
+                    .elemento, finalmente le damos tamaño con las propiedades width y height
+                */
+                &::after {
+                    right: 10px;
+                    bottom: 10px;
+                    border-radius: 50% 0 0 0;
+                    width: 60px;
+                    height: 60px;
+                }
+    
+                /*
+                    tag-img: definimos la propiedad transform: scale() para disminuir el 
+                    tamaño de las imagenes
+                */
+                img {
+                    transform: scale(0.9);
+                    transition: transform .3s;
+
+                    /*
+                        _@query 479px <== : definimos un ancho y alto para este elemento
+                        _en esta medida
+                    */
+                    @media (max-width: 479px) {
+                        width: 75px;
+                        height: 75px;
+                    }
+        
+                    /*
+                        _@query 480px ==> : definimos un ancho y alto para este elemento
+                        _en esta medida
+                    */
+                    @media (min-width: 480px) {
+                        width: 95px;
+                        height: 95px;
+                    }
+        
+                    /*
+                        _@query 1000px ==> : definimos un ancho y alto para este elemento
+                        _en esta medida
+                    */
+                    @media (min-width: 1000px) {
+                        width: 110px;
+                        height: 110px;
+                    }
+                }
+
+                /*
+                    tag-h3
+                */
+                h3 {
+                    color: var(--textColor);
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+  
+            /*
+                hacemos uso de las clases distintivas de cada tarjeta y hacemos uso de los
+                pseudo elementos ::before y ::after para definirles un color de fondo
+            */
+            .html {
+                animation: skillMoveTop 2.5s infinite;
+
+                &::before, &::after {
+                    background-color: #FF6D00;
+                }
+            }
+
+            .css {
+                animation: skillMoveTop 2.5s infinite .2s;
+
+                &::before, &::after {
+                    background-color: #039BE5;
+                }
+            }
+
+            .sass {
+                animation: skillMoveTop 2.5s infinite .4s;
+                
+                &::before, &::after {
+                    background-color: #F06292;
+                }
+            }
+    
+            .bootstrap { 
+                animation: skillMoveTop 2.5s infinite .6s;
+
+                &::before, &::after {
+                    background-color: #673AB7;
+                }
+            }
+
+            .jquery { 
+                animation: skillMoveTop 2.5s infinite .8s;
+
+                &::before, &::after {
+                    background-color: #0268AE;
+                }
+            }
+    
+            .javascript {
+                animation: skillMoveTop 2.5s infinite 1s;
+                
+                &::before, &::after {
+                    background-color: #FFD600;
+                }
+            }
+
+            .angular {
+                animation: skillMoveBottom 2.5s infinite;
+                
+                &::before, &::after {
+                    background-color: #DD2C00;
+                }
+            }
+
+            .node {
+                animation: skillMoveBottom 2.5s infinite .2s;
+                
+                &::before, &::after {
+                    background-color: #4CAF50;
+                }
+            }
+
+            .mysql {
+                animation: skillMoveBottom 2.5s infinite .4s;
+                
+                &::before, &::after {
+                    background-color: #00796B;
+                }
+            }
+
+            .mongodb {
+                animation: skillMoveBottom 2.5s infinite .6s;
+                
+                &::before, &::after {
+                    background-color: #4CAF50;
+                }
+            }
+
+            .git {
+                animation: skillMoveBottom 2.5s infinite .8s;
+                
+                &::before, &::after {
+                    background-color: #F4511E;
+                }
+            }
+
+            .ui_ux {
+                animation: skillMoveBottom 2.5s infinite 1s;
+                
+                &::before, &::after {
+                    background-color: #83D8F4;
+                }
+            }
+
+            /*
+                _@query 1200px ==> : definimos una animacion para
+                _este elemento en esta medida
+            */
+            @media (min-width: 1200px) {
+                /*
+                    skillMoveTop: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    elicono -10px hacia arriba finalmente en 100% vuelve a su 
+                    posicion original
+                */
+                @keyframes skillMoveTop {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+    
+                /*
+                    skillMoveBottom: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(0) para trasladar 
+                    el icono 10px hacia abajo finalmente en 100% vuelve a su 
+                    posicion original
+                */
+                @keyframes skillMoveBottom {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(10px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+}

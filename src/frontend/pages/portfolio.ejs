@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PDRT7J"
+            height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+
+    <!-- 
+        _header_component: contenedor de la seccion,
+        _hoja de estilos 'src/sass/layout/_header.scss',
+        _le definimos un ID para manejar este elemento 
+        _desde 'src/js/portfolio/header.js'  
+    -->
+    <header class="header_component" id="header-component">
+        <%- include('../partials/templates/darkmode'); %>
+
+        <!--  
+            box_open_menu_icon: contenedor de 1 tag-svg, definimos un
+            ID para manejar este elemento desde 'src/js/portfolio/header.js'
+        -->
+        <div class="box_open_menu_icon" id="menu-icon-header">
+            <!--  
+                .tag-svg: en esta definimos el icono que abre el menu, la clase
+                .js_icon_color_change es para implementar en 'src/js/portfolio/navbar.js'
+            -->
+            <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- 
+        _body_page: contenedor de navbar_component y de main_components_container
+        _que son los componentes que conforman el cuerpo del portafolio
+    -->
+    <div class="body_page">
+        <!-- 
+            _navbar_component: contenedor de la seccion,
+            _hoja de estilos 'src/sass/layout/_navbar.scss',
+            _le definimos un ID para manejar este elemento 
+            _desde 'src/js/portfolio/header.js' y 'src/js/portfolio/navbar.js'
+        -->
+        <div class="navbar_component" id="navbar-component">
+            <!--  
+                .tag-nav: contiene a box_navbar_menu y 1 tag-ul,
+                .le definimos un ID para manejar este elemento 
+                .desde 'src/js/portfolio/header.js' y 'src/js/portfolio/navbar.js'
+            -->
+            <nav id="navbar-nav">
+                <!--  
+                    box_navbar_menu: contenedor de 1 tag-h2 y de box_menu_close_icon
+                -->
+                <section class="box_navbar_menu">
+                    <!--  
+                        .tag-h3: en esta definimos el titulo menu, los atributos 
+                        .data-section y data-value los implementamos para el cambio 
+                        .de lenguaje
+                    -->
+                    <h3 data-section="navbarComponent" data-value="navbarTitle">Menú</h3>
+
+                    <!--  
+                        box_menu_close_icon: contenedor de 1 tag-svg, definimos un
+                        ID para manejar este elemento desde 'src/js/portfolio/navbar.js'
+                    -->
+                    <div class="box_menu_close_icon" id="menu-icon-navbar">
+                        <!--  
+                            .tag-svg: en esta definimos el icono que cierra el menu
+                        -->
+                        <svg viewBox="0 0 24 24">
+                            <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+                        </svg>
+                    </div>
+                </section>
+
+                <!--  
+                    .tag-ul: contenedor de 7 tags-li  
+                -->
+                <ul class="ul_navbar">
+                    <!--  
+                        .tag-li: contiene 1 tag-a, la clase js_active_link
+                        .es para implementar en 'src/js/portfolio/navbar.js'
+                    -->
+                    <li class="js_active_link">
+                        <!--  
+                            .tag-a: contiene 1 tag-svg y 1 tag-span
+                        -->
+                        <a href="#redirection_banner_component">
+                            <!--  
+                                .tag-svg: en esta definimos el icono que acompaña al enlace
+                            -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                            </svg>
+
+                            <!--  
+                                .tag-span: en esta definimos el titulo del enlace, los atributos 
+                                .data-section y data-value los implementamos para el cambio de lenguaje
+                            -->
+                            <span data-section="navbarComponent" data-value="navbarListItemOne">Conóceme</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redirection_skills_component">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 5H6c-1.103 0-2 .897-2 2v16l6-3.601L16 23V7c0-1.103-.897-2-2-2zm0 14.467-4-2.399-4 2.399V7h8v12.467z"></path>
+                                <path d="M18 1h-8c-1.103 0-2 .897-2 2h8c1.103 0 2 .897 2 2v10.443l2 2.489V3c0-1.103-.897-2-2-2z"></path>
+                            </svg>
+
+                            <span data-section="navbarComponent" data-value="navbarListItemTwo">Habilidades</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redirection_certificates_component">
+                            <svg>
+                                <path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.799 6.91 4.819 7.012A6.001 6.001 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09a6.01 6.01 0 0 0 4.181-2.898C20.201 14.91 22 12.31 22 8V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.216 12.078 4 9.299 4 8zm8 8c-2.206 0-4-1.794-4-4V4h8v8c0 2.206-1.794 4-4 4zm6-3.17V6h2v2c0 1.299-.216 4.078-2 4.83z"></path>
+                            </svg>
+
+                            <span data-section="navbarComponent" data-value="navbarListItemThree">Certificados</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redirection_projects_component">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 22h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2h-2a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2zM5 5h2v2h10V5h2v15H5V5z"></path><path d="m11 13.586-1.793-1.793-1.414 1.414L11 16.414l5.207-5.207-1.414-1.414z"></path>
+                            </svg>
+
+                            <span data-section="navbarComponent" data-value="navbarListItemFour">Proyectos</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redirection_customers_component">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM8 8h12v3H4V8h4zM4 19v-6h6v2h4v-2h6l.001 6H4z"></path>
+                            </svg>
+
+                            <span data-section="navbarComponent" data-value="navbarListItemFive">Clientes</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#redirection_contacts_component">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
+                            </svg>
+
+                            <span data-section="navbarComponent" data-value="navbarListItemSix">Contactos</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!--  
+                            .tag-button: en esta definimos el boton para cambiar el skin de la
+                            .pagina, js_background_change, le definimos un ID para implementar
+                            .este elemento en 'src/js/portfolio/navbar.js'
+                        -->
+                        <button type="button" id="navbar-skin-btn">
+                            <!--  
+                                .tag-svg: en esta definimos el icono del boton
+                            -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13.4 2.096a10.08 10.08 0 0 0-8.937 3.331A10.054 10.054 0 0 0 2.096 13.4c.53 3.894 3.458 7.207 7.285 8.246a9.982 9.982 0 0 0 2.618.354l.142-.001a3.001 3.001 0 0 0 2.516-1.426 2.989 2.989 0 0 0 .153-2.879l-.199-.416a1.919 1.919 0 0 1 .094-1.912 2.004 2.004 0 0 1 2.576-.755l.412.197c.412.198.85.299 1.301.299A3.022 3.022 0 0 0 22 12.14a9.935 9.935 0 0 0-.353-2.76c-1.04-3.826-4.353-6.754-8.247-7.284zm5.158 10.909-.412-.197c-1.828-.878-4.07-.198-5.135 1.494-.738 1.176-.813 2.576-.204 3.842l.199.416a.983.983 0 0 1-.051.961.992.992 0 0 1-.844.479h-.112a8.061 8.061 0 0 1-2.095-.283c-3.063-.831-5.403-3.479-5.826-6.586-.321-2.355.352-4.623 1.893-6.389a8.002 8.002 0 0 1 7.16-2.664c3.107.423 5.755 2.764 6.586 5.826.198.73.293 1.474.282 2.207-.012.807-.845 1.183-1.441.894z"></path>
+                                <circle cx="7.5" cy="14.5" r="1.5"></circle>
+                                <circle cx="7.5" cy="10.5" r="1.5"></circle>
+                                <circle cx="10.5" cy="7.5" r="1.5"></circle>
+                                <circle cx="14.5" cy="7.5" r="1.5"></circle>
+                            </svg>
+
+                            <!--  
+                                .tag-span: en esta definimos el titulo del boton
+                            -->
+                            <span>Skins</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!--  
+            _main_components_container: contenedor de banner_component,
+            _modal_component, skills_component, _certificates_component,
+            _projects_component, customers_component y contacts_component
+        -->
+        <main class="main_components_container">
+            <!-- 
+                _banner_component: contenedor de la seccion,
+                _hoja de estilos 'src/sass/layout/portfolio/_banner.scss',
+                _definimos un ID requerido en las tags-a definidas
+                _en navbar_component 
+            -->
+            <div class="banner_component" id="redirection_banner_component">
+                <!--  
+                    banner_flexbox: contenedor defido para implementar
+                    flexbox en la seccion
+                -->
+                <div class="banner_flexbox">
+                    <!--  
+                        box_banner_biografy: contenedor de 1 tag-h1, 1 tag-h5, 1 tag-p 
+                        y de box_btn
+                    -->
+                    <section class="box_banner_biografy">
+                        <!--  
+                            .tag-h1: en esta definimos el titulo del banner, la clase 
+                            .js_color_change es para implementar en 'src/js/portfolio/navbar.js',
+                            .los atributos data-section y data-value los implementamos 
+                            .para el cambio de lenguaje
+                        -->
+                        <h1 class="js_color_change" data-section="bannerComponent" data-value="bannerTitle">Soy Jefferson Salazar</h1>
+
+                        <!--  
+                            .tag-h5: en esta definimos el subtitulo del banner, los atributos 
+                            .data-section y data-value los implementamos para el cambio de lenguaje
+                        -->
+                        <h5 data-section="bannerComponent" data-value="bannerSubtitle">Desarrollador Frontend</h5>
+
+                        <!--  
+                            .tag-p: en esta definimos el parrafo del banner, los atributos
+                            .data-section y data-value los implementamos para el cambio de lenguaje 
+                        -->
+                        <p data-section="bannerComponent" data-value="bannerParagraph">
+                            Nací el 10 de Febrero de 1989 en Palmira Valle. Me dedico al desarrollo 
+                            Frontend hace 3 años en los cuales he participado en el desarrollo de sitios
+                            web y pequeñas aplicaciones. Tengo conocimientos básicos en Backend y en el
+                            manejo de bases de datos relacionales y no relacionales...
+                        </p>
+
+                        <!--  
+                            box_btn: contenedor de 1 tag-button y 1 tag-a, box_btn es una clase
+                            general para todos los botones, su hoja de estilos 'src/sass/style.scss'
+                        -->
+                        <div class="box_btn">
+                            <!--  
+                                .tag-button: en esta definimos el boton del banner,
+                                .la clase js_background_change es exclusiva para usar en 'src/js/navbar.js',
+                                .definimos un ID para manejar este elemento desde 'src/js/portfolio/navbar.js', 
+                                .los atributos data-section y data-value los implementamos para el cambio de lenguaje
+                            -->
+                            <button type="button" class="js_background_change" 
+                                data-section="bannerComponent" data-value="bannerTextButton" id="btn-open-modal"
+                            >
+                                Leer Más
+                            </button>
+
+                            <!--  
+                                .tag-a: en esta definimos un enlace de descarga del curriculo, la clase 
+                                .js_color_change es para implementar en 'src/js/portfolio/navbar.js', 
+                                .definimos un ID para manejar este elemento tambien desde 'src/js/portfolio/navbar.js'
+                            -->
+                            <a href="./assets/docs/cv_jefferson_salazar.pdf" download="CV Jefferson Salazar" class="js_color_change" 
+                                id="btn-banner-hdv"
+                            >
+                                <!--  
+                                    .tag-span: en esta definimos el titulo de la hoja de vida, los atributos 
+                                    .data-section y data-value los implementamos para el cambio de lenguaje
+                                -->
+                                <span data-section="bannerComponent" data-value="bannerLinkButton">HDV</span> 
+
+                                <!--  
+                                    .tag-svg: en esta definimos el icono del boton de descarga hdv, la clase 
+                                    .js_icon_color_change es para implementar en 'src/js/portfolio/navbar.js',
+                                -->
+                                <svg viewBox="0 0 24 24" width="24" class="js_icon_color_change">
+                                    <path d="m12 16 4-5h-3V4h-2v7H8z"></path>
+                                    <path d="M20 18H4v-7H2v7c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2v-7h-2v7z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- 
+                        box_banner_img: contenedor de box_border_img y 1 tag-img	
+                    -->
+                    <div class="box_banner_img">
+                        <!-- 
+                            box_img_border: este elemento lo implementamos para crear el borde
+                            que decora la imagen, la clase js_img_border_color_change es para 
+                            implementar en 'src/js/portfolio/navbar.js'
+                        -->
+                        <div class="box_img_border js_img_border_color_change"></div>
+
+                        <!--  
+                            .tag-img: en esta definimos la imagen del banner
+                        -->
+                        <img src="./assets/images/model1.png" alt="photo banner" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 
+                _modal_component: contenedor de la seccion,
+                _hoja de estilos 'src/sass/layout/portfolio/_modal.scss',
+                _definimos un ID para manejar este elemento 
+                _desde 'src/js/portfolio/banner.js' y 'src/js/portfolio/modal.js'
+            -->
+            <div class="modal_component" id="modal-component">
+                <!--  
+                    modal_card: contenedor de box_modal_img y de box_modal_content, 
+                    le definimos un ID para manejar este elemento desde
+                    'src/js/portfolio/banner.js' y 'src/js/portfolio/modal.js'
+                -->
+                <div class="modal_card" id="modal-card">
+                    <!--  
+                        box_modal_img: contenedor de box_border_img y 1 tag-img
+                    -->
+                    <aside class="box_modal_img">
+                        <!-- 
+                            box_img_border: este elemento lo implementamos para crear el borde
+                            que decora la imagen, js_img_border_color_change es una clase para
+                            implementar en 'src/js/portfolio/navbar.js'
+                        -->
+                        <div class="box_img_border js_img_border_color_change"></div>
+
+                        <!--  
+                            .tag-img: en esta definimos la imagen del banner
+                        -->
+                        <img src="./assets/images/modal4.png" alt="photo modal" loading="lazy">
+                    </aside>
+
+                    <!--  
+                        box_modal_content: contenedor de box_modal_icon, 2 tags-p y
+                        1 tag-ol
+                    -->
+                    <aside class="box_modal_content">
+                        <!--  
+                            box_modal_icon: contenedor de 1 tag-svg, js_color_border_change 
+                            es una clase trabajada desde 'src/js/portfolio/navbar.js'
+                        -->
+                        <div class="box_modal_icon js_color_border_change">
+                            <!--  
+                                .tag-svg: en esta definimos el icono que cierre el modal,
+                                .'js_icon_color_change' es una clase trabajada desde 
+                                .'src/js/portfolio/navbar.js'
+                            -->
+                            <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path>
+                            </svg>
+                        </div>
+
+                        <!--  
+                            .tag-p: en esta definimos el parrafo del modal, los atributos data-section 
+                            .y data-value los implementamos para el cambio de lenguaje
+                        -->
+                        <p data-section="modalComponent" data-value="modalParagraphTop">
+                            Me considero una persona sencilla, respetuosa y sociable. Apasionado por 
+                            la vida, el emprendimiento y la tecnología. Entre mis virtudes está:
+                        </p>
+
+                        <!--  
+                            .tag-ol: contiene 4 tags-li
+                        -->
+                        <ol>
+                            <!--  
+                                tag-li: contiene 1 tag-svg y 1 tag-span
+                            -->
+                            <li>
+                                <!--  
+                                    .tag-svg: en esta definimos el icono de los checks de la lista
+                                    .'js_icon_color_change' es una clase trabajada desde
+                                    .'src/js/portfolio/navbar.js'
+                                -->
+                                <svg class="js_icon_color_change">
+                                    <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+                                </svg>
+
+                                <!--  
+                                    .tag-span: en esta definimos el texto del item de la lista, los atributos 
+                                    .data-section y data-value los implementamos para el cambio de lenguaje
+                                -->
+                                <span data-section="modalComponent" data-value="modalListItemOne">El trabajo en equipo</span>
+                            </li>
+
+                            <li>
+                                <svg class="js_icon_color_change">
+                                    <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+                                </svg>
+                                
+                                <span data-section="modalComponent" data-value="modalListItemTwo">La toma de decisiones</span>
+                            </li>
+
+                            <li>
+                                <svg class="js_icon_color_change">
+                                    <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+                                </svg>
+                                
+                                <span data-section="modalComponent" data-value="modalListItemThree">EL aprendizaje autodidacta</span>
+                            </li>
+                            
+                            <li>
+                                <svg class="js_icon_color_change">
+                                    <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+                                </svg>
+                                
+                                <span data-section="modalComponent" data-value="modalListItemFour">La comunicación asertiva</span>
+                            </li>
+                        </ol>
+
+                        <p data-section="modalComponent" data-value="modalParagraphBottom">
+                            Me encanta la fórmula 1, ir a cine y compartir en familia.
+                            A mediano plazo anhelo terminar la carrera técnico en
+                            desarrollo de software e iniciar con la ingeniería.
+                        </p>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- 
+                _skills_component: contenedor de la seccion,
+                _hoja de estilos 'src/sass/layout/portfolio/_skills.scss',
+                _le definimos un ID requerido en las tags-a definidas
+                _en navbar_component 
+            -->
+            <section class="skills_component" id="redirection_skills_component">
+                <!--  
+                    .tag-h2: en esta definimos el titulo de la seccion, js_change_color
+                    .es una clase trabajada desde src/js/portfolio/navbar.js,
+                    .los atributos data-section y data-value los implementamos 
+                    .para el cambio de lenguaje
+                -->
+                <h2 class="js_color_change" data-section="skillsComponent" data-value="skillsTitle">Habilidades</h2>
+
+                <!--  
+                    box_title_border: este elemento lo definimos para generar espacio entre
+                    los titulos de seccion y el contenido de la seccion, su hoja de estilos
+                    'src/sass/style.scss'
+                -->
+                <div class="box_title_border"></div>
+
+                <!-- 
+                    skills_container: contenedor definido para manejar el responsive
+                    de la seccion
+                -->
+                <div class="skills_container">
+                    <!--  
+                        skills_grid: contenedor definido para implementar grid en la
+                        seccion
+                    -->
+                    <div class="skills_grid">
+                        <!--  
+                            box_skill_cards: contenedor de 1 tag-img y 1 tag-h3
+                        -->
+                        <div class="box_skill_cards html">
+                            <!--  
+                                .tag-img: en esta definimos la imagen de la habilidad
+                            -->
+                            <img src="./assets/images/html5.png" alt="html" loading="lazy">
+
+                            <!--  
+                                .tag-h3: en esta definimos el titulo de la tecnologia
+                            -->
+                            <h3>html</h3>
+                        </div>
+
+                        <!--  
+                            02 css
+                        -->
+                        <div class="box_skill_cards css">
+                            <img src="./assets/images/css.png" alt="css" loading="lazy">
+
+                            <h3>css</h3>
+                        </div>
+
+                        <!--  
+                            03 sass
+                        -->
+                        <div class="box_skill_cards sass">
+                            <img src="./assets/images/sass.png" alt="sass" loading="lazy">
+
+                            <h3>sass</h3>
+                        </div>
+
+                        <!--  
+                            04 bootstrap
+                        -->
+                        <div class="box_skill_cards bootstrap">
+                            <img src="./assets/images/bootstrap.png" alt="bootstrap" loading="lazy">
+
+                            <h3>bootstrap</h3>
+                        </div>
+
+                        <!--  
+                            05 jquery
+                        -->
+                        <div class="box_skill_cards jquery">
+                            <img src="./assets/images/jquery.png" alt="jquery" loading="lazy">
+                            
+                            <h3>jquery</h3>
+                        </div>
+
+                        <!--  
+                            06 javascript
+                        -->
+                        <div class="box_skill_cards javascript">
+                            <img src="./assets/images/javascript.png" alt="javascript" loading="lazy">
+
+                            <h3>javascript</h3>
+                        </div>
+
+                        <!--  
+                            07 angular
+                        -->
+                        <div class="box_skill_cards angular">
+                            <img src="./assets/images/angular.png" alt="angular" loading="lazy">
+
+                            <h3>angular</h3>
+                        </div>
+
+                        <!--  
+                            08 node
+                        -->
+                        <div class="box_skill_cards node">
+                            <img src="./assets/images/node.png" alt="node js" loading="lazy">
+
+                            <h3>node js</h3>
+                        </div>
+
+                        <!--  
+                            09 mysql
+                        -->
+                        <div class="box_skill_cards mysql">
+                            <img src="./assets/images/mysql.png" alt="mysql" loading="lazy">
+
+                            <h3>mysql</h3>
+                        </div>
+
+                        <!--  
+                            10 mongodb
+                        -->
+                        <div class="box_skill_cards mongodb">
+                            <img src="./assets/images/mongo.png" alt="mongo db" loading="lazy">
+
+                            <h3>mongo db</h3>
+                        </div>
+
+                        <!--  
+                            11 git
+                        -->
+                        <div class="box_skill_cards git">
+                            <img src="./assets/images/git.png" alt="git" loading="lazy">
+
+                            <h3>git</h3>
+                        </div>
+
+                        <!--  
+                            12 iu-ux
+                        -->
+                        <div class="box_skill_cards ui_ux">
+                            <img src="./assets/images/ui-ux.png" alt="ui-ux" loading="lazy">
+
+                            <h3>ui - ux</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                _certificates_component: contenedor de la seccion,
+                _hoja de estilos 'src/sass/layout/_certificates.scss',
+                _le definimos un ID requerido en las tags-a definidas
+                _en navbar_component 		
+            -->
+            <section class="certificates_component" id="redirection_certificates_component">
+                <!--  
+                    .tag-h2: en esta definimos el titulo de la seccion, la clase 
+                    .js_change_color es una clase exclusiva para usar en 'src/js/navbar.js',
+                    .los atributos data-section y data-value los implementamos 
+                    .para el cambio de lenguaje
+                -->
+                <h2 class="js_color_change" data-section="certificatesComponent" data-value="certificatesTitle">Certificados</h2>
+
+                <!--  
+                    box_title_border: este elemento lo definimos para generar espacio entre
+                    los titulos de seccion y el contenido de la seccion, su hoja de estilos
+                    'src/sass/style.scss'
+                -->
+                <div class="box_title_border"></div>
+
+                <!--  
+                    certificates_section: contenedor de box_certificates_title y de 
+                    box_certificates_content, esta misma clase es implementada en 
+                    'src\js\certificates.js'
+                -->
+                <div class="certificates_section">
+                    <!--  
+                        box_certificates_title: contenedor de 1 tag-h3 y 1 tag-svg
+                    -->
+                    <section class="box_certificates_title">
+                        <!--  
+                            .tag-h3: en esta definimos el titulo del programa, los atributos data-section 
+                            .y data-value los implementamos para el cambio de lenguaje
+                        -->
+                        <h3 data-section="certificatesAccordeonFour" data-value="accordeonTitleFour">Académico</h3>
+                    
+                        <!--  
+                            .tag-svg: en esta definimos el icono, la clase 'js_icon_color_change'
+                            .es exclusiva para usar en 'src\js\navbar.js'
+                        -->
+                        <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </section>
+
+                    <!--  
+                        box_certificates_content: contenedor de 2 tags-h4, 1 tag-p y de
+                        box_certificates_files
+                    -->
+                    <section class="box_certificates_content">
+                        <!--  
+                            .tag-5: en esta definimos el titulo del certificado, los atributos data-section 
+                            .y data-value los implementamos para el cambio de lenguaje
+                        -->
+                        <h4 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourOne">Instituto: Sena</h4>
+
+                        <!--  
+                            .tag-5: en esta definimos el subtitulo del certificado
+                        -->
+                        <h4 data-section="certificatesAccordeonFour" data-value="accordeonSubtitleFourTwo">Intensidad: 15 meses</h4>
+
+                        <!--  
+                            .tag-p: en esta definimos el parrafo del certificado
+                        -->
+                        <p data-section="certificatesAccordeonFour" data-value="accordeonParagraphFour">
+                            Actualmente, me encuentro realizando la carrera TÉCNICO EN DESARROLLO DE 
+                            SOFTWARE en modalidad virtual los días lunes, martes, miércoles y viernes 
+                            y presencial los días jueves, la cual dio inicio el 16/05/2022 y finaliza 
+                            el 15/09/2023.
+                        </p>
+
+                        <!--  
+                            box_certificates_files: contenedor de 3 tags-a 
+                        -->
+                        <div class="box_certificates_files">
+                            <!--  
+                                .tag-a: en esta definimos los certificados estudiantiles para descargar, 
+                                .la clase js_color_change es exclusiva para usar en 'src\js\navbar.js'
+                            -->
+                            <a href="./assets/docs/desarrollo_software.pdf" download="constancia de estudio" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+                            >
+                                1. Descargar Certificado
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="certificates_section">
+                    <section class="box_certificates_title">
+                        <h3 data-section="certificatesAccordeonOne" data-value="accordeonTitleOne">Diseño web</h3>
+                        
+                        <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </section>
+                    
+                    <section class="box_certificates_content">
+                        <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
+
+                        <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitleOne">Intensidad: 77 Horas</h4>
+
+                        <p data-section="certificatesAccordeonOne" data-value="accordeonParagraphOne">
+                            Construcción de sitios web accesibles y adaptables a dispositivos móviles implementando html, 
+                            css (sass) y bootstrap, javascript y/o jquery, uso de condicionales, funciones, 
+                            bucles, arreglos, objetos, promesas y consumo de apis con fetch.
+                        </p>
+
+                        <div class="box_certificates_files">
+                            <a href="./assets/docs/html1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+                            >
+                                1. Descargar Certificados
+                            </a>
+                            
+                            <a href="./assets/docs/html2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+                            >
+                                2. Descargar Certificados
+                            </a>
+                            
+                            <a href="./assets/docs/js1.pdf"  download="certificado tres" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextThree"
+                            >
+                                3. Descargar Certificados
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="certificates_section">
+                    <section class="box_certificates_title">
+                        <h3>Frontend</h3>
+                        
+                        <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </section>
+
+                    <section class="box_certificates_content">
+                        <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
+
+                        <h4 data-section="certificatesAccordeonTwo" data-value="accordeonSubtitleTwo">Intensidad: 54 Horas</h4>
+
+                        <p data-section="certificatesAccordeonTwo" data-value="accordeonParagraphTwo">
+                            Creación de proyectos SPA (single page application) con angular 
+                            implementando componentes, módulos personalizados, directivas, inyección de dependencias,
+                            formularios reactivos, formularios por plantilla, validación de formularios, enrutamiento, 
+                            carga perezosa, servicios, guardianes, clases e interfaces, consumo de apis y realización 
+                            de pruebas unitarias.
+                        </p>
+
+                        <div class="box_certificates_files">
+                            <a href="./assets/docs/angular1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+                            >
+                                1. Descargar Certificados
+                            </a>
+
+                            <a href="./assets/docs/angular2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+                            >
+                                2. Descargar Certificados
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="certificates_section">
+                    <section class="box_certificates_title">
+                        <h3>Backend</h3>
+
+                        <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                            <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
+                        </svg>
+                    </section>
+
+                    <section class="box_certificates_content">
+                        <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
+
+                        <h4 data-section="certificatesAccordeonThree" data-value="accordeonSubtitleThree">Intensidad: 24 Horas</h4>
+
+                        <p data-section="certificatesAccordeonThree" data-value="accordeonParagraphThree">
+                            Creación de servidores con node.js haciendo uso del framework express e implementando módulos
+                            como morgan, cors, mysql, mongoose, jwt, bcrypt, uso de variables de entorno, construcción 
+                            de apis para peticiones post get, delete y update, validación de datos del lado del servidor e 
+                            interacción con bases de datos mysql o mongoDB.
+                        </p>
+
+                        <div class="box_certificates_files">
+                            <a href="./assets/docs/node1.pdf" download="certificado uno" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextOne"
+                            >
+                                1. Descargar Certificados
+                            </a>
+                            <a href="./assets/docs/sql2.pdf" download="certificado dos" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextTwo"
+                            >
+                                2. Descargar Certificados
+                            </a>
+                            <a href="./assets/docs/mongo1.pdf" download="certificado tres" title="descargar certificado" class="links_donwload js_color_change"
+                                data-section="certificatesAccordeonOne" data-value="accodeonLinkTextThree"
+                            >
+                                3. Descargar Certificados
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!--  
+                _proyects_component: contenedor de la seccion,
+                _hoja de estilos 'src/sass/layout/_projects.scss',
+                _le definimos un ID requerido en las tags-a definidas
+                _en navbar_component 		
+            -->
+            <section class="projects_component" id="redirection_projects_component">
+                <!--  
+                    .tag-h2: en esta definimos el titulo de la seccion, la clase 
+                    .js_change_color es una clase exclusiva para usar 'src/js/navbar.js'
+                -->
+                <h2 class="js_color_change">Proyectos</h2>
+
+                <!--  
+                    box_title_border: este elemento lo definimos para generar espacio entre
+                    los titulos de seccion y el contenido de la seccion, su hoja de estilos
+                    'src/sass/style.scss'
+                -->
+                <div class="box_title_border"></div>
+
+                <!--  
+                    proyects_container: contenedor definido para manejar el responsive
+                    de la seccion
+                -->
+                <div class="projects_container">
+                    <!--  
+                        proyects_flexbox: contenedor definido para implementar flexbox en la
+                        seccion
+                    -->
+                    <div class="projects_flexbox">
+                        <!--  
+                            swiper: contenedor de swiper-wrapper la clase
+                            mySwiper es exclusiva para usar en 'src\js\projects.js'
+                        -->
+                        <div class="swiper mySwiper">
+                            <!--  
+                                swiper-wrapper: contenedor de swiper-slide
+                            -->
+                            <div class="swiper-wrapper">
+                                <!--  
+                                    swiper-slide: contenedor de 1 tag-img y de
+                                    box_slide_content
+                                -->
+                                <div class="swiper-slide">
+                                    <!--  
+                                        .tag-img: en esta definomos la imagen del slider
+                                    -->
+                                    <img src="./assets/images/fundacion_bolivar.png" alt="fundación bolívar davivienda" loading="lazy" />
+
+                                    <!-- 
+                                        box_slide_content: contiene 1 tag-a
+                                    -->
+                                    <div class="box_slide_content">	
+                                        <!--  
+                                            .tag-a: en esta definimos el redireccionamiento hacia la pagina oficial, los
+                                            .atributos data-section y data-value los implementamos para el cambio de lenguaje
+                                        -->
+                                        <a href="https://www.fundacionbolivardavivienda.org/" target="_blank"
+                                            data-section="projectsComponent" data-value="pageLinkTitle"
+                                        >
+                                            Ver Página Web
+                                        </a>
+                                    </div>
+                                </div>					
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/biofortificados.png" alt="biofortificados" loading="lazy" />
+
+                                    <div class="box_slide_content">	
+                                        <a href="https://biofortificados.com/" target="_blank"
+                                            data-section="projectsComponent" data-value="pageLinkTitle"
+                                        >
+                                            Ver Página Web
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide">
+                                    <img src="./assets/images/los_naranjos.png" alt="Los naranjos" loading="lazy" />
+
+                                    <div class="box_slide_content">	
+                                        <a href="https://losnaranjos.com.co/" target="_blank"
+                                            data-section="projectsComponent" data-value="pageLinkTitle"
+                                        >
+                                            Ver Página Web
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  
+                                swiper-button-next y swiper-button-prev: estos contenedores
+                                tienen definido por defecto los botones de desplazamiento del slider,
+                                estas mismas clases son implementadas en 'src\js\proyects.js'
+                            -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                _customers_component: contenedor de la seccion,
+                _hoja de estilos 'src\sass\layout\_customers.scss',
+                _le definimos un ID requerido en las tags-a definidas
+                _en navbar_component 
+            -->
+            <section class="customers_component" id="redirection_customers_component">
+                <!--  
+                    .tag-h2: en esta definimos el titulo de la seccion, la clase 
+                    .js_change_color es una clase trabajada desde 'src/js/navbar.js',
+                    .los atributos data-section y data-value los implementamos 
+                    .para el cambio de lenguaje
+                -->
+                <h2 class="js_color_change" data-section="customersComponent" data-value="customersTitle">Clientes</h2>
+
+                <!--  
+                    box_title_border: este elemento lo definimos para generar espacio entre
+                    los titulos de seccion y el contenido de la seccion, su hoja de estilos
+                    'src/sass/style.scss'
+                -->
+                <div class="box_title_border"></div>
+
+                <!--  
+                    customers_container: contenedor definido para manejar el responsive
+                    de la seccion
+                -->
+                <div class="customers_container">
+                    <!--  
+                        customers_grid: contenedor definido para implementar grid en la
+                        seccion
+                    -->
+                    <div class="customers_grid">
+                        <!--  
+                            customers_card_content: contenedor de box_icon_quote, box_customers_profile
+                            1 tag-p 1 tag-ol, la clase js_customer_left y clase js_customer_right es 
+                            exclusiva para usar en 'src/js/main.js'
+                        -->
+                        <div class="customers_card_content js_customer_left">
+                            <!--  
+                                box_icon_quote: contenedor de 1 tag-svg, la clase quote_left
+                                se definio para manipular la tarjeta izquierda sin afectar la
+                                tarjeta derecha que tiene la clase quote_right
+                            -->
+                            <div class="box_icon_quote quote_left">
+                                <!--  
+                                    .tag-svg: en esta definimos el icono de la tarjeta cliente
+                                -->
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3.691 6.292C5.094 4.771 7.217 4 10 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.902 2.902 0 0 0 6.925 10H10a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2H3a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789zM20 20h-6a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789C16.094 4.771 18.217 4 21 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.902 2.902 0 0 0 17.925 10H21a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2z"></path>
+                                </svg>
+                            </div>
+
+                            <!-- 
+                                box_customers_profile: contenedor de 1 tag-img y de customers_name
+                            -->
+                            <div class="box_customers_profile">
+                                <!--  
+                                    .tag-img: en esta definimos la imagen del cliente, la clase
+                                    .js_color_border_change es exclusiva para usar en 'src\js\navbar.js'
+                                -->
+                                <img src="./assets/images/customer.png" alt="Elberth Agreda" class="js_color_border_change" loading="lazy">
+
+                                <!--  
+                                    customers_name: contenedor de 1 tag-h3 y 1 tag-h6
+                                -->
+                                <section class="customers_name">
+                                    <!--  
+                                        .tag-h3: en esta definimos el nombre del cliente, la clase 
+                                        .js_color_change es exclusiva para usar en 'src\js\navbar.js'
+                                    -->
+                                    <h3 class="js_color_change">Elberth Agreda</h3>
+
+                                    <!--  
+                                        .tag-span: en esta definimos @las redes sociales
+                                    -->
+                                    <h6>@elberthagreda</h6>
+                                </section>
+                            </div>
+
+                            <!--  
+                                .tag-p: en esta definimos la opinion del cliente, los atributos data-section y 
+                                .data-value los implementamos para el cambio de lenguaje
+                            -->
+                            <p data-section="customersComponent" data-value="customersCardParagraphOne">
+                                Desde el comienzo noté su deseo por aprender, entonces decidí ser su tutor 
+                                y ayudarlo en su meta de ser un desarrollador de software.
+                            </p>
+
+                            <!--  
+                                ol_socials_customers: contiene 3 tags-li
+                            -->
+                            <ol class="ol_socials_customers">
+                                <!--  
+                                    .tag-li: contiene 1 tag-svg y 1 tag-span
+                                -->
+                                <li>
+                                    <!--  
+                                        .tag-svg: en esta definimos el icono de la profesion
+                                        .del cliente, la clase js_color_change es exclusiva 
+                                        .para usar en 'src\js\navbar.js'
+                                    -->
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="M19 2H9c-1.103 0-2 .897-2 2v6H5c-1.103 0-2 .897-2 2v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4c0-1.103-.897-2-2-2zM5 12h6v8H5v-8zm14 8h-6v-8c0-1.103-.897-2-2-2H9V4h10v16z"></path><path d="M11 6h2v2h-2zm4 0h2v2h-2zm0 4.031h2V12h-2zM15 14h2v2h-2zm-8 .001h2v2H7z"></path>
+                                    </svg>
+                                    
+                                    <!--  
+                                        .tag-span: en esta definimos la profesion del cliente, los atributos data-section 
+                                        .y data-value los implementamos para el cambio de lenguaje
+                                    -->
+                                    <span data-section="customersComponent" data-value="customersCompany">Compañía:</span> Seguros Bòlivar
+                                </li>
+
+                                <li>
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="M8 9h8v2H8z"></path>
+                                        <path d="M20 22V4c0-1.103-.897-2-2-2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22zM6 10V4h12v14.553l-6-3.428-6 3.428V10z"></path>
+                                    </svg>
+
+                                    <span data-section="customersComponent" data-value="customersRoll">Cargo:</span>
+                                    <span data-section="customersComponent" data-value="customersCardRollOne">Jefe de desarrollo</span>	
+                                </li>
+
+                                <li>
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"></path>
+                                    </svg>	
+
+                                    <span data-section="customersComponent" data-value="customersTelephone">Teléfono:</span> 310 726 1654
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="customers_card_content js_customer_right">
+                            <div class="box_icon_quote quote_right">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20.309 17.708C22.196 15.66 22.006 13.03 22 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292zm-11.007 0C11.19 15.66 10.999 13.03 10.993 13V5a1 1 0 0 0-1-1h-6c-1.103 0-2 .897-2 2v7a1 1 0 0 0 1 1h3.078a2.89 2.89 0 0 1-.429 1.396c-.508.801-1.465 1.348-2.846 1.624l-.803.16V20h1c2.783 0 4.906-.771 6.309-2.292z"></path>
+                                </svg>
+                            </div>
+
+                            <div class="box_customers_profile">
+                                <img src="./assets/images/customer.png" alt="Carlos Jimenez" class="js_color_border_change" loading="lazy">
+
+                                <section class="customers_name">
+                                    <h3 class="js_color_change">Carlos Jiménez</h3>
+
+                                    <h6>@carlosjimenez</h6>
+                                </section>
+                            </div>
+
+                            <p data-section="customersComponent" data-value="customersCardParagraphTwo">
+                                Se ha adaptado rápidamente a nuestro equipo de trabajo, sigue y aplica cada 
+                                instrucción para llevar a cabo el desarrollo de los proyectos en los que ha 
+                                participado.
+                            </p>
+
+                            <ol class="ol_socials_customers">
+                                <li>
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="M19 2H9c-1.103 0-2 .897-2 2v6H5c-1.103 0-2 .897-2 2v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4c0-1.103-.897-2-2-2zM5 12h6v8H5v-8zm14 8h-6v-8c0-1.103-.897-2-2-2H9V4h10v16z"></path><path d="M11 6h2v2h-2zm4 0h2v2h-2zm0 4.031h2V12h-2zM15 14h2v2h-2zm-8 .001h2v2H7z"></path>
+                                    </svg>
+                                    
+                                    <span data-section="customersComponent" data-value="customersCompany">Compañía:</span> Uno Raya
+                                </li>
+
+                                <li>
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="M8 9h8v2H8z"></path>
+                                        <path d="M20 22V4c0-1.103-.897-2-2-2H6c-1.103 0-2 .897-2 2v18l8-4.572L20 22zM6 10V4h12v14.553l-6-3.428-6 3.428V10z"></path>
+                                    </svg>
+
+                                    <span data-section="customersComponent" data-value="customersRoll">Cargo:</span>
+                                    <span data-section="customersComponent" data-value="customersCardRollTwo">Fundador y SEO</span>
+                                </li>
+
+                                <li>
+                                    <svg viewBox="0 0 24 24" class="js_icon_color_change">
+                                        <path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"></path>
+                                    </svg>	
+
+                                    <span data-section="customersComponent" data-value="customersTelephone">Teléfono:</span> 301 451 0210
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+                _contacts_component: contenedor de la seccion,
+                _hoja de estilos 'src\sass\layout\_contacts.scss',
+                _le definimos un ID requerido en las tags-a definidas
+                _en navbar_component 
+            -->
+            <div class="contacts_component" id="redirection_contacts_component">
+                <!--  
+                    form_flexbox: contenedor definido para implementar flexbox
+                    en la seccion
+                -->
+                <div class="form_flexbox">
+                    <!--  
+                        box_form_card: contenedor de 1 tah-h2, 1 tag-p y de 
+                        box_socials_contacts
+                    -->
+                    <section class="box_form_card">			
+                        <!--  
+                            .tag-h2: en esta definimos el titulo de la seccion, la clase 
+                            .js_change_color es exclusiva para uasr en 'src/js/navbar.js',
+                            .los atributos data-section y data-value los implementamos 
+                            .para el cambio de lenguaje
+                        -->
+                        <h2 class="js_color_change" data-section="contactsComponent" data-value="contactsTitle">Contactos</h2>
+                        
+                        <!--  
+                            .tag-p: en esta definimos el titulo de la tarjeta, los atributos data-section y 
+                            .data-value los implementamos para el cambio de lenguaje
+                        -->
+                        <p data-section="contactsComponent" data-value="contactsParagraph">
+                            Déjame un email y trataré de contactar contigo lo antes posible, 
+                            no olvides que todos los campos del formulario son obligatorios...
+                        </p>
+
+                        <!--  
+                            box_socials_contacts: contenedor de 1 tag-button y de 3 socials_media
+                        -->
+                        <div class="box_socials_contacts">			
+                            <!--  
+                                .tag-button: contiene 1 tag-svg, la clase js_background_change es 
+                                .exclusiva para usar en 'src/js/navbar.js', le definimos un ID para
+                                .manejar este elemento en 'src/js/contacts.js'
+                            -->
+                            <button class="js_background_change" id="btn-socials-media">
+                                <!--  
+                                    .tag-svg: en esta definimos el icono plus para mostrar las redes
+                                -->
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
+                                </svg>
+                            </button>
+
+                            <!--  
+                                socials_media: contenedor de 1 tag-a
+                            -->
+                            <div class="socials_media js_background_change">
+                                <!--  
+                                    .tag-a: contiene 1 tag-svg
+                                -->
+                                <a href="https://github.com/JeffersonSalazar?tab=repositories" target="_blank">
+                                    <!--  
+                                        .tag-svg: en esta definimos el icono de los contactos
+                                    -->
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="socials_media js_background_change">
+                                <a href="https://www.linkedin.com/in/jefferson-salazar-032870174/" target="_blank">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="socials_media js_background_change">
+                                <a href="https://wa.me/+0573215142379" target="_blank">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path>
+                                    </svg>
+                                </a>		
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--  
+                        .form: contenedor de 3 box_inputs, 1 box_btn, le definimos un ID para 
+                        .manejar este elemento desde 'src/js/contacts.js'
+                    -->
+                    <form autocomplete="off" novalidate id="formulario">
+                        <!--  
+                            box_inputs: contenedor de 1 tag-svg, 1 tag-input, 1 tag-label, 1 tag-span y 
+                            1 tag-p
+                        -->
+                        <div class="box_inputs">
+                            <!--  
+                                .tag-svg: en esta definimos el icono para los inputs
+                            -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                            </svg>
+
+                            <!--  
+                                .tag-input: en esta definimos el input del formulario, le definimos un ID para
+                                .asociar este elemento con la tag-label
+                            -->
+                            <input type="text" name="name" placeholder=" " id="nameInput"/>
+
+                            <!--  
+                                .tag-label: esta la definimos para que trabaje en conjunto con ta-input, 
+                                .los atributos data-section y data-value los implementamos 
+                                .para el cambio de lenguaje
+                            -->
+                            <label for="nameInput" data-section="contactsComponent" data-value="contactsInputText">Nombre</label>
+
+                            <!--  
+                                .tag-span: esta la definimos para crear un borde animado
+                                .para los campos del fomulario, la clase js_background_change
+                                .es una clase exclusiva para usar en 'src/js/navbar.js'
+                            -->
+                            <span class="border_animated js_background_change"></span>
+
+                            <!--  
+                                .tag-p: en esta definimos la caja de errores del formulario
+                                .la clase js_background_change es una clase exclusiva para
+                                .usar en 'src/js/navbar.js', le definimos un ID para manejar
+                                .este elemento desde 'src/js/contacts.js'
+                            -->
+                            <p class="box_errors js_background_change" data-section="contactsComponent" data-value="contactsInputErrorText" id="error-name">
+                                De 4 a 16 dígitos sin símbolos ni números	
+                            </p>
+                        </div>
+
+                        <div class="box_inputs">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
+                            </svg>
+
+                            <input type="text" name="email" placeholder=" " id="emailInput"/>
+                            <label for="emailInput" data-section="contactsComponent" data-value="contactsInputEmail">Correo</label>
+
+                            <span class="border_animated js_background_change"></span>
+
+                            <p class="box_errors js_background_change" id="error-email" data-section="contactsComponent" data-value="contactsInputErrorEmail">
+                                El correo no es válido
+                            </p>
+                        </div>
+
+                        <div class="box_inputs">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 21a1 1 0 0 0 .24 0l4-1a1 1 0 0 0 .47-.26L21 7.41a2 2 0 0 0 0-2.82L19.42 3a2 2 0 0 0-2.83 0L4.3 15.29a1.06 1.06 0 0 0-.27.47l-1 4A1 1 0 0 0 3.76 21 1 1 0 0 0 4 21zM18 4.41 19.59 6 18 7.59 16.42 6zM5.91 16.51 15 7.41 16.59 9l-9.1 9.1-2.11.52z"></path>
+                            </svg>
+
+                            <!--  
+                                tag-textarea: en esta definimos un campo del 
+                                formulario
+                            -->
+                            <textarea name="post" placeholder=" " id="postTextarea"></textarea>
+                            <label for="postTextarea" data-section="contactsComponent" data-value="contactsInputPost">Asunto</label>
+
+                            <span class="border_animated js_background_change"></span>
+
+                            <p class="box_errors js_background_change" id="error-post" data-section="contactsComponent" data-value="contactsInputErrorPost">
+                                De 10 a 100 dígitos sin símbolos
+                            </p>
+                        </div>
+
+                        <!--  
+                            box_btn: contenedor de 1 tag-button, esta es una clase general
+                            definida para todos los botones, sus hoja de estilo 'src/sass/style.scss'
+                        -->
+                        <div class="box_btn">
+                            <!--  
+                                .tag-button: en esta definimos el boton del formulario,
+                                .la clase js_background_change es una clase exclusiva para 
+                                .usar en 'src\js\navbar.js', los atributos data-section y 
+                                .data-value los implementamos para el cambio de lenguaje
+                            -->
+                            <button type="submit" class="js_background_change"
+                                data-section="contactsComponent" data-value="contactsTextButton"
+                            >
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <%- include('../partials/loader'); %>
+        </main>
+    </div>
+
+
+    <%- include('../partials/footer'); %>
+
+    <!-- 
+        custom js to portfolio.ejs
+    -->
+    <script src="./js/portfolio/header.js"></script>
+    <script src="./js/portfolio/navbar.js"></script>
+    <script src="./js/portfolio/banner.js"></script>
+    <script src="./js/portfolio/modal.js"></script>
+    <script src="./js/portfolio/certificates.js"></script>
+    <script src="./js/portfolio/projects.js"></script>
+    <script src="./js/portfolio/contacts.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/*
+    mainNavbarColorOne: variable local que almacena el primer color 
+    principal implementado solo a los elementos de este componente 
+*/
+$mainNavbarColorOne: #fff;
+
+/*
+    mainNavbarColorTwo: variable local que almacena el segundo color 
+    principal implementado solo a los elementos de este componente 
+*/
+$mainNavbarColorTwo: #333;
+
+/*
+    navbar_component: definimos position: fixed y sus propiedades top, 
+    left, right y z-index para fijar este elemento y darle tamaño 
+    height: 100vh permite que este tome el alto total del viewport, 
+    finalmente visibility: hidden lo usamos para ocultar este elemento
+*/
+.navbar_component {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 89;
+    height: 100vh; 
+    background-color: #00000080;
+    visibility: hidden;
+    
+    /*
+        .js_show_overlay: clase añadida desde 'src/js/navbar.js',
+        .cuando navbar_component tiene esta clase cambiamos a
+        .visibility: visible permitiendo que este elemento sea visible
+    */
+    &.js_show_overlay {
+        visibility: visible;
+    }
+
+    /*
+        navbar_component: definimos width: 0 para eliminar el ancho del elemento
+        y height: 100% para que este tome el alto total de su contenedor padre, 
+        finalmente overflow: hidden lo usamos para ocultar los elementos que queden 
+        visibles al superar el ancho del contenedor y con overflow-y: auto generamos
+        un scroll en el eje Y para cuado la altura de la pantalla se reduce
+    */
+    nav {
+        background-color: $mainPageBackgroundColor;
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        transition: width .2s;
+
+        /*
+            .implementamos el pseudo elemento ::-webkit-scrollbar-thumb 
+            .para darle color de fondo al scroll
+        */
+        &::-webkit-scrollbar-thumb {
+            background-color: #bcc0c4;
+            border-radius: 5px;
+        }
+
+        /*
+            .implementamos el pseudo elemento ::-webkit-scrollbar 
+            .para definir el ancho de la caja que contiene al scroll
+        */
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        /*
+            .js_show_menu_nav: clase añadida desde 'src/js/header.js',
+            .cuando navbar_component tiene esta clase modificamos el width 
+            .permitiendole al navbar que sea visible
+        */
+        &.js_show_menu_nav { 
+            width: 240px; 
+        }
+
+        /*
+            box_navbar_menu: definimos flexbox y sus propiedades justify-content y 
+            align-items junto con un height para centrar de manera horizontal y 
+            vertical los elementos que este contiene, finalmente un espaciado para
+            separar el contenido de los bordes de este elemento
+        */
+        .box_navbar_menu {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            align-items: center;
+            border-bottom: 2px solid $mainNavbarColorOne;
+            padding: 0 20px;
+
+            /*
+                tag-h3
+            */
+            h3 {
+                color: $mainNavbarColorOne;
+                font-size: 20px;
+            }
+
+            /*
+                box_menu_close_icon
+            */
+            .box_menu_close_icon {
+                border: 2px solid $mainNavbarColorOne;
+                border-radius: 50%;
+                cursor: pointer;
+
+                /*
+                    tag-svg
+                */
+                svg {
+                    fill: $mainNavbarColorOne;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        /*
+            ul_navbar: definimos un espaciado para separar de los bordes los 
+            elementos que este contiene
+        */
+        .ul_navbar {
+            padding: 20px 0 20px 9px;
+            
+            /*
+                tag-li
+            */
+            li {
+                list-style: none;
+
+                /*
+                    .js_active_item: clase añadida desde 'src/js/navbar.js', 
+                    .cuando tag-li tiene esta clase añadimos color de fondo y
+                    .con las propiedades border-top-left-radius y
+                    .border-bottom-left-radius creamos los bordes redondeados
+                */
+                &.js_active_item {
+                    background-color: $mainNavbarColorOne;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                
+                    /*
+                        .cunado tag-li tiene la clase js_active_item,
+                        .relaciona a tag-a y tag-button
+                    */
+                    a, button {
+                        /*
+                            .buscamos dentro a tag-svg y cambiamos su color de fuente
+                        */
+                        svg {
+                            fill: $mainNavbarColorTwo;
+                        }
+
+                        /*
+                            .buscamos dentro a tag-span y cambiamos su color de fuente
+                        */
+                        span {
+                            color: $mainNavbarColorTwo;
+                        }
+                    }
+                }
+
+                /*
+                    tag-a y tag-button: definimos inline-flex y su propiedad align-items 
+                    junto con un height para centrar de manera vertical los elementos que 
+                    este contiene
+                */
+                a, button {
+                    display: inline-flex;
+                    height: 60px;
+                    align-items: center;
+
+                    /*
+                        tag-svg
+                    */
+                    svg {
+                        fill: $mainNavbarColorOne;
+                        width: 24px; 
+                        height: 24px; 
+                        margin: 0 10px;
+                    }
+
+                    /*
+                        tag-span
+                    */
+                    span {
+                        color: $mainNavbarColorOne;
+                        font-family: 'ubuntu-regular', sans-serif;
+                        font-size: 20px;
+                    }
+                }
+
+                /*
+                    tag-button: definimos background-color: transparent para remover
+                    cualquier color de fondo que tenga el botton
+                */
+                button {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

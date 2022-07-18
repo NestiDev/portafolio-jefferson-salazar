@@ -1,0 +1,124 @@
+{
+    "jumbotronComponent": {
+        "jumbotronTopTitle": "Welcome to my",
+        "jumbotronBottomTitle": "Web Portfolio",
+        "jumbotronSubTitle": "Before going to the portfolio, I want to share with you a guide consisting of 10 simple steps that will help you understand how it is structured and what features have been implemented in each section. If you want to skip these step, go to the end of this guide and click the SEE PORTFOLIO button."
+    },
+
+    "cardsComponent": {
+        "headerTitle": "01. Header",
+        "headerParagraph": "In this section there is an icon that indicates the current color of the portfolio, you also have the option to choose between light mode and dark mode. Finally, we have an icon that opens the menu.",
+        "navbarTitle": "02. Navbar",
+        "navbarParagraph": "In this section there is an icon (X) that closes the menu, you also have the option to navigate between the different sections. Finally, with SKINS you can change the main color of the portfolio.",
+        "bannerTitle": "03. Banner",
+        "bannerParagraph": "In this section, the READ MORE button displays a modal that allows you to learn more about me, followed by the CV button which starts a download of my curriculum.",
+        "modalTitle": "04. Modal",
+        "modalParagraph": "Once visible, this section can be closed from anywhere on the screen or by clicking directly on the (X) icon if desired.",
+        "skillsTitle": "05. Skills",
+        "skillsParagraph": "In this section you will find the different technologies in which I work, leaning more towards the FRONTEND.",
+        "certificatesTitle": "06. Certificates",
+        "certificatesParagraph": "In this section you will find detailed information on the different studies or courses I have taken. Finally, I leave a download link for each certificate.",
+        "projectsTitle": "07. Projects",
+        "projectsParagraph": "In this section I share some of the personal and professional projects I have worked",
+        "customersTitle": "08. Customers",
+        "customersParagraph": "In this section you will learn the opinion of two people with whom I have had the opportunity to work as a freelance developer.",
+        "contactsTitle": "09. Contacts",
+        "contactsParagraph": "This section has a form for sending messages. Finally, the (+) icon shows the social networks through which you can contact me.",
+        "footerTitle": "10. Footer",
+        "footerParagraph": "This section has the option to change the language by selecting between ES or EN. Finally, it has an icon (↑) to redirect the user to the portfolio header.",
+        "botonCards": "See Portfolio"
+    },
+
+    "navbarComponent": {
+        "navbarTitle": "Menu",
+        "navbarListItemOne": "About me",
+        "navbarListItemTwo": "Skills",
+        "navbarListItemThree": "Certificates",
+        "navbarListItemFour": "Projects",
+        "navbarListItemFive": "Customers",
+        "navbarListItemSix": "Contacts"
+    },
+
+    "bannerComponent": {
+        "bannerTitle": "I'm Jefferson Salazar",
+        "bannerSubtitle": "Frontend Developer",
+        "bannerParagraph": "I was born on February 10, 1989 in Palmira Valle. I am dedicated to development frontend 3 years ago in which I have participated in the development of sites web and small applications. I have basic knowledge in Backend and in the management of relational and non-relational databases...",
+        "bannerTextButton": "See More",
+        "bannerLinkButton": "CV"
+    },
+
+    "modalComponent": {
+        "modalParagraphTop": "I consider myself a simple, respectful and sociable person. Passionate about life, entrepreneurship and technology. my virtues are:",
+        "modalListItemOne": "Team Work",
+        "modalListItemTwo": "Decision making",
+        "modalListItemThree": "Self taught learning",
+        "modalListItemFour": "Assertive communication",
+        "modalParagraphBottom": "I love formula 1, going to the movies and sharing with the family. In the medium term, I hope to finish my technical degree in software development and start with engineering."
+    },
+
+    "skillsComponent": {
+        "skillsTitle": "Skills"
+    },
+
+    "certificatesComponent": {
+        "certificatesTitle": "Certificates"
+    },
+
+    "certificatesAccordeonOne": {
+        "accordeonTitleOne": "Web design",
+        "accordeonSubtitle": "Institute: Udemy",
+        "accordeonSubtitleOne": "Intensity: 77 Hours",
+        "accordeonParagraphOne": "Construction of accessible and adaptable websites for mobile devices implementing html, css (sass) and bootstrap, javascript and jquery, use of conditionals, functions, loops, arrays, objects, promises and apis consumption with fetch.",
+        "accodeonLinkTextOne": "1. Download Certificates",
+        "accodeonLinkTextTwo": "2. Download Certificates",
+        "accodeonLinkTextThree": "3. Download Certificates"
+    },
+
+    "certificatesAccordeonTwo": {
+        "accordeonSubtitleTwo": "Intensity: 55 Hours",
+        "accordeonParagraphTwo": "Make SPA projects (single page application) with angular implement components, custom modules, directives, dependency injection, reactive forms, templates forms, form validation, routing, lazy loading, services, guards, classes and interfaces, apis consummation and unit tests."
+    },
+
+    "certificatesAccordeonThree": {
+        "accordeonSubtitleThree": "Intensity: 24 Hours",
+        "accordeonParagraphThree": "Make servers with node.js using express framework and implementing modules like morgan, cors, mysql, mongoose, jwt, bcrypt, using environment variables, make apis for subsequent get, delete, and update requests, server-side data validation, and interaction with mysql or mongoDB databases."
+    },
+
+    "certificatesAccordeonFour": {
+        "accordeonTitleFour": "Academic",
+        "accordeonSubtitleFourOne": "Institute: Sena",
+        "accordeonSubtitleFourTwo": "Intensity: 15 months",
+        "accordeonParagraphFour": "I am currently studying the SOFTWARE DEVELOPMENT TECHNICIAN career in virtual mode on monday, tuesday, wednesday and friday and face-to-face on thursday, which began on 16/05/2022 and finish on 15/09/2023."
+    },
+
+    "projectsComponent": {
+        "pageLinkTitle": "See Web Site"
+    },
+
+    "customersComponent": {
+        "customersTitle": "Customers",
+        "customersCardParagraphOne": "From the beginning I saw his desire to learn, so I decided to be his tutor and help him in his goal of being a software developer.",
+        "customersCardRollOne": "Development boss",
+        "customersCardParagraphTwo": "He has quickly adapted to our work team, follows and applies each instruction to carry out the development of the projects in which He has participated.",
+        "customersCardRollTwo": "Founder and SEO",
+        "customersCompany": "Company:",
+        "customersRoll": "Roll:",
+        "customersTelephone": "Phone:"
+    },
+
+    "contactsComponent": {
+        "contactsTitle": "Contacts",
+        "contactsParagraph": "Leave me an email and I will try to contact you as soon as possible, do not forget that all the fields of the form are required...",
+        "contactsInputText": "Name",
+        "contactsInputErrorText": "From 4 to 16 digits no symbols no numbers",
+        "contactsInputEmail": "Email",
+        "contactsInputErrorEmail": "The email is not valid",
+        "contactsInputPost": "Subject",
+        "contactsInputErrorPost": "From 10 to 100 digits no symbols",
+        "contactsTextButton": "Send"
+    },
+
+    "footerComponent": {
+        "footerCopyright": "© Created and Designed by Jefferson Salazar 2022"
+    }
+}

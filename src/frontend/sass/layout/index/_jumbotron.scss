@@ -1,0 +1,140 @@
+/*
+    jumbotron_component
+*/
+.jumbotron_component {
+    text-align: center;
+    padding: 120px 0 40px;
+
+    /*
+        _@query 1000px ==> : modificamos el espaciado para este 
+        _elemento en esta medida
+    */
+    @media (min-width: 1000px) {
+        padding: 140px 0 40px;
+    }
+
+    h2 {
+        /*
+            _@query 300px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 300px) {
+            font-size: 30px;
+        }
+
+        /*
+            _@query 450px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 450px) {
+            font-size: 35px;
+        }
+
+        /*
+            _@query 1000px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 1000px) {
+            font-size: 45px;
+        }
+
+        /*
+            _@query 1200px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 1200px) {
+            font-size: 50px;
+        }
+    }
+
+    /*
+        tag-h1
+    */
+    h1 {
+        /*
+            _@query 300px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 300px) {
+            font-size: 35px;
+        }
+
+        /*
+            _@query 450px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 450px) {
+            font-size: 50px;
+        }
+
+        /*
+            _@query 1000px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 1000px) {
+            font-size: 70px;
+        }
+
+        /*
+            _@query 1200px ==> : definimos un tamaño de fuente para 
+            _este elemento en esta medida
+        */
+        @media (min-width: 1200px) {
+            font-size: 80px;
+        }
+    }
+
+    /*
+        tag-p
+    */
+    p {
+        max-width: 900px;
+        margin: 14px auto 26px;
+        
+        /*
+            _@query 999px <== : definimos un espaciado para este 
+            _elemento en esta medida
+        */
+        @media (max-width: 999px) {
+            padding: 0 14px;
+        }
+    }
+
+    /*
+        box_modal_icon: definimos display: inline-block para 
+        ajustar el borde redondeado dentro del icono
+    */
+    .box_jumbotron_icon {
+        display: inline-block;
+        border: 3px solid $mainPageColor;
+        border-radius: 50px;
+        animation: iconMove 1s 20 3s;
+
+        /*
+            iconMove: en 0% implementamos un transform: translateY(0)
+            en 50% implementamos un transform: translateY(10px) para 
+            transladar el icono 20px hacia abajo finalmente en 100% 
+            vuelve a su posicion original
+        */
+        @keyframes iconMove {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /*
+            tag-svg
+        */
+        svg {
+            fill: $mainPageColor;
+            width: 34px;
+            height: 34px;
+        }
+    }
+}

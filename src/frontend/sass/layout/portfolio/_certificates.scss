@@ -1,0 +1,153 @@
+/*
+    certificates_component
+*/
+.certificates_component {
+    /*
+        certificates_section
+    */
+    .certificates_section {
+        box-shadow: 0 5px 10px 0 var(--shadowColor);
+        border-radius: 10px;
+        cursor: pointer;
+
+        /*
+            .js_show_certificates: clase añadida desde 'src\js\certificates.js' 
+            .que relaciona a tag-svg que se encentra dentro de box_certificates_title
+            .en esta añadimos la propiedad transform: rotate() para rotar el
+            .icono -180deg
+        */
+        &.js_show_certificates .box_certificates_title svg {
+            transform: rotate(-180deg);
+            margin-top: 6px;
+        }
+
+        /*
+            .js_show_certificates: clase añadida desde 'src\js\certificates.js' 
+            .que relaciona a box_certificates_content, añadimos height: auto y
+            .overflow: visible para mostrar el contenido
+        */
+        &.js_show_certificates .box_certificates_content {
+            height: auto;
+            overflow: visible;
+        }
+
+        /*
+            _@query 999px <== : definimos un espaciado para separar
+            _los elementos del borde de este contenedor, finalmente
+            _un margen superior para separar las secciones en esta 
+            _medida
+        */
+        @media (max-width: 999px) {
+            padding: 12px 24px;
+            margin-bottom: 25px;
+        }
+        
+        /*
+            _@query 1000px ==> : definimos un ancho calculado, un espaciado
+            _para separar los elementos del borde de este contenedor, finalmente
+            _un margen auto para centrar de manera horizontal este elemento y
+            _un margen en la parte inferior para separar las secciones en esta 
+            _medida
+        */
+        @media (min-width: 1000px) {
+            width: calc(100% - 300px);
+            padding: 20px 40px;
+            margin: 0 auto 25px;
+        }
+        
+        /*
+            box_certificates_title: definimos flexbox y sus propiedades justify-content y
+            align-items para centrar de manera vertical y horizontal los elementos que
+            este contiene
+        */
+        .box_certificates_title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /*
+                tag-h3
+            */
+            h3 {
+                color: var(--textColor);
+                
+                /*
+                    _@query 369px <== : definimos un tamaño de fuente para este elemento
+                    _en esta medida
+                */
+                @media (max-width: 369px) {
+                    font-size: 24px;
+                }
+                
+                /*
+                    _@query 370px ==> : definimos un tamaño de fuente para este elemento
+                    _en esta medida
+                */
+                @media (min-width: 370px) {
+                    font-size: 32px;
+                }
+            }
+
+            /*
+                tag-svg
+            */
+            svg {
+                fill: $mainPageColor;
+                width: 40px;
+                height: 40px;
+                transition: transform .3s;
+            }
+        }
+
+        /*
+            box_certificates_content: definimos un height: 0 para reducir
+            la altura del contenedor y con overflow: hidden ocultamos
+            el contenido que queda expuesto
+        */
+        .box_certificates_content {
+            height: 0;
+            overflow: hidden;
+            transition: height .7s;
+
+            /*
+                tag-h4
+            */
+            h4 {
+                color: var(--textColor);
+                font-family: "poppin-regular", sans-serif;
+                letter-spacing: .6px;
+                margin: 10px 0;
+            }
+            
+            /*
+                tag-p
+            */
+            p {
+                margin: 20px 0;
+
+                /*
+                    tag-strong
+                */
+                strong {
+                    color: $mainPageColor;
+                }
+            }
+
+            /*
+                box_certificates_files {
+            */
+            .box_certificates_files {
+                /*
+                    tag-a: definimos displa: block para que esta se comporte
+                    como un elemento de bloque y pueda tomar el margen que 
+                    definimos 
+                */
+                a {
+                    text-decoration: underline;
+                    display: block;
+                    margin: 14px 0;
+                }
+            }
+        }
+    }
+}

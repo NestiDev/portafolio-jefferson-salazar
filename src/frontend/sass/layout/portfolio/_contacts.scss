@@ -1,0 +1,346 @@
+/*
+    inputsStyle: contiene los estilos principales aplicados a las
+    las tag-input y tag-textarea pertenecientes solo a contacts_component
+*/
+@mixin inputsStyle {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--textColor);
+    font-size: 21px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #00000026;
+    padding: 4px;
+}
+
+/*
+    svgIconsStyle: contiene los estilos principales aplicados a las
+    tag-svg pertenecientes solo a contacts_component
+*/
+@mixin svgIconsStyle {
+    fill: #fff;
+    width: 26px;
+    height: 26px;
+}
+
+/*
+    contacts_component
+*/
+.contacts_component {
+    /*
+        form_flexbox
+    */
+    .form_flexbox {
+        /*
+            _@query 1000px ==> : definimos flexbox y sus propiedades
+            _justify-content y align-items para centrar de manera
+            _vertical y horizontal los elementos que este contiene 
+            _para esta medida
+        */
+        @media (min-width: 1000px) {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        /*
+            box_form_card
+        */
+        .box_form_card {
+            /*
+                _@query 999px <== : definimos un margen inferior para generar
+                _espacio para este elemento en esta medida
+            */
+            @media (max-width: 999px) {
+                margin-bottom: 60px;
+            }
+
+            /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+            @media (min-width: 1000px) {
+                order: 2;
+                width: 380px;
+            }
+
+            /*
+                tag-h2
+            */
+            h2 {
+                text-align: start;
+            }
+
+            /*
+                tag-p
+            */
+            p {
+                margin: 12px 0 30px;
+            }
+
+            /*
+                box_socials_contacts: definimos flexbox y su propiedad align-items para 
+                centrar de manera vertical los elementos que este contiene
+            */
+            .box_socials_contacts {
+                display: flex;
+                align-items: center;
+
+                /*
+                    tag-button: definimos display: inline-flex y sus propiedades
+                    justify-content y align-items junsto con un ancho y alto para 
+                    centrar de manera vertical y horizontal el icono que este 
+                    contiene
+                */
+                button {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $mainPageBackgroundColor;
+                    border-radius: 50%;
+                    box-shadow: 0 5px 10px 0 var(--shadowColor);
+                    width: 38px;
+                    height: 38px;
+                    margin-right: 4px;
+
+                    /*
+                        .js_show_socials_media: cuando el boton tiene esta clase realciona a 
+                        .socials_media y modifica el margin y con opacity: 1 y visibility: visible
+                        .hacemos visibles los iconos de las redes sociales
+                    */
+                    &.js_show_socials_media ~ .socials_media {
+                        margin: 0 2px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    /*
+                        tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
+                        estilos principales de este elemento
+                    */
+                    svg {
+                        @include svgIconsStyle();
+                    }
+                }
+
+                /*
+                    socials_media: definimos margin: 0 -15px para juntar estos elementos 
+                    entre si, finalmente con opacity: 0 removemos de la vista los iconos
+                    para posteriormente hacerlos visible haciendo :hover sobre tag-button.
+                    Importante definir visibility: hidden para evitar que se pueda hacer
+                    click sobre los elementos cuando aun estan ocultos
+                */
+                .socials_media {
+                    background-color: $mainPageBackgroundColor;
+                    border-radius: 100%;
+                    box-shadow: 0 5px 10px 0 var(--shadowColor);
+                    padding: 5px 7px;
+                    margin: 0 -10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: scale(0.9);
+                    transition: transform .3s, margin .3s;
+
+                    /*
+                        .cuando hacemos :hover implementamos la propeidad
+                        .transform: scale() para aumentar el tamaño de
+                        .los iconos
+                    */
+                    &:hover {
+                        transform: scale(1);
+                    }
+
+                    /*
+                        tag-a
+                    */
+                    a {
+                        /*
+                            tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
+                            estilos principales de este elemento
+                        */
+                        svg {
+                            @include svgIconsStyle();
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*
+            tag-form
+        */
+        form {
+            /*
+                _@query 1000px ==> : con la propiedad order cambiamos el orden de 
+                _este elemento y definimos un ancho para esta medida
+            */
+            @media (min-width: 1000px) {
+                order: 1;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                border-radius: 5px;
+                width: 380px;
+                padding: 50px 40px;
+            }
+            
+            /*
+                box_inputs: definimos position: relative debido a que uno de sus 
+                elementos hijos tiene definido position: absolute
+            */
+            .box_inputs {
+                position: relative;
+
+                /*
+                    .nth-child: haciendo uso de este pseudo elemento seleccionamos
+                    .el segundo input y generamos un margen
+                */
+                &:nth-child(2) {
+                    margin: 40px 0;
+                }
+
+                /*
+                    tag-svg: definimos position: absolute con sus propiedades top y left
+                    para posicionar los iconos dentro de tag-input
+                */
+                svg {
+                    position: absolute;
+                    top: 6px;
+                    right: 0;
+                    fill: #7e7b7c;
+                    width: 26px;
+                    height: 26px;
+                }
+
+                /*
+                    tag-label: definimos position: absolute con sus propiedades top y left
+                    para posicionar este elemento, es importante definir la propiedad
+                    transform: translateY() ya que con este generamos el efecto label
+                */
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 5px;
+                    color: #7e7b7c;
+                    font-size: 21px;
+                    letter-spacing: 1px;
+                    transform: translateY(5px);
+                    transition: transform .3s, transform-origin .2s;
+                    cursor: pointer;
+                }
+                
+                /*
+                    tag-input: implementamos el mixin 'inputsStyle' que contiene los
+                    estilos principales de este elemento, finalmente definimos un
+                    ancho de 100% para que tome todo el ancho de su contenedor padre
+                */
+                input {
+                    @include inputsStyle();
+                    width: 100%;
+                    
+                    /*
+                        .cunado tag-input tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: translateY(-18px) scale(.7);
+                        transform-origin: left top;
+                    }
+                }
+
+                /*
+                    tag-textarea: implementamos el mixin 'inputsStyle' que contiene
+                    los estilos principales de este elemento, finalmente definimos 
+                    las propiedades min-width max-width, min-height y max-height para 
+                    darle tamaño
+                */
+                textarea {
+                    @include inputsStyle();
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100px;
+                    max-height: 100px;
+
+                    /*
+                        .cunado tag-textarea tiene los pseudo elementos ::focus y 
+                        .:not(:placeholder-shown) haciendo uso del selector adayacente
+                        .(+), seleccionamos a su elemento hermano que lo precede.
+                        .modificamos su transform: translateY() y añadimos un scale(),
+                        .para reposicionar este elemento a la vez que disminuimos su
+                        .tamaño, finalmente la propeidad transform-origin nos permite
+                        .aliniarlo de manera correcta
+                    */
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label {
+                        transform: translateY(-18px) scale(.7);
+                        transform-origin: left top;
+                    }
+                }
+
+                /*
+                    .cuando tag-input y tag-textarea tienen el :focus hacemos uso del 
+                    .selector (~) y relacionamos a border_animated para redefinir el 
+                    .ancho haciendo visible el borde animado
+                */
+                input:focus ~ .border_animated,
+                textarea:focus ~ .border_animated { 
+                    width: 100%;
+                    background-color: $mainPageBackgroundColor;
+                }
+
+                /*
+                    border_animated: definimos position: absolute y sus propiedades bottom y left
+                    para posicionar el borde animado debajo de tag-input y tag-textarea,
+                    fialmente definimos display: block para que tag-span pueda tomar un ancho y alto
+                    el cual usaremos para mostrar el borde animado
+                */
+                .border_animated {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    transition: width .5s ease-in;
+                }
+
+                /*
+                    box_errors: definimos display: none para remover la caja de errores 
+                    del fomulario
+                */
+                .box_errors {
+                    display: none;
+                    color: #fff;
+                    background-color: $mainPageBackgroundColor;
+                    font-size: 18px;
+                    letter-spacing: 1;
+                    width: inherit;
+                    padding: 6px 4px;
+                    box-shadow: 0 3px 6px 0 var(--shadowColor);
+                    
+                    /*
+                        .js_show_error: clase añadida desde 'src/js/contacts.js', 
+                        .cuando box_errors tiene esta clase le definimos display: block
+                        .para hacer visible la caja de errores del fomulario
+                    */
+                    &.js_show_error {
+                        display: block;
+                    }
+                }
+            }
+        
+            /*
+                box_btn
+            */
+            .box_btn {
+                text-align: center;
+                margin-top: 60px;
+            }
+        }
+    }
+}

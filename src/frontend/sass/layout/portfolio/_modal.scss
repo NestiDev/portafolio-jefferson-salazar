@@ -1,0 +1,226 @@
+/*
+    modal_component: definimos visibility: hidden para ocultar el modal
+*/
+.modal_component {
+    visibility: hidden;
+    cursor: pointer;
+    
+    /*
+        .js_show_modal: clase añadida con javascript en 'src/js/banner.js',
+        .definimos visibility: visible para hacer visible el modal
+    */
+    &.js_show_modal { 
+        visibility: visible;
+    }
+
+    /*
+        modal_card: definimos transform: translateY() para transladar -100px hacia 
+        arriba la tarjeta modal
+    */
+    .modal_card {   
+        background-color: var(--backgroundColor);
+        width: 84%;
+        transform: translateY(-100px);
+
+        /*
+            .js_translate_down: clase añadida con javascritp en 'src/js/banner_modal.js',
+            .definimos transform: translateY() para transladar la tarjeta modal a su 
+            .posicion 0
+        */
+        &.js_translate_down {
+            transform: translateY(0px);
+            transition: transform .5s ease-in-out;
+        }
+      
+        /*
+            _@query 1199px <== : añadimos un alto maximo y modificamos el ancho maximo, 
+            _overflow: hidden oculta el contenido cuando este supere el alto del contenedor padre, 
+            _finalmente con overflow-y: auto generamos un scroll cuando la altura de la pantalla 
+            _disminuya
+        */
+        @media (max-width: 1199px) {
+            max-height: 85%;
+            max-width: 500px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            /*
+                .implementamos el pseudo elemento ::-webkit-scrollbar-thumb 
+                .para darle color de fondo al scroll
+            */
+            &::-webkit-scrollbar-thumb {
+                background-color: #bcc0c4;
+                border-radius: 5px;
+            }
+
+            /*
+                .implementamos el pseudo elemento ::-webkit-scrollbar 
+                .para definir el ancho de la caja que contiene al scroll
+            */
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+        }
+
+        /*
+            _@query 1200px <== : definimos flexbox para poner en linea los elementos
+            _que este contiene en esta medida
+        */
+        @media (min-width: 1200px) {
+            display: flex;
+            border-radius: 5px;
+        }
+
+        /*
+            box_modal_img: definimos position: relative debido a que uno de sus
+            elementos hijos tiene definido position: absolute
+        */
+        .box_modal_img {
+            position: relative; 
+            background-color: #f5f6f6;
+
+            /*
+                _@query 1200px ==> : definimos un ancho para este elemento
+                _en esta medida
+            */
+            @media (min-width: 1200px) {
+                width: 40%;
+            }
+
+            /*
+                box_img_border: definimos position: absolute e implementamos width 
+                y height para darle tamaño a este elemento
+            */
+            .box_img_border {
+                position: absolute;
+                width: 70%;
+                height: 71%;
+                box-shadow: 0 5px 10px 0 #ccc;
+
+                /*
+                    _@query 399px <== : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+                @media (max-width: 369px) {
+                    top: 45px;
+                    left: 38px;
+                }
+
+                /*
+                    _@query 370px ==> <== @query 469px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+                @media (min-width: 370px) and (max-width: 469px) {
+                    top: 64px;
+                    left: 51px;
+                }
+
+                /*
+                    _@query 470px ==> <== @query 899px ==>: modificamos las propiedades 
+                    _top y left para posicionar este elemento en esta medida
+                */
+                @media (min-width: 470px) and (max-width: 899px) {
+                    top: 72px;
+                    left: 62px;
+                }
+
+                /*
+                    _@query 900px ==> : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+                @media (min-width: 900px) {
+                    top: 90px;
+                    left: 77px;
+                }
+
+                /*
+                    _@query 1200px ==> : definimos las propiedades top y left para 
+                    _posicionar este elemento en esta medida
+                */
+                @media (min-width: 1200px) {
+                    top: 84px;
+                    left: 69px;
+                }
+            }
+
+            /*
+                tag-img: definimos position: relative para posicionar la imagen
+                por encima del borde
+            */
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%
+            }
+        }
+
+        /*
+            box_modal_content
+        */
+        .box_modal_content {
+            /*
+                _@query 1199px <== : definimos un espaciado para separar el
+                _contenido de los bordes del contenedor en esta medida
+            */
+            @media (max-width: 1199px) {
+                padding: 16px;
+            }
+            
+            /*
+                _@query 1200px ==> : definimos un ancho y espaciado para separar
+                _el contenido de los bordes del contenedor en esta medida
+            */
+            @media (min-width: 1200px) {
+                width: 60%;
+                padding: 25px;
+            }
+
+            /*
+                box_modal_icon: definimos position: relative y su propeidad left
+                para posicionar este elemento, finalmente display: inline-block para 
+                ajustar el borde redondeado dentro del icono
+            */
+            .box_modal_icon {
+                position: relative;
+                left: 45%;
+                display: inline-block;
+                margin-bottom: 10px;
+                border: 3px solid $mainPageColor;
+                border-radius: 50px;
+
+                /*
+                    tag-svg
+                */
+                svg {
+                    fill: $mainPageColor;
+                    width: 34px;
+                    height: 34px;
+                }
+            }
+
+            /*
+                tag-ol
+            */
+            ol {  
+                /*
+                    tag-li
+                */
+                li {
+                    list-style: none;
+                    color: var(--textColor);
+                    font-size: 20px;
+                    margin: 14px 0;
+                    
+                    /*
+                        tag-svg
+                    */
+                    svg {
+                        fill: $mainPageColor;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/*
+    _NOTA: este layout.scss es importado en 'assets/sass/style.scss'
+*/
+
+/*
+    @imports: de las hojas de estilo de cada uno de los componentes 
+    que pertenecen a index.html, estos estilos estan definidos 
+    dentro en 'src/sass/layout/index'
+*/
+@import './index/header';
+@import './index/jumbotron';
+@import './index/cards';
+
+
+/*
+    @imports: de las hojas de estilo de cada uno de los componentes 
+    que pertenecen a portfolio.html, estos estilos estan definidos 
+    dentro de 'src/sass/layout/portfolio' 
+*/
+@import './portfolio/header';
+@import './portfolio/navbar';
+@import './portfolio/banner';
+@import './portfolio/modal';
+@import './portfolio/skills';
+@import './portfolio/certificates';
+@import './portfolio/projects';
+@import './portfolio/customers';
+@import './portfolio/contacts';
+@import './portfolio/loader';
+@import './portfolio/footer';

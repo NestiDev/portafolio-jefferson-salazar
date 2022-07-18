@@ -1,0 +1,142 @@
+/*
+    footer_component
+*/
+.footer_component { 
+    text-align: center;
+
+    /*
+        box_footer_icon
+    */
+    .box_footer_icon {
+        /*
+            tag-svg: definimos un ancho y un alto que junto al espaciado reduce el icono y
+            aumenta su circulo (efecto boton), finalmente lo ocultamos con visibility: hidden
+        */ 
+        svg {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            visibility: hidden;
+
+            /*
+                .js_show_gotop: clase añadida desde 'src\js\footer.js' que añade 
+                .color y color de fondo a este elemento que junto con visibility: visible 
+                .lo hacemos nuevamente visible
+            */
+            &.js_show_gotop {
+                fill: #fff;
+                background-color: $mainPageBackgroundColor;
+                border-radius: 50%;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                visibility: visible;
+                animation: animateGotop 1s ease 1s 3;
+                cursor: pointer;
+
+                /*
+                    animateGotop: en 0% implementamos un transform: translateY(0)
+                    en 50% implementamos un transform: translateY(-30px) para 
+                    transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+                    a su posicion original
+                */
+                @keyframes animateGotop {
+                    0% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-30px);
+                    }
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            /*
+                @query 799px <== : definimos un margen para este elemento en esta medida
+            */
+            @media (max-width: 799px) {
+                margin: 40px 0;
+            }
+
+            /*
+                @query 800px ==> : definimos position: fixed y sus propiedades right, 
+                bottom y z-index para darle posicion a este elemento en esta medida
+            */
+            @media (min-width: 800px) {
+                position: fixed;
+                right: 20px;
+                bottom: 40px;
+                z-index: 69;
+            }
+        }
+    }
+
+    /*
+        footer_flags: definimos flexbox y sus propiedades
+        justify-content y align-items para centrar de manera
+        horizontal y vertical los elementos que este contiene
+    */
+    .footer_flags {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        /*
+            _@query 800px ==> : definimos un espaciado en la parte
+            _superior para este elemento en esta medida
+        */
+        @media (min-width: 800px) {
+            padding-top: 80px;
+        }
+
+        /*
+            espanish_flag y english_flag: es importante definir
+            un width y height para ajustar el tamaño de estos
+            contenedores
+        */
+        .espanish_flag, .english_flag {
+            width: 35px;
+            height: 25px;
+            margin: 0 8px;
+            box-shadow: 0 5px 10px 0 var(--shadowColor);
+            transition: transform .3s;
+            cursor: pointer;
+
+            /*
+                .cuando hacemos :hover sobre una bandera, definimos la
+                .propiedad transform: scale() para reducir el tamaño de
+                .las banderas
+            */
+            &:hover {
+                transform: scale(.9);
+            }
+
+            /*
+                tag-img: es importante que el width y height sea igaul
+                al de su contenedor padre, finalmente la propiedad
+                object-fit: cover que permite ajustar la imagen a
+                su contenedor padre
+            */
+            img {
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+            }
+        }
+    }
+
+    /*
+        tag-p
+    */
+    p {   
+        margin: 40px auto;
+
+        /*
+            _@query 476px <== : definimos un ancho maximo para este 
+            _elemento en esta medida
+        */
+        @media (max-width: 476px) {
+            max-width: 250px;
+        }
+    }
+}

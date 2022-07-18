@@ -1,0 +1,124 @@
+{
+    "jumbotronComponent": {
+        "jumbotronTopTitle": "Bienvenido a mi",
+        "jumbotronBottomTitle": "Portafolio Web",
+        "jumbotronSubTitle": "Antes de pasar al portafolio, quiero compartir contigo una guía que consta de 10 sencillos pasos que te ayudarán a entender cómo está estructurado y qué funcionalidades se han implementado en cada sección. Si desea omitir este paso, vaya al final de esta guía y haga clic en el botón VER PORTAFOLIO."
+    },
+
+    "cardsComponent": {
+        "headerTitle": "01. Cabecera",
+        "headerParagraph": "En esta sección hay un icono que indica el color actual del portafolio, también tienes la opción de elegir entre el modo claro y el modo oscuro. Finalmente, tenemos un icono que abre el menú.",
+        "navbarTitle": "02. Menú",
+        "navbarParagraph": "En esta sección hay un icono (X) que cierra el menú, también tienes la opción de navegar entre las diferentes secciones. Por último, con SKINS puedes cambiar el color principal del portafolio.",
+        "bannerTitle": "03. Portada",
+        "bannerParagraph": "En esta sección, el botón LEER MÁS despliega un apartado que permite conocer más sobre mí, seguido del botón HDV el cual inicia una descarga de mi currículo.",
+        "modalTitle": "04. Apartado",
+        "modalParagraph": "Una vez visible, esta sección se puede cerrar desde cualquier lugar de la pantalla o haciendo clic directamente en el icono (X) si se desea.",
+        "skillsTitle": "05. Habilidades",
+        "skillsParagraph": "En esta sección encontrarás las diferentes tecnologías en las que me desempeño inclinandome más por el FRONTEND.",
+        "certificatesTitle": "06. Certificados",
+        "certificatesParagraph": "En esta sección encontrarás información detallada sobre los diferentes estudios o cursos que he realizado sobre las tecnologías descritas en la sección de habilidades. Por último dejo un link de descarga para cada certificado.",
+        "projectsTitle": "07. Proyectos",
+        "projectsParagraph": "En esta sección encontrarás algunos de los proyectos personales y/o profesionales en los que he trabajado.",
+        "customersTitle": "08. Clientes",
+        "customersParagraph": "En esta sección conocerás la opinión de dos personas con las que he tenido la oportunidad de trabajar como desarrollador freelance.",
+        "contactsTitle": "09. Contactos",
+        "contactsParagraph": "Esta sección cuenta con un formulario para el envío de mensajes. Finalmente, el ícono (+) muestra las redes sociales por las cuales también me pueden contactar.",
+        "footerTitle": "10. Pie de página",
+        "footerParagraph": "Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio.",
+        "botonCards": "Ver Portafolio"
+    },
+
+    "navbarComponent": {
+        "navbarTitle": "Menú",
+        "navbarListItemOne": "Conóceme",
+        "navbarListItemTwo": "Habilidades",
+        "navbarListItemThree": "Certificados",
+        "navbarListItemFour": "Proyectos",
+        "navbarListItemFive": "Clientes",
+        "navbarListItemSix": "Contactos"
+    },
+
+    "bannerComponent": {
+        "bannerTitle": "Soy Jefferson Salazar",
+        "bannerSubtitle": "Desarrollador Frontend",
+        "bannerParagraph": "Nací el 10 de Febrero de 1989 en Palmira Valle. Me dedico al desarrollo Frontend hace 3 años en los cuales he participado en el desarrollo de sitios web y pequeñas aplicaciones. Tengo conocimientos básicos en Backend y en el manejo de bases de datos relacionales y no relacionales...",
+        "bannerTextButton": "Leer Más",
+        "bannerLinkButton": "HDV"
+    },
+
+    "modalComponent": {
+        "modalParagraphTop": "Me considero una persona sencilla, respetuosa y sociable. Apasionado por la vida, el emprendimiento y la tecnología. Entre mis virtudes está:",
+        "modalListItemOne": "El trabajo en equipo",
+        "modalListItemTwo": "La toma de decisiones",
+        "modalListItemThree": "EL aprendizaje autodidacta",
+        "modalListItemFour": "La comunicación asertiva",
+        "modalParagraphBottom": "Me encanta la fórmula 1, ir a cine y compartir en familia. A mediano plazo anhelo terminar la carrera técnico en desarrollo de software e iniciar con la ingeniería."
+    },
+
+    "skillsComponent": {
+        "skillsTitle": "Habilidades"
+    },
+
+    "certificatesComponent": {
+        "certificatesTitle": "Certificados"
+    },
+
+    "certificatesAccordeonOne": {
+        "accordeonTitleOne": "Diseño web",
+        "accordeonSubtitle": "Instituto: Udemy",
+        "accordeonSubtitleOne": "Intensidad: 77 Horas",
+        "accordeonParagraphOne": "Construcción de sitios web accesibles y adaptables a dispositivos móviles implementando html, css (sass) y bootstrap, javascript y/o jquery, uso de condicionales, funciones, bucles, arreglos, objetos, promesas y consumo de apis con fetch.",
+        "accodeonLinkTextOne": "1. Descargar Certificados",
+        "accodeonLinkTextTwo": "2. Descargar Certificados",
+        "accodeonLinkTextThree": "3. Descargar Certificados"
+    },
+
+    "certificatesAccordeonTwo": {
+        "accordeonSubtitleTwo": "Intensidad: 55 Horas",
+        "accordeonParagraphTwo": "Creación de proyectos SPA (single page application) con angular implementando componentes, módulos personalizados, directivas, inyección de dependencias, formularios reactivos, formularios por plantilla, validación de formularios, enrutamiento, carga perezosa, servicios, guardianes, clases e interfaces, consumo de apis y realización de pruebas unitarias."
+    },
+
+    "certificatesAccordeonThree": {
+        "accordeonSubtitleThree": "Intensidad: 24 Horas",
+        "accordeonParagraphThree": "Creación de servidores con node.js haciendo uso del framework express e implementando módulos como morgan, cors, mysql, mongoose, jwt, bcrypt, uso de variables de entorno, construcción de apis para peticiones post get, delete y update, validación de datos del lado del servidor e interacción con bases de datos mysql o mongoDB."
+    },
+
+    "certificatesAccordeonFour": {
+        "accordeonTitleFour": "Académico",
+        "accordeonSubtitleFourOne": "Instituto: Sena",
+        "accordeonSubtitleFourTwo": "Intensidad: 15 meses",
+        "accordeonParagraphFour": "Actualmente, me encuentro realizando la carrera TÉCNICO EN DESARROLLO DE SOFTWARE en modalidad virtual los días lunes, martes, miércoles y viernes y presencial los días jueves, la cual dio inicio el 16/05/2022 y finaliza el 15/09/2023."
+    },
+
+    "projectsComponent": {
+        "pageLinkTitle": "Ver Página Web"
+    },
+
+    "customersComponent": {
+        "customersTitle": "Clientes",
+        "customersCardParagraphOne": "Desde el comienzo noté su deseo por aprender, entonces decidí ser su tutor y ayudarlo en su meta de ser un desarrollador de software.",
+        "customersCardRollOne": "Jefe de desarrollo",
+        "customersCardParagraphTwo": "Se ha adaptado rápidamente a nuestro equipo de trabajo, sigue y aplica cada instrucción para llevar a cabo el desarrollo de los proyectos en los que ha participado.",
+        "customersCardRollTwo": "Fundador y SEO",
+        "customersCompany": "compañía:",
+        "customersRoll": "Cargo:",
+        "customersTelephone": "teléfono:"
+    },
+
+    "contactsComponent": {
+        "contactsTitle": "Contactos",
+        "contactsParagraph": "Déjame un email y trataré de contactar contigo lo antes posible, no olvides que todos los campos del formulario son obligatorios...",
+        "contactsInputText": "Nombre",
+        "contactsInputErrorText": "De 4 a 16 dígitos sin símbolos ni números",
+        "contactsInputEmail": "Correo",
+        "contactsInputErrorEmail": "El correo no es válido",
+        "contactsInputPost": "Asunto",
+        "contactsInputErrorPost": "De 10 a 100 dígitos sin símbolos",
+        "contactsTextButton": "Enviar"
+    },
+
+    "footerComponent": {
+        "footerCopyright": "© Creado y Diseñado por Jefferson Salazar 2022"
+    }
+}

@@ -1,0 +1,129 @@
+/*
+	proyects_component
+*/
+.projects_component {
+	/*
+		proyects_container
+	*/
+	.projects_container {
+		/*
+			_@query 1000px ==> : definimos un width: 90% para que sea en alncho
+			_maximo de este contenedor en referencia al ancho de su contenedor 
+			_padre, finalmente margin: 0 auto para centrarlo de manera horizontal
+		*/
+		@media (min-width: 1000px) {
+			width: 94%;
+			margin: 0 auto;
+		}
+
+		/*
+			proyects_flexbox
+		*/
+		.projects_flexbox {
+			/*
+				swiper
+			*/
+			.swiper {
+				box-shadow: 0 5px 10px 0 var(--shadowColor);
+
+				/*
+					_@query 768px ==> : definimos una grilla de 4 columnas 
+					_para esta medida
+				*/
+				@media (min-width: 768px) {
+					height: 450px;
+				}
+
+				/*
+					swiper-wrapper
+				*/
+				.swiper-wrapper {
+					/*
+						swiper-slide
+					*/
+					.swiper-slide {		
+						/*
+							tag-img: definimos un width: 100% y height: 100% para que la img 
+							se ajuste al ancho del contenedor padre
+						*/ 
+						img {
+							width: 100%;						
+							height: 83%;
+							border-left: 3px solid transparent;
+							border-right: 3px solid transparent;
+						}
+
+						/*
+                            box_slide_content
+                        */
+						.box_slide_content {
+							text-align: center;
+							padding-top: 12px;
+
+							a {
+								text-decoration: underline;
+								color: var(--textColor);
+								font-size: 26px;
+							}
+						}
+					}
+				}
+
+				
+				/*
+					swiper-button-prev, swiper-button-next: definimos width y height
+					para darle tamaño al icono
+				*/ 
+				.swiper-button-prev,
+				.swiper-button-next {	
+					width: 44px;
+					height: 44px;
+					background-color: rgba(0,0,0, .8);
+					box-shadow: 0 5px 10px 0 rgba(0,0,0, .3);
+
+					/*
+						swiper-button-next:after, swiper-button-prev:after: para 
+						cambiar estas propiedades debemos definirlas en estas clases
+					*/
+					&:after {
+						color: #fff;
+						font-size: 22px;
+						font-weight: bold;
+					}
+
+					/*
+						swiper-button-disabled: modificando esta propiedad
+						hacemos visible el icono del slider
+					*/
+					&.swiper-button-disabled {
+						opacity: 1;
+						cursor: pointer;
+					}
+
+					@media (max-width: 519px) {
+						width: 34px;
+						height: 34px;
+					}
+				}
+
+				/*
+					swiper-button-prev: definiendo la propiedad left 
+					podemos determinar la posicion de este icono
+				*/
+				.swiper-button-prev {
+					left: 5%;
+				}
+
+				/*
+					swiper-button-next: definiendo la propiedad right 
+					podemos determinar la posicion de este icono
+				*/
+				.swiper-button-next {
+					right: 5%;
+				}
+			}
+		}
+	}
+}
+
+

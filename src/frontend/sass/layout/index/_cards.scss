@@ -1,0 +1,140 @@
+/*
+    cards_component
+*/
+.cards_component {
+    padding: 0 20px;
+
+    /*
+        cards_container
+    */
+    .cards_container { 
+        /*
+            cards_grid: definimos display: grid y sus propiedades
+            jsutify-content y grid-gap para centrar de manera horizontal
+            los elementos que este contiene y generar espaciado entre los
+            los mismos
+        */
+        .cards_grid {
+            display: grid;
+            justify-content: center;
+            grid-gap: 20px 16px;
+
+            /*
+                _@query 369px <== : definimos una grilla de 1 columna 
+                _para esta medida
+            */
+            @media (max-width: 369px) {
+                grid-template-columns: repeat(1, 100%);
+            }
+
+            /*
+                _@query 370px ==> : definimos una grilla de 1 columna 
+                _para esta medida
+            */
+            @media (min-width: 370px) {
+                grid-template-columns: repeat(1, 90%);
+            }
+
+            /*
+                _@query 506px ==> : definimos una grilla de 1 columna 
+                _para esta medida
+            */
+            @media (min-width: 506px) {
+                grid-template-columns: repeat(1, 70%);
+            }
+
+            /*
+                _@query 693px ==> : definimos una grilla de 2 columnas 
+                _para esta medida
+            */
+            @media (min-width: 693px) {
+                grid-template-columns: repeat(2, 46%);
+            }
+
+            /*
+                _@query 1000px ==> : definimos una grilla de 2 columnas 
+                _para esta medida
+            */
+            @media (min-width: 1000px) {
+                grid-template-columns: repeat(2, 41%);
+            }
+
+            /*
+                _@query 1200px ==> : definimos una grilla de 2 columnas 
+                _para esta medida
+            */
+            @media (min-width: 1200px) {
+                grid-template-columns: repeat(2, 36%);
+            }
+
+            /*
+                box_cards_content
+            */
+            .box_cards_content {
+                background-color: var(--backgroundColor);
+                padding: 30px 25px;
+                border-radius: 5px;
+                box-shadow: 0 5px 10px 0 var(--shadowColor);
+
+                /*
+                    _@query 315px <== : modificamos el espaciado que ya tenia
+                    _este elemento para esta medida
+                */
+                @media (max-width: 315px) {
+                    padding: 20px 14px;
+                }
+
+                /*
+                    tag-h3
+                */
+                h3 {
+                    color: $mainPageColor;
+                    font-size: 30px;
+
+                    /*
+                        _@query 349px <== : modificamos el tamaño de fuente de este
+                        _elemento para esta medida
+                    */
+                    @media (max-width: 349px) {
+                        font-size: 25px;
+                    }
+                }
+
+                /*
+                    tag-p
+                */
+                p {
+                    margin-top: 18px;
+
+                    /*
+                        _@query 693px ==> : definimos un ancho minimo para este elemento 
+                        _en esta medida con el fin de mantener alineados los elementos
+                        _dentro de las tarjetas
+                    */
+                    @media (min-width: 693px) {
+                        min-height: calc(100% - 238px);
+                    }
+                }
+            }
+        }
+
+        /*
+            box_btn
+        */
+        .box_btn {
+            text-align: center;
+            margin-top: 60px;
+
+            /*
+                tag-a: es importante definir un display: inline-flex junto con las propiedades 
+                width, justify-content, height y align-items para dar tamaño al boton y 
+                centrar de manera vertical y horizontal su contenido
+            */
+            a {
+                @include btnLinks();
+                background-color: $mainPageBackgroundColor;
+                color: #fff;
+            }
+        }  
+    }
+}

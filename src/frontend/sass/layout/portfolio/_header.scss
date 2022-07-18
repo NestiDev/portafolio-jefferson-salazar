@@ -1,0 +1,110 @@
+/*
+    header_component: definimos position: fixed y sus propiedades top, right, 
+    left y z-index para fijar este elemento, finalmente flexbox y sus propiedades 
+    justify-content y align-items junto con una altura para centrar de manera 
+    horizontal y vertical los elementos que este contiene
+*/
+.header_component {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 79;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--backgroundColor);
+    height: 80px;
+    align-items: center;
+    transition: height .3s;
+
+    /*
+        .js_header_scroll: clase añadida desde 'src/js/header.js',
+        .modificamos la altura de este elemento 
+    */
+    &.js_header_scroll {
+        height: 60px;
+        box-shadow: 0 0 10px 0 var(--shadowColor);
+    }
+
+    /*
+        dark_mode_content: definimos flexbox y su propiedad align-items para
+        centrar de manera vertical los elementos que este contiene
+    */
+    .dark_mode_content {
+        display: flex;
+        align-items: center;
+
+        /*
+            tag-svg
+        */
+        svg {
+            fill: $mainPageColor;
+            width: 36px;
+            height: 36px;
+        }
+
+        /*
+            box_dark_mode: definimos position: relative debido a que uno de
+            sus elementos hijos tiene definido position: absolute
+        */
+        .box_dark_mode {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: #fff;
+            box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.157),
+                        inset 0 -4px 4px 0 rgba(199, 195, 195, 0.246);
+            margin-left: 16px;
+
+            /*
+                dark_mode_icon: definimos position: absolute y sus propiedades top y left 
+                para posicionar el icono dentro de su contenedor padre, finalmente la
+                propeidad tarnsform: scale para ajustar el tamaño del icono
+            */
+            .dark_mode_icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+                border-radius: 50%;
+                transform: scale(.9);
+                box-shadow: inset 0 4px 4px 0  #ffffff,
+                            inset 0 -4px 4px 0 #ffffff;
+                transition: left .2s;
+                cursor: pointer;
+
+                /*
+                    .js_active_dark_mode: clase añadida desde 'src/js/header.js',
+                    .cuando dark_mode_icon tiene esta clase definimos left: 30px 
+                    .que hace desplazar el icono y cambia el color de fondo
+                */
+                &.js_active_dark_mode {
+                    left: 30px;
+                    background: linear-gradient(to bottom, #454545, #575555);
+                    box-shadow: inset 0 4px 4px 0  #46484A,
+                                inset 0 -4px 4px 0 #46484A;
+                }
+            }
+        }
+    }
+
+    /*
+        box_menu_icon
+    */
+    .box_open_menu_icon {
+        margin-top: 1px;
+        cursor: pointer;
+
+        /*
+            tag-svg
+        */
+        svg {
+            fill: $mainPageColor;
+            width: 38px;
+            height: 38px;
+        }
+    }
+}
