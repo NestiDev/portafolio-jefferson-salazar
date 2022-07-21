@@ -141,15 +141,15 @@ $btnSocialMedia.addEventListener('click', function(e) {
     .$form: almacena el elemento html con ID formulario
     .$loaderComponent: almacena el elemento html con ID laoder-component
 */
-let api = "http://localhost:3000/contacts/message",
-    $form = document.querySelector('#formulario'),
-    $loaderComponent = document.querySelector('#loader-component');
+    let api = "http://localhost:3000/contacts/message",
+        $form = document.querySelector('#formulario'),
+        $loaderComponent = document.querySelector('#loader-component');
 
 /* 
     generamos un evento submit en $form y definimos una funcion
     a la que pasamos un event(e) como parametro
 */
-$form.addEventListener('submit', function(e){
+$form.addEventListener('submit', async (e) => {
     /* 
         prevenimos el comportamiento del button tipo submit
     */
@@ -179,7 +179,7 @@ $form.addEventListener('submit', function(e){
 
         JSON.stringify nos ayuda a pasar los datos de tipo OBJETO a tipo OBJETOS JSON
     */
-    fetch(api, {
+    await fetch(api, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
