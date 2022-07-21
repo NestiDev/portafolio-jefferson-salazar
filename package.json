@@ -1,7 +1,7 @@
 {
-  "name": "backend_portafolio",
+  "name": "portafolio-jefferson-salazar",
   "version": "1.0.0",
-  "description": "",
+  "description": "En este portafolio web, conocerás un poco sobre mí y mis habilidades en el manejo de tecnologías para el desarrollo web.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -12,11 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
     "ejs": "^3.1.8",
     "express": "^4.17.1",
     "express-validator": "^6.12.1",
-    "mongoose": "^5.13.5",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

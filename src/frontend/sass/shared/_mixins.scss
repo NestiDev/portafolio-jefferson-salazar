@@ -1,3 +1,10 @@
+/*
+    btnLink: este mixin contiene los estilos generales de los
+    botones del cardsComponente y de bannerComponent, definimos
+    display inline-flex y su propiedad space-around y align-items
+    que junto a width y height nos permite centrar de manera 
+    vertical y horizontal los elementos que este contiene
+*/
 @mixin btnLinks() {
     display: inline-flex;
     width: 187px;

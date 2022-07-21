@@ -1,3 +1,5 @@
+// __________ start code - show target slider __________ //
+
 /* 
 	swiper: alamacena el elemento html con la clase mySwiper
 */
@@ -32,3 +34,5 @@ let swiper = new Swiper('.mySwiper', {
 	*/
 	loop: true,
 });
+
+// __________ start code - show target slider __________ //

@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+    <!--  
+        incluimos el componente head.ejs que contiene el 
+        inicio de la estructura html 
+        destino src\frontend\partials\head
+    -->
     <%- include('../partials/head'); %>
-</head>
-<body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PDRT7J"
-            height="0" width="0" style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
 
     <!-- 
         _header_component: contenedor de la seccion,
@@ -18,6 +12,11 @@
         _en 'src/js/index/header.js'  
     -->
     <header class="header_component" id="header-component">
+        <!--  
+            incluimos el componente darkmode.ejs que contiene
+            el activador del modo oscuro 
+            destino src/frontend/partials/templates/darkmode
+        -->
         <%- include('../partials/templates/darkmode'); %>
 
         <!--  
@@ -215,9 +214,10 @@
                 </div>
 
                 <!--  
-                    box_btn: contenedor de 1 tag-a
+                    box_btn: contenedor de 1 tag-a, le definimos un ID para implementar este
+                    elemento en Google Tag Manager
                 -->
-                <div class="box_btn">
+                <div class="box_btn" id="gtm-see-portfolio">
                     <!--  
                         .tag-a: en esta definimos un enlace de descarga del curriculo, la clase 
                         .js_color_change es para implementar en 'src/js/portfolio/navbar.js', 
@@ -231,13 +231,15 @@
                         <spa data-section="cardsComponent" data-value="botonCards">Ver Portafolio</span> 
                     </a>
                 </div>
-
-                <%- include('../partials/loader'); %>
             </div>
         </div>
     </main>
 
-
+    <!--  
+        incluimos el componente footer.ejs que contiene 
+        el  el pie de pagina del portafolio
+        destino src\frontend\partials\footer
+    -->
     <%- include('../partials/footer'); %>
 
     <!-- 

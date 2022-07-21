@@ -1,4 +1,37 @@
-// __________ start code - active item __________ //
+// __________ start code - close menu __________ //
+
+/* 
+    .$menuIconNavbar: almacena el elemento html con ID menu-icon-navbar
+*/
+$menuIconNavbar = document.querySelector('#menu-icon-navbar');
+
+/* 
+    generamos un evento click en menuIconNavbar y definimos una funcion
+*/
+$menuIconNavbar.addEventListener('click', function() { 
+    /*
+        removemos de $navbarComponent la clase js_show_overlay
+        definida en 'src/sass/navbar.scss'  
+    */
+        $navbarComponent.classList.remove('js_show_overlay');
+            
+    /*
+        removemos de $navbarNav la clase js_show_menu_nav
+        definida en 'src/sass/navbar.scss'  
+    */
+    $navbarNav.classList.remove('js_show_menu_nav');
+
+    /*
+        removemos de body la clase js_hidden_scroll
+        definida en 'src/sass/style.scss'  
+    */
+    document.body.classList.remove('js_hidden_scroll');
+});
+
+// __________ end code - close menu __________ //
+
+
+// __________ start code - active link __________ //
 
 /* 
    .$navbarActiveLinks: almacena todos los elementos html tag-li con clase
@@ -30,7 +63,7 @@ function activeItem() {
 */
 $navbarActiveLinks.forEach(items => items.addEventListener('click', activeItem));
 
-// __________ end code - active item __________ //
+// __________ end code - active link __________ //
 
 
 // __________ start code - smoot link __________ //
@@ -93,39 +126,6 @@ function redirectLink(e) {
 }
 
 // __________ end code - smoot link __________ //
-
-
-// __________ start code - close menu __________ //
-
-/* 
-    .$menuIconNavbar: almacena el elemento html con ID menu-icon-navbar
-*/
-$menuIconNavbar = document.querySelector('#menu-icon-navbar');
-
-/* 
-    generamos un evento click en menuIconNavbar y definimos una funcion
-*/
-$menuIconNavbar.addEventListener('click', function() { 
-    /*
-        removemos de $navbarComponent la clase js_show_overlay
-        definida en 'src/sass/navbar.scss'  
-    */
-        $navbarComponent.classList.remove('js_show_overlay');
-            
-    /*
-        removemos de $navbarNav la clase js_show_menu_nav
-        definida en 'src/sass/navbar.scss'  
-    */
-    $navbarNav.classList.remove('js_show_menu_nav');
-
-    /*
-        removemos de body la clase js_hidden_scroll
-        definida en 'src/sass/style.scss'  
-    */
-    document.body.classList.remove('js_hidden_scroll');
-});
-
-// __________ end code - close menu __________ //
 
 
 // __________ start code - background color generator __________ //
@@ -224,6 +224,5 @@ $navbarSkinBtn.addEventListener("click", function(e) {
         border.style.border = `3px solid ${newColor}`;
     });
 });
-
 
 // __________ end code - background color generator __________ //

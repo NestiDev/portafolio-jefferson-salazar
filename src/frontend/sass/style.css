@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-    @imports: importacion de los archivos fonts, variables, mixins y layout  
+    @imports: importacion de los archivos fonts, variables y mixins  
     ruta de los archivos src\sass\shared
 */
 /*
@@ -42,7 +42,17 @@
     .$mainPageBorderColor: almacena el color de bordes principal 
     .de la pagina el cual es impelmentado en varios elementos html
 */
-/**/
+/*
+    btnLink: este mixin contiene los estilos generales de los
+    botones del cardsComponente y de bannerComponent, definimos
+    display inline-flex y su propiedad space-around y align-items
+    que junto a width y height nos permite centrar de manera 
+    vertical y horizontal los elementos que este contiene
+*/
+/*
+    @import: importacion del archivo main que contiene los estilos de 
+    diferentes componentes src/frontend/sass/layout/main
+*/
 /*
     _NOTA: este layout.scss es importado en 'assets/sass/style.scss'
 */
@@ -2468,11 +2478,11 @@
       .lo hacemos nuevamente visible
   */
   /*
-      @query 799px <== : definimos un margen para este elemento en esta medida
+      _@query 799px <== : definimos un margen para este elemento en esta medida
   */
   /*
-      @query 800px ==> : definimos position: fixed y sus propiedades right, 
-      bottom y z-index para darle posicion a este elemento en esta medida
+      _@query 800px ==> : definimos position: fixed y sus propiedades right, 
+      _bottom y z-index para darle posicion a este elemento en esta medida
   */
 }
 .footer_component .box_footer_icon svg.js_show_gotop {
@@ -2481,37 +2491,7 @@
   border-radius: 50%;
   box-shadow: 0 5px 10px 0 var(--shadowColor);
   visibility: visible;
-  -webkit-animation: animateGotop 1s ease 1s 3;
-          animation: animateGotop 1s ease 1s 3;
   cursor: pointer;
-  /*
-      animateGotop: en 0% implementamos un transform: translateY(0)
-      en 50% implementamos un transform: translateY(-30px) para 
-      transladar el icono -30px hacia arriba finalmente en 100% vuelve 
-      a su posicion original
-  */
-}
-@-webkit-keyframes animateGotop {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes animateGotop {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 @media (max-width: 799px) {
   .footer_component .box_footer_icon svg {
@@ -2524,6 +2504,36 @@
     right: 20px;
     bottom: 40px;
     z-index: 69;
+    -webkit-animation: animateGotop 1s ease 1s 3;
+            animation: animateGotop 1s ease 1s 3;
+    /*
+        _animateGotop: en 0% implementamos un transform: translateY(0)
+        _en 50% implementamos un transform: translateY(-30px) para 
+        _transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+        _a su posicion original
+    */
+  }
+  @-webkit-keyframes animateGotop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes animateGotop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }
 .footer_component .footer_flags {

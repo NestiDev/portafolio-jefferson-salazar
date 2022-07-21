@@ -29,14 +29,32 @@
                 border-radius: 50%;
                 box-shadow: 0 5px 10px 0 var(--shadowColor);
                 visibility: visible;
-                animation: animateGotop 1s ease 1s 3;
                 cursor: pointer;
+            }
+
+            /*
+                _@query 799px <== : definimos un margen para este elemento en esta medida
+            */
+            @media (max-width: 799px) {
+                margin: 40px 0;
+            }
+
+            /*
+                _@query 800px ==> : definimos position: fixed y sus propiedades right, 
+                _bottom y z-index para darle posicion a este elemento en esta medida
+            */
+            @media (min-width: 800px) {
+                position: fixed;
+                right: 20px;
+                bottom: 40px;
+                z-index: 69;
+                animation: animateGotop 1s ease 1s 3;
 
                 /*
-                    animateGotop: en 0% implementamos un transform: translateY(0)
-                    en 50% implementamos un transform: translateY(-30px) para 
-                    transladar el icono -30px hacia arriba finalmente en 100% vuelve 
-                    a su posicion original
+                    _animateGotop: en 0% implementamos un transform: translateY(0)
+                    _en 50% implementamos un transform: translateY(-30px) para 
+                    _transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+                    _a su posicion original
                 */
                 @keyframes animateGotop {
                     0% {
@@ -49,24 +67,6 @@
                         transform: translateY(0);
                     }
                 }
-            }
-
-            /*
-                @query 799px <== : definimos un margen para este elemento en esta medida
-            */
-            @media (max-width: 799px) {
-                margin: 40px 0;
-            }
-
-            /*
-                @query 800px ==> : definimos position: fixed y sus propiedades right, 
-                bottom y z-index para darle posicion a este elemento en esta medida
-            */
-            @media (min-width: 800px) {
-                position: fixed;
-                right: 20px;
-                bottom: 40px;
-                z-index: 69;
             }
         }
     }

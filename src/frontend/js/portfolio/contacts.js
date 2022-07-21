@@ -61,7 +61,6 @@ $inputs.forEach(input => {
     });
 });
 
-
 /* 
 	.$textArea: alamacena el elemento html definido
 	.con la tag-textarea
@@ -79,7 +78,6 @@ let $errorPost = document.querySelector('#error-post');
     .para validar los campos del formulario
 */
 let expPost = /^[a-zA-Z0-9_.+-À-ÿ\s]{10,100}$/;
-
 
 /* 
     generamos un evento KEYUP al parametro (input) y declaramos 
@@ -179,7 +177,7 @@ $form.addEventListener('submit', function(e){
         y pasamos el METHOD, un HEADERS y en BODY utilizamos JSON.STRINGFY que 
         recibe como parametro el objeto formFields
 
-        JSON.stringify nos ayuda a pasar los datos de tipo OBJETO a tipo STRING
+        JSON.stringify nos ayuda a pasar los datos de tipo OBJETO a tipo OBJETOS JSON
     */
     fetch(api, {
         method: 'POST',
@@ -211,7 +209,7 @@ $form.addEventListener('submit', function(e){
             if(res.status === 400) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'verifica que los campos sean correctos',
+                    title: 'Verifica que los datos ingresados sean correctos.',
                     position: 'center',
                     showConfirmButton: false,
                     padding: '0 0 3em',
@@ -226,7 +224,7 @@ $form.addEventListener('submit', function(e){
             if(res.status === 200) {
                 Swal.fire({ 
                     icon: 'success',
-                    title: 'el mensaje fue enviado correctamente',
+                    title: 'Tu mensaje fue enviado correctamente.',
                     position: 'center',
                     showConfirmButton: false,
                     padding: '0 0 3em',
@@ -239,24 +237,30 @@ $form.addEventListener('submit', function(e){
                 */
                 $form.reset();
             };
-        }, 3000);
+        }, 2000);
     })
     .catch(err => {
         /* 
-            añadimos a $loaderComponent la clase js_show_loader definida
-            en 'src/sass/layout/laoder.scss' 
+            añadimos la funcion setTimeout() para retrazar la respuesta del
+            servidor y con esto darle espacio al loader
         */
-        $loaderComponent.classList.remove('js_show_loader');
+        setTimeout(() => {
+            /* 
+                añadimos a $loaderComponent la clase js_show_loader definida
+                en 'src/sass/layout/laoder.scss' 
+            */
+            $loaderComponent.classList.remove('js_show_loader');
 
-        Swal.fire({
-            icon: 'error',
-            title: 'parece que no hay conexion con la api',
-            position: 'center',
-            showConfirmButton: false,
-            padding: '0 0 3em',
-            timer: 4000 
-        });
-    })
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salió mal, revisa tu conexión a Internet e inténtalo de nuevo.',
+                position: 'center',
+                showConfirmButton: false,
+                padding: '0 0 3em',
+                timer: 4000 
+            });
+        }, 2000);
+    });
 });
 
 // __________ end code - submit form data __________ //

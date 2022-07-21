@@ -1,12 +1,12 @@
 /* 
-    requerimiento del archivo 'schema'
-*/
-let schema = require('../../database/schema');
-
-/* 
     requerimiento de 'express' y su '.Router()'
 */
 const router = require('express').Router();
+
+/* 
+    requerimiento del modulo fs
+*/
+let fs = require('fs');
 
 /*
     requerimos body y validationResult del modulo express-validator
@@ -24,12 +24,16 @@ const VALIDATIONS = [
     body('post').trim().matches(/^[a-zA-Z0-9_.+-À-ÿ\s]{10,100}$/).withMessage('este campo no admite simbolos')
 ];
 
-router.get('/users', async (req, res) => {
-    let users = await schema.find()
+/* 
+    readFileJson: hacemos uso del modulo fs y su metodo readFileSync()
+    que recibe la ruta del archivo .json que necesitamos leer traemos
+    nuestro archivo message.json donde tenemos almacenado los mensajes 
+    de los usuarios
 
-    res.json(users);
-})
-
+    messages: hacemos uso de JSON.parse() para desconvertir los objetos json
+*/
+let fileJson = fs.readFileSync('./src/backend/database/message.json', 'utf-8');
+let messages = JSON.parse(fileJson);
 
 /* 
     message: endpoint que recibe los datos que envia el usuario a travez 
@@ -56,24 +60,37 @@ router.post('/message', VALIDATIONS, async (req, res) => {
     if(!errors.isEmpty()) return res.status(400).json({err: errors.array()});
 
     /* 
-        haciendo uso del 'schema' pasamos los datos que llegan
-        en el req.body y los almacenamos en una constante
+        newMessage: definimos un objeto el cual recibe los valores
+        que envia el usuario a traves del formulario con los cuales
+        creamos un nuevo mensaje
     */
-    const contactMessage = new schema ({ name, email, post });
+    const newMessage = { name, email, post };
 
     /* 
-        finalmente pasamos la constante que crea el nuevo
-        schema el metodo save() de mongoDB que permite 
-        almacenar un valor dentro de la base de datos
+        finalmente haciendo uso del metodo push() enviamos al array
+        de mensajes existentes el nuevo mensaje
     */
-    await contactMessage.save()
+    await messages.push(newMessage)
 
     /* 
-        este metodo save() retorna una promesa con la cual
-        podemos conocer si el dato se almaceno correctamente
+        saveMessage: hacemos uso de JSON.stringify() para convertir a objetos json
+        los parametros null y 2 nos ayudan en la configuracion de los valores
     */
-    .then(() =>  res.status(200).json({msn: 'mensaje guardado satisfactorimente'}))
-    .catch(err => res.status(401).json({msn: err}));
+    let saveMessage = JSON.stringify(messages, null, 2);
+
+    /* 
+        hacemos uso del modulo fs y su metodo writeFile() que recibe la ruta 
+        del archivo .json en el cual necesitamos guardar los mensajes 
+        de los usuarios, como segundo parametro pasamos el mensaje a guardar
+        y finalmente definimos una funcion
+    */
+    fs.writeFile('./src/backend/database/message.json', saveMessage, 'utf8', (err) => {
+        /* 
+            el servidor responde con un status(200) solo si el mensaje se
+            guarda de manera correcta
+        */
+        res.status(200).json({msn: 'mensaje guardado satisfactorimente'})
+    });
 });
 
 /* 

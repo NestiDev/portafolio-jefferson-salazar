@@ -11,26 +11,23 @@ let express = require('express'),
 */
 let path = require('path');
 
-/*
-    dotenv: permite crear variables de entorno
-    para guardar de manera segura nuestras credenciales
+/* 
+    aqui definimos la configuracion de los archivos img, json,
+    fonts, javascript y css que necesitamos
 */
-require('dotenv').config();
-
-app.use(express.static('src/frontend'));
+app.use(express.static(path.join(__dirname, './src/frontend')));
 
 /* 
-    configuracion del motor de platilla ejs
+    configuracion del motor de platilla ejs que me permite
+    definnir codigo html
 */
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'src/frontend'));
+app.set('views', path.join(__dirname, './src/frontend'));
 
 /* 
-    requerimiento de message.js donde definimos el 
-    endpoint que recibe los datos enviados por el
-    usuario a travez del formulario
+    requerimiento de los endpoint
 */
-let portafolio = require('./src/backend/routes/views/portafolio');
+let pages = require('./src/backend/routes/views/pages');
 let message = require('./src/backend/routes/api/message');
 
 /*
@@ -49,9 +46,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 /* 
-    uso y acceso de las rutas al servidor local
+    definicion del acceso a los endpoints
 */
-app.use('/', portafolio);
+app.use('/', pages);
 app.use('/contacts', message);
 
 /* 

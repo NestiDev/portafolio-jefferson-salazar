@@ -1,58 +1,31 @@
-/* 
-	revealElements: alamacena el metodo ScrollReveal() 
-*/
-let revealElements = ScrollReveal({
-    /* 
-        duration: esta propiedad me permite defimnir la
-        velocidad en que se van revelando los elementos
-    */
-    duration: 2000,
-});
+// __________ start code - scroll header __________ //
 
 /* 
-	pasamos a revealElements el metodo reveal() que recibe
-    como parametro el elemento html al cual vamos a aplicar
-    scrollReveal 
+   .$headerComponent: almacena el elemento html con ID header-component
 */
-revealElements.reveal('.jumbotron_component', {
-    /* 
-        origin: con esta propiedad definimos el modo de 
-        revelado del elemento
+let $headerComponent = document.querySelector('#header-component');
+
+/* 
+    generamos un evento scroll al objeto windows y declaramos una funcion
+*/
+window.addEventListener('scroll', function() {
+    /*  
+        definimos un condicional, si window.scrollY es mayor a 70
+        añadimos a $headerComponent la clase js_header_scroll,
+        definida en 'src\sass\layout\_header.scss'
     */
-    origin: "bottom",
-})
-
-revealElements.reveal('.box_banner_biografy', {
-    origin: "bottom",
-
-    /* 
-        distance: esta propiedad me permite definir el
-        desplazamiento que tiene tendra el elemento antes
-        de ser revelado
-    */
-    distance: "10px"
-});
-
-revealElements.reveal('.box_banner_img', {
-    origin: "top",
-    distance: "10px"
-});
-
-revealElements.reveal('h2', {
-    origin: "bottom",
-    distance: "20px"
-});
-
-revealElements.reveal('.js_customer_left', {
-    origin: "bottom",
-    distance: "60px"
-});
-
-revealElements.reveal('.js_customer_right', {
-    origin: "bottom",
-    distance: "60px",
-    duration: 3500
-});
+    if(this.scrollY > 70) {
+        $headerComponent.classList.add('js_header_scroll');
+    }else {
+        /* 
+            de lo contrario removemos de $headerComponent la clase
+            js_header_scroll
+        */
+        $headerComponent.classList.remove('js_header_scroll');
+    };
+}); 
+    
+// __________ end code - scroll header __________ //
 
 
 // __________ start code - active dark mode __________ //
@@ -117,31 +90,63 @@ if (localStorage.getItem('dark_mode') === "true") {
 // __________ end code - save dark mode to local storage __________ //
 
 
-// __________ start code - scroll header __________ //
+// __________ start code - add scroll reveal __________ //
 
 /* 
-   .$headerComponent: almacena el elemento html con ID header-component
+	revealElements: alamacena el metodo ScrollReveal() 
 */
-let $headerComponent = document.querySelector('#header-component');
-
-/* 
-    generamos un evento scroll al objeto windows y declaramos una funcion
-*/
-window.addEventListener('scroll', function() {
-    /*  
-        definimos un condicional, si window.scrollY es mayor a 70
-        añadimos a $headerComponent la clase js_header_scroll,
-        definida en 'src\sass\layout\_header.scss'
+let revealElements = ScrollReveal({
+    /* 
+        duration: esta propiedad me permite defimnir la
+        velocidad en que se van revelando los elementos
     */
-    if(this.scrollY > 70) {
-        $headerComponent.classList.add('js_header_scroll');
-    }else {
-        /* 
-            de lo contrario removemos de $headerComponent la clase
-            js_header_scroll
-        */
-        $headerComponent.classList.remove('js_header_scroll');
-    };
-}); 
-    
-// __________ end code - scroll header __________ //
+    duration: 2000,
+});
+
+/* 
+	pasamos a revealElements el metodo reveal() que recibe
+    como parametro el elemento html al cual vamos a aplicar
+    scrollReveal 
+*/
+revealElements.reveal('.jumbotron_component', {
+    /* 
+        origin: con esta propiedad definimos el modo de 
+        revelado del elemento
+    */
+    origin: "bottom",
+})
+
+revealElements.reveal('.box_banner_biografy', {
+    origin: "bottom",
+
+    /* 
+        distance: esta propiedad me permite definir el
+        desplazamiento que tiene tendra el elemento antes
+        de ser revelado
+    */
+    distance: "10px"
+});
+
+revealElements.reveal('.box_banner_img', {
+    origin: "top",
+    distance: "10px"
+});
+
+revealElements.reveal('h2', {
+    origin: "bottom",
+    distance: "20px",
+    duration: 1500,
+});
+
+revealElements.reveal('.js_customer_left', {
+    origin: "bottom",
+    distance: "60px"
+});
+
+revealElements.reveal('.js_customer_right', {
+    origin: "bottom",
+    distance: "60px",
+    duration: 3500
+});
+
+// __________ end code - add scroll reveal __________ //

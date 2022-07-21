@@ -1,12 +1,15 @@
 /*
-    @imports: importacion de los archivos fonts, variables, mixins y layout  
+    @imports: importacion de los archivos fonts, variables y mixins  
     ruta de los archivos src\sass\shared
 */
 @import './shared/fonts';
 @import './shared/variables';
 @import './shared/mixins';
 
-/**/
+/*
+    @import: importacion del archivo main que contiene los estilos de 
+    diferentes componentes src/frontend/sass/layout/main
+*/
 @import './layout/main';
 
 /*

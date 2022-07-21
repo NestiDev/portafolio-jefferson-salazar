@@ -4,13 +4,15 @@
 const router = require('express').Router();
 
 /* 
-  message: endpoint que recibe los datos que envia el usuario a travez 
-  del formulario
+  /: endpoint que muestra la vista de index.ejs
 */
 router.get('/', (req, res) => {
   res.render('pages/index');
 });
 
+/* 
+  portfolio: endpoint que muestra la vista portfolio.ejs
+*/
 router.get('/portfolio', (req, res) => {
   res.render('pages/portfolio');
 });
