@@ -27,7 +27,7 @@
                 fill: #fff;
                 background-color: $mainPageBackgroundColor;
                 border-radius: 50%;
-                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                box-shadow: 0 3px 8px 0 var(--shadowColor);
                 visibility: visible;
                 cursor: pointer;
             }
@@ -51,10 +51,10 @@
                 animation: animateGotop 1s ease 1s 3;
 
                 /*
-                    _animateGotop: en 0% implementamos un transform: translateY(0)
-                    _en 50% implementamos un transform: translateY(-30px) para 
-                    _transladar el icono -30px hacia arriba finalmente en 100% vuelve 
-                    _a su posicion original
+                    .animateGotop: en 0% implementamos un transform: translateY(0)
+                    .en 50% implementamos un transform: translateY(-30px) para 
+                    .transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+                    .a su posicion original
                 */
                 @keyframes animateGotop {
                     0% {
@@ -98,7 +98,7 @@
             width: 35px;
             height: 25px;
             margin: 0 8px;
-            box-shadow: 0 5px 10px 0 var(--shadowColor);
+            box-shadow: 0 4px 6px 0 var(--shadowColor);
             transition: transform .3s;
             cursor: pointer;
 
@@ -136,7 +136,7 @@
             _elemento en esta medida
         */
         @media (max-width: 476px) {
-            max-width: 250px;
+            max-width: 271px;
         }
     }
 }

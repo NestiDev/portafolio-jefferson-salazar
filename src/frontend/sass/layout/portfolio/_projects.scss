@@ -1,13 +1,13 @@
 /*
-	proyects_component
+	projects_component
 */
 .projects_component {
 	/*
-		proyects_container
+		projects_container
 	*/
 	.projects_container {
 		/*
-			_@query 1000px ==> : definimos un width: 90% para que sea en alncho
+			_@query 1000px ==> : definimos un width: 90% para que sea el ancho
 			_maximo de este contenedor en referencia al ancho de su contenedor 
 			_padre, finalmente margin: 0 auto para centrarlo de manera horizontal
 		*/
@@ -24,16 +24,6 @@
 				swiper
 			*/
 			.swiper {
-				box-shadow: 0 5px 10px 0 var(--shadowColor);
-
-				/*
-					_@query 768px ==> : definimos una grilla de 4 columnas 
-					_para esta medida
-				*/
-				@media (min-width: 768px) {
-					height: 450px;
-				}
-
 				/*
 					swiper-wrapper
 				*/
@@ -43,14 +33,14 @@
 					*/
 					.swiper-slide {		
 						/*
-							tag-img: definimos un width: 100% y height: 100% para que la img 
-							se ajuste al ancho del contenedor padre
+							tag-img: definimos un width: 100% y height: 100% para 
+							que la img se ajuste al ancho del contenedor padre
 						*/ 
 						img {
-							width: 100%;						
-							height: 83%;
-							border-left: 3px solid transparent;
-							border-right: 3px solid transparent;
+							width: 100%;
+							height: 100%;				
+							object-fit: cover;		
+							box-shadow: 0 3px 8px 0 var(--shadowColor);
 						}
 
 						/*
@@ -58,17 +48,27 @@
                         */
 						.box_slide_content {
 							text-align: center;
-							padding-top: 12px;
+							margin-top: 10px;
 
+							/*
+								tag-a
+							*/
 							a {
 								text-decoration: underline;
-								color: var(--textColor);
+								color: $mainPageColor;
 								font-size: 26px;
+								
+								/*
+									_cuando hacemos :hover sobre tag-a, modificamos
+									_su propiedad color
+								*/
+								&:hover {
+									color: #cccccc;
+								}
 							}
 						}
 					}
 				}
-
 				
 				/*
 					swiper-button-prev, swiper-button-next: definimos width y height
@@ -92,14 +92,9 @@
 					}
 
 					/*
-						swiper-button-disabled: modificando esta propiedad
-						hacemos visible el icono del slider
+						_@query 519px <== : modificamos el width: y el height de este
+						_elemento para esta medida
 					*/
-					&.swiper-button-disabled {
-						opacity: 1;
-						cursor: pointer;
-					}
-
 					@media (max-width: 519px) {
 						width: 34px;
 						height: 34px;
@@ -127,3 +122,11 @@
 }
 
 
+/*
+	swiper-button-disabled: modificando esta propiedad
+	hacemos visible el icono del slider
+*/
+// &.swiper-button-disabled {
+// 	opacity: 1;
+// 	cursor: pointer;
+// }

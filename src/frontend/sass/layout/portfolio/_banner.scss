@@ -11,6 +11,7 @@
         banner_flexbox
     */
     .banner_flexbox {
+
         /*
             _@query 1000px ==> : definimos flexbox y sus propiedades
             _justify-content y align-items para centrar de manera
@@ -25,7 +26,8 @@
         /*
             box_banner_biografy
         */
-        .box_banner_biografy {  
+        .box_banner_biografy {
+
             /*
                 _@query 1000px ==> : definimos un ancho para este elemento
                 _en esta medida
@@ -33,11 +35,12 @@
             @media (min-width: 1000px) {
                 width: 45%;
             }
-    
+
             /*
                 tag-h1
             */
             h1 {
+
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
@@ -70,14 +73,14 @@
                     font-size: 46px;
                 }
             }
-            
+
             /*
                 tag-h5
             */
             h5 {
                 color: #aaaaaa;
                 letter-spacing: .6px;
-                
+
                 /*
                     _@query 300px ==> : definimos un tamaño de fuente para 
                     _este elemento en esta medida
@@ -102,7 +105,7 @@
                     font-size: 25px;
                 }
             }
-    
+
             /*
                 tag-p: definimos un max-width para que apartir de 600px en adelante
                 este elemento tenga un ancho de 700px en referencia al ancho de su 
@@ -118,10 +121,12 @@
                 box_btn
             */
             .box_btn {
+
                 /*
                     tag-button
                 */
                 button {
+
                     /*
                         _@query 429px <== : definimos un espaciado para este elemento en 
                         _esta medida
@@ -137,10 +142,25 @@
                     centrar de manera vertical y horizontal su contenido
                 */
                 a {
-                    @include btnLinks();
-                    border: 2px solid $mainPageBorderColor;
+                    display: inline-flex;
+                    width: 187px;
+                    justify-content: space-around;
+                    height: 52px;
+                    align-items: center;
                     border-radius: 5px;
+                    border: 2px solid $mainPageBorderColor;
                     margin-left: 12px;
+                    transition: transform .2s, box-shadow .2s;
+
+                    /*
+                        .cuando hacemos :hover sobre tag-a agregamos color y color de fondo,
+                        .finalmente definimos transform: translateY() para desplazar el boton 
+                        .-8px hacia arriba
+                    */
+                    &:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 4px 8px 0 var(--shadowColor);
+                    }
 
                     /*
                         _@query 429px <== : modificamos el ancho y margen izquierdo de este elemento en 
@@ -191,21 +211,21 @@
                 left: 58px;
                 width: 70%;
                 height: 89%;
-                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                box-shadow: 0 4px 10px 0 var(--shadowColor);
             }
-    
+
             /*
                 tag-img: definimos position: relative para posicionar la imagen
                 por encima del borde
             */
             img {
                 position: relative;
-                
+
                 /*
                     _@query 1000px ==> : definimos width y height para darle tamaño
                     _a este elemento en esta medida
                 */
-                @media (min-width: 1000px) { 
+                @media (min-width: 1000px) {
                     width: 90%;
                     height: auto;
                 }

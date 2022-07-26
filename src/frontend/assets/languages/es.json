@@ -1,8 +1,9 @@
 {
     "jumbotronComponent": {
         "jumbotronTopTitle": "Bienvenido a mi",
-        "jumbotronBottomTitle": "Portafolio Web",
-        "jumbotronSubTitle": "Antes de pasar al portafolio, quiero compartir contigo una guía que consta de 10 sencillos pasos que te ayudarán a entender cómo está estructurado y qué funcionalidades se han implementado en cada sección. Si desea omitir este paso, vaya al final de esta guía y haga clic en el botón VER PORTAFOLIO."
+        "jumbotronButtonTitle": "Portafolio Web",
+        "jumbotronSubTitle": "Antes de pasar al portafolio, quiero compartir contigo una guía que consta de 10 sencillos pasos que te ayudarán a entender cómo está estructurado y qué funcionalidades se han implementado en cada sección. Si desea omitir este paso haga",
+        "jumbotronLink": "Clic aquí."
     },
 
     "cardsComponent": {
@@ -25,8 +26,7 @@
         "contactsTitle": "09. Contactos",
         "contactsParagraph": "Esta sección cuenta con un formulario para el envío de mensajes. Finalmente, el ícono (+) muestra las redes sociales por las cuales también me pueden contactar.",
         "footerTitle": "10. Pie de página",
-        "footerParagraph": "Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio.",
-        "botonCards": "Ver Portafolio"
+        "footerParagraph": "Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio."
     },
 
     "navbarComponent": {
@@ -68,7 +68,7 @@
         "accordeonTitleOne": "Diseño web",
         "accordeonSubtitle": "Instituto: Udemy",
         "accordeonSubtitleOne": "Intensidad: 77 Horas",
-        "accordeonParagraphOne": "Construcción de sitios web accesibles y adaptables a dispositivos móviles implementando html, css (sass) y bootstrap, javascript y/o jquery, uso de condicionales, funciones, bucles, arreglos, objetos, promesas y consumo de apis con fetch.",
+        "accordeonParagraphOne": "Construcción de sitios web accesibles y adaptables a dispositivos móviles con html, css (sass), bootstrap, jquery, javascript (condicionales, funciones, bucles, arreglos, objetos, promesas y consumo de apis con fetch) e implementación de herramientas de análisis y seguimiento como google analytics y google tag manager.",
         "accodeonLinkTextOne": "1. Descargar Certificados",
         "accodeonLinkTextTwo": "2. Descargar Certificados",
         "accodeonLinkTextThree": "3. Descargar Certificados"
@@ -81,7 +81,7 @@
 
     "certificatesAccordeonThree": {
         "accordeonSubtitleThree": "Intensidad: 24 Horas",
-        "accordeonParagraphThree": "Creación de servidores con node.js haciendo uso del framework express e implementando módulos como morgan, cors, mysql, mongoose, jwt, bcrypt, uso de variables de entorno, construcción de apis para peticiones post get, delete y update, validación de datos del lado del servidor e interacción con bases de datos mysql o mongoDB."
+        "accordeonParagraphThree": "Creación de servidores con node.js haciendo uso del framework express e implementando módulos como morgan, cors, mysql, mongoose, jwt, bcrypt, uso de variables de entorno, motores de plantillas (ejs o handlebars), construcción de apis para peticiones post get, delete y update, validación de datos del lado del servidor e interacción con bases de datos mysql o mongoDB."
     },
 
     "certificatesAccordeonFour": {
@@ -92,7 +92,8 @@
     },
 
     "projectsComponent": {
-        "pageLinkTitle": "Ver Página Web"
+        "projectsTitle": "Proyectos",
+        "projectsLinkTitle": "Ver Página Web"
     },
 
     "customersComponent": {
@@ -119,6 +120,6 @@
     },
 
     "footerComponent": {
-        "footerCopyright": "© Creado y Diseñado por Jefferson Salazar 2022"
+        "footerCopyright": "© 2022 Creado y Diseñado por Jefferson Salazar"
     }
 }

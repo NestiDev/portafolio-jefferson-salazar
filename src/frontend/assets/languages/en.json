@@ -1,8 +1,9 @@
 {
     "jumbotronComponent": {
         "jumbotronTopTitle": "Welcome to my",
-        "jumbotronBottomTitle": "Web Portfolio",
-        "jumbotronSubTitle": "Before going to the portfolio, I want to share with you a guide consisting of 10 simple steps that will help you understand how it is structured and what features have been implemented in each section. If you want to skip these step, go to the end of this guide and click the SEE PORTFOLIO button."
+        "jumbotronButtonTitle": "Web Portfolio",
+        "jumbotronSubTitle": "Before going to the portfolio, I want to share with you a guide consisting of 10 simple steps that will help you understand how it is structured and what features have been implemented in each section. If you want to skip this step",
+        "jumbotronLink": "Click here."
     },
 
     "cardsComponent": {
@@ -25,8 +26,7 @@
         "contactsTitle": "09. Contacts",
         "contactsParagraph": "This section has a form for sending messages. Finally, the (+) icon shows the social networks through which you can contact me.",
         "footerTitle": "10. Footer",
-        "footerParagraph": "This section has the option to change the language by selecting between ES or EN. Finally, it has an icon (↑) to redirect the user to the portfolio header.",
-        "botonCards": "See Portfolio"
+        "footerParagraph": "This section has the option to change the language by selecting between ES or EN. Finally, it has an icon (↑) to redirect the user to the portfolio header."
     },
 
     "navbarComponent": {
@@ -68,7 +68,7 @@
         "accordeonTitleOne": "Web design",
         "accordeonSubtitle": "Institute: Udemy",
         "accordeonSubtitleOne": "Intensity: 77 Hours",
-        "accordeonParagraphOne": "Construction of accessible and adaptable websites for mobile devices implementing html, css (sass) and bootstrap, javascript and jquery, use of conditionals, functions, loops, arrays, objects, promises and apis consumption with fetch.",
+        "accordeonParagraphOne": "Construction of accessible and adaptable websites for mobile devices with html, css (sass), bootstrap, jquery, javascript (conditionals, functions, loops, arrays, objects, promises and apis consumption with fetch) and implementation of analysis and monitoring tools such as google analytics and google tag manager.",
         "accodeonLinkTextOne": "1. Download Certificates",
         "accodeonLinkTextTwo": "2. Download Certificates",
         "accodeonLinkTextThree": "3. Download Certificates"
@@ -81,7 +81,7 @@
 
     "certificatesAccordeonThree": {
         "accordeonSubtitleThree": "Intensity: 24 Hours",
-        "accordeonParagraphThree": "Make servers with node.js using express framework and implementing modules like morgan, cors, mysql, mongoose, jwt, bcrypt, using environment variables, make apis for subsequent get, delete, and update requests, server-side data validation, and interaction with mysql or mongoDB databases."
+        "accordeonParagraphThree": "Make servers with node.js using express framework and implementing modules like morgan, cors, mysql, mongoose, jwt, bcrypt, using environment variables, template engines like (ejs or handlebars), make apis for subsequent get, delete, and update requests, server-side data validation, and interaction with mysql or mongoDB databases."
     },
 
     "certificatesAccordeonFour": {
@@ -92,7 +92,8 @@
     },
 
     "projectsComponent": {
-        "pageLinkTitle": "See Web Site"
+        "projectsTitle": "Projects",
+        "projectsLinkTitle": "See Web Site"
     },
 
     "customersComponent": {
@@ -119,6 +120,6 @@
     },
 
     "footerComponent": {
-        "footerCopyright": "© Created and Designed by Jefferson Salazar 2022"
+        "footerCopyright": "© 2022 Created and Designed by Jefferson Salazar"
     }
 }

@@ -43,13 +43,6 @@
     .de la pagina el cual es impelmentado en varios elementos html
 */
 /*
-    btnLink: este mixin contiene los estilos generales de los
-    botones del cardsComponente y de bannerComponent, definimos
-    display inline-flex y su propiedad space-around y align-items
-    que junto a width y height nos permite centrar de manera 
-    vertical y horizontal los elementos que este contiene
-*/
-/*
     @import: importacion del archivo main que contiene los estilos de 
     diferentes componentes src/frontend/sass/layout/main
 */
@@ -93,7 +86,9 @@
       tag-h1
   */
   /*
-      tag-p
+      box_jumbotron_guide: definimos la propiedad max-width: 900px
+      para que apartir de esta medida los elementos de tipo bloque
+      que este contiene dejen de crecer
   */
   /*
       box_modal_icon: definimos display: inline-block para 
@@ -181,30 +176,50 @@
     font-size: 80px;
   }
 }
-.jumbotron_component p {
+.jumbotron_component .box_jumbotron_guide {
   max-width: 900px;
   margin: 14px auto 26px;
   /*
       _@query 999px <== : definimos un espaciado para este 
       _elemento en esta medida
   */
+  /*
+      tag-p
+  */
+  /*
+      tag-a
+  */
 }
 @media (max-width: 999px) {
-  .jumbotron_component p {
-    padding: 0 14px;
+  .jumbotron_component .box_jumbotron_guide {
+    padding: 0 20px;
   }
+}
+.jumbotron_component .box_jumbotron_guide p {
+  /*
+      _@query 645px ==> : definimos display: inline para 
+      _pasar este elemento de bloque a linea en esta medida
+  */
+  display: inline;
+}
+.jumbotron_component .box_jumbotron_guide a {
+  text-decoration: underline;
+  color: rgb(71, 155, 227);
+  font-size: 1.4rem;
+  margin-left: 2px;
 }
 .jumbotron_component .box_jumbotron_icon {
   display: inline-block;
   border: 3px solid rgb(71, 155, 227);
   border-radius: 50px;
+  box-shadow: 0 3px 8px -2px var(--shadowColor);
   -webkit-animation: iconMove 1s 20 3s;
           animation: iconMove 1s 20 3s;
   /*
-      iconMove: en 0% implementamos un transform: translateY(0)
-      en 50% implementamos un transform: translateY(10px) para 
-      transladar el icono 20px hacia abajo finalmente en 100% 
-      vuelve a su posicion original
+      .iconMove: en 0% implementamos un transform: translateY(0)
+      .en 50% implementamos un transform: translateY(10px) para 
+      .transladar el icono 20px hacia abajo finalmente en 100% 
+      .vuelve a su posicion original
   */
   /*
       tag-svg
@@ -242,92 +257,56 @@
     cards_component
 */
 .cards_component {
-  padding: 0 20px;
   /*
-      cards_container
+      cards_container: definimos un ancho maximo de 90% para
+      este contenedor
   */
 }
 .cards_component .cards_container {
+  max-width: 90%;
+  margin: 0 auto;
   /*
-      cards_grid: definimos display: grid y sus propiedades
-      jsutify-content y grid-gap para centrar de manera horizontal
-      los elementos que este contiene y generar espaciado entre los
-      los mismos
+      _@query 1200px ==> : modificamos el ancho maximo de 
+      _este elemento para esta medida
   */
   /*
-      box_btn
+      cards_grid
   */
 }
+@media (min-width: 1200px) {
+  .cards_component .cards_container {
+    max-width: 80%;
+  }
+}
 .cards_component .cards_container .cards_grid {
-  display: grid;
-  justify-content: center;
-  grid-gap: 20px 16px;
   /*
-      _@query 369px <== : definimos una grilla de 1 columna 
-      _para esta medida
+  	swiper
   */
+}
+.cards_component .cards_container .cards_grid .swiper {
+  padding: 10px 10px 60px;
   /*
-      _@query 370px ==> : definimos una grilla de 1 columna 
-      _para esta medida
+  	swiper-wrapper
   */
+}
+.cards_component .cards_container .cards_grid .swiper .swiper-wrapper {
   /*
-      _@query 506px ==> : definimos una grilla de 1 columna 
-      _para esta medida
+  	swiper-slide
   */
-  /*
-      _@query 693px ==> : definimos una grilla de 2 columnas 
-      _para esta medida
-  */
-  /*
-      _@query 1000px ==> : definimos una grilla de 2 columnas 
-      _para esta medida
-  */
-  /*
-      _@query 1200px ==> : definimos una grilla de 2 columnas 
-      _para esta medida
-  */
+}
+.cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide {
   /*
       box_cards_content
   */
 }
-@media (max-width: 369px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(1, 100%);
-  }
-}
-@media (min-width: 370px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(1, 90%);
-  }
-}
-@media (min-width: 506px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(1, 70%);
-  }
-}
-@media (min-width: 693px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(2, 46%);
-  }
-}
-@media (min-width: 1000px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(2, 41%);
-  }
-}
-@media (min-width: 1200px) {
-  .cards_component .cards_container .cards_grid {
-    grid-template-columns: repeat(2, 36%);
-  }
-}
-.cards_component .cards_container .cards_grid .box_cards_content {
+.cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide .box_cards_content {
   background-color: var(--backgroundColor);
   padding: 30px 25px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 3px 8px -2px var(--shadowColor);
   /*
-      _@query 315px <== : modificamos el espaciado que ya tenia
-      _este elemento para esta medida
+      _@query 315px <== : modificamos el espaciado de este
+      _elemento para esta medida
   */
   /*
       tag-h3
@@ -337,11 +316,11 @@
   */
 }
 @media (max-width: 315px) {
-  .cards_component .cards_container .cards_grid .box_cards_content {
+  .cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide .box_cards_content {
     padding: 20px 14px;
   }
 }
-.cards_component .cards_container .cards_grid .box_cards_content h3 {
+.cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide .box_cards_content h3 {
   color: rgb(71, 155, 227);
   font-size: 30px;
   /*
@@ -350,51 +329,35 @@
   */
 }
 @media (max-width: 349px) {
-  .cards_component .cards_container .cards_grid .box_cards_content h3 {
+  .cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide .box_cards_content h3 {
     font-size: 25px;
   }
 }
-.cards_component .cards_container .cards_grid .box_cards_content p {
+.cards_component .cards_container .cards_grid .swiper .swiper-wrapper .swiper-slide .box_cards_content p {
   margin-top: 18px;
-  /*
-      _@query 693px ==> : definimos un ancho minimo para este elemento 
-      _en esta medida con el fin de mantener alineados los elementos
-      _dentro de las tarjetas
-  */
 }
-@media (min-width: 693px) {
-  .cards_component .cards_container .cards_grid .box_cards_content p {
-    min-height: calc(100% - 238px);
-  }
+
+/*
+    para modificar los valores de swiper cuando utilizamos los marcadores
+    circulares lo hacemos sobre estas propiedades
+*/
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
 }
-.cards_component .cards_container .box_btn {
-  text-align: center;
-  margin-top: 60px;
-  /*
-      tag-a: es importante definir un display: inline-flex junto con las propiedades 
-      width, justify-content, height y align-items para dar tamaño al boton y 
-      centrar de manera vertical y horizontal su contenido
-  */
+
+.swiper-pagination-bullet-active {
+  background-color: #fff !important;
+  border: 2px solid #f1f1f1;
 }
-.cards_component .cards_container .box_btn a {
-  display: inline-flex;
-  width: 187px;
-  justify-content: space-around;
-  height: 52px;
-  align-items: center;
-  border-radius: 5px;
-  transition: transform 0.2s, box-shadow 0.5s;
-  /*
-      .cuando hacemos :hover sobre tag-a agregamos color y color de fondo,
-      .finalmente definimos transform: translateY() para desplazar el boton 
-      .-8px hacia arriba
-  */
-  background-color: rgb(71, 155, 227);
-  color: #fff;
-}
-.cards_component .cards_container .box_btn a:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 8px 0 var(--shadowColor);
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  background: rgb(71, 155, 227);
+  padding: 4px 0;
+  border-radius: 20px;
+  box-shadow: 0 3px 7px 0 var(--shadowColor);
 }
 
 /*
@@ -632,10 +595,6 @@
       junto con un height para centrar de manera vertical los elementos que 
       este contiene
   */
-  /*
-      tag-button: definimos background-color: transparent para remover
-      cualquier color de fondo que tenga el botton
-  */
 }
 .navbar_component nav .ul_navbar li.js_active_item {
   background-color: #fff;
@@ -681,9 +640,6 @@
   color: #fff;
   font-family: "ubuntu-regular", sans-serif;
   font-size: 20px;
-}
-.navbar_component nav .ul_navbar li button {
-  background-color: transparent;
 }
 
 /*
@@ -847,15 +803,14 @@
   height: 52px;
   align-items: center;
   border-radius: 5px;
-  transition: transform 0.2s, box-shadow 0.5s;
+  border: 2px solid rgb(71, 155, 227);
+  margin-left: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
   /*
       .cuando hacemos :hover sobre tag-a agregamos color y color de fondo,
       .finalmente definimos transform: translateY() para desplazar el boton 
       .-8px hacia arriba
   */
-  border: 2px solid rgb(71, 155, 227);
-  border-radius: 5px;
-  margin-left: 12px;
   /*
       _@query 429px <== : modificamos el ancho y margen izquierdo de este elemento en 
       _esta medida
@@ -907,7 +862,7 @@
   left: 58px;
   width: 70%;
   height: 89%;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 4px 10px 0 var(--shadowColor);
 }
 .banner_component .banner_flexbox .box_banner_img img {
   position: relative;
@@ -1026,7 +981,7 @@
   position: absolute;
   width: 70%;
   height: 71%;
-  box-shadow: 0 5px 10px 0 #ccc;
+  box-shadow: 0 2px 8px 0 #cccccc;
   /*
       _@query 399px <== : definimos las propiedades top y left para 
       _posicionar este elemento en esta medida
@@ -1238,7 +1193,7 @@
 .skills_component .skills_container .skills_grid .box_skill_cards {
   position: relative;
   text-align: center;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 4px 8px -2px var(--shadowColor);
   padding: 10px 12px;
   /*
       .cuando hacemos :hover en box_skill_cards
@@ -1390,6 +1345,20 @@
 .skills_component .skills_container .skills_grid .angular::before, .skills_component .skills_container .skills_grid .angular::after {
   background-color: #DD2C00;
 }
+.skills_component .skills_container .skills_grid .ui_ux {
+  -webkit-animation: skillMoveBottom 2.5s infinite 1s;
+          animation: skillMoveBottom 2.5s infinite 1s;
+}
+.skills_component .skills_container .skills_grid .ui_ux::before, .skills_component .skills_container .skills_grid .ui_ux::after {
+  background-color: #83D8F4;
+}
+.skills_component .skills_container .skills_grid .git {
+  -webkit-animation: skillMoveBottom 2.5s infinite 0.8s;
+          animation: skillMoveBottom 2.5s infinite 0.8s;
+}
+.skills_component .skills_container .skills_grid .git::before, .skills_component .skills_container .skills_grid .git::after {
+  background-color: #F4511E;
+}
 .skills_component .skills_container .skills_grid .node {
   -webkit-animation: skillMoveBottom 2.5s infinite 0.2s;
           animation: skillMoveBottom 2.5s infinite 0.2s;
@@ -1411,33 +1380,19 @@
 .skills_component .skills_container .skills_grid .mongodb::before, .skills_component .skills_container .skills_grid .mongodb::after {
   background-color: #4CAF50;
 }
-.skills_component .skills_container .skills_grid .git {
-  -webkit-animation: skillMoveBottom 2.5s infinite 0.8s;
-          animation: skillMoveBottom 2.5s infinite 0.8s;
-}
-.skills_component .skills_container .skills_grid .git::before, .skills_component .skills_container .skills_grid .git::after {
-  background-color: #F4511E;
-}
-.skills_component .skills_container .skills_grid .ui_ux {
-  -webkit-animation: skillMoveBottom 2.5s infinite 1s;
-          animation: skillMoveBottom 2.5s infinite 1s;
-}
-.skills_component .skills_container .skills_grid .ui_ux::before, .skills_component .skills_container .skills_grid .ui_ux::after {
-  background-color: #83D8F4;
-}
 @media (min-width: 1200px) {
   .skills_component .skills_container .skills_grid {
     /*
-        skillMoveTop: en 0% implementamos un transform: translateY(0)
-        en 50% implementamos un transform: translateY(0) para trasladar 
-        elicono -10px hacia arriba finalmente en 100% vuelve a su 
-        posicion original
+        .skillMoveTop: en 0% implementamos un transform: translateY(0)
+        .en 50% implementamos un transform: translateY(0) para trasladar 
+        .elicono -10px hacia arriba finalmente en 100% vuelve a su 
+        .posicion original
     */
     /*
-        skillMoveBottom: en 0% implementamos un transform: translateY(0)
-        en 50% implementamos un transform: translateY(0) para trasladar 
-        el icono 10px hacia abajo finalmente en 100% vuelve a su 
-        posicion original
+        .skillMoveBottom: en 0% implementamos un transform: translateY(0)
+        .en 50% implementamos un transform: translateY(0) para trasladar 
+        .el icono 10px hacia abajo finalmente en 100% vuelve a su 
+        .posicion original
     */
   }
   @-webkit-keyframes skillMoveTop {
@@ -1495,8 +1450,8 @@
   */
 }
 .certificates_component .certificates_section {
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
   border-radius: 10px;
+  box-shadow: 0 3px 12px -4px var(--shadowColor);
   cursor: pointer;
   /*
       .js_show_certificates: clase añadida desde 'src\js\certificates.js' 
@@ -1635,16 +1590,16 @@
 }
 
 /*
-	proyects_component
+	projects_component
 */
 .projects_component {
   /*
-  	proyects_container
+  	projects_container
   */
 }
 .projects_component .projects_container {
   /*
-  	_@query 1000px ==> : definimos un width: 90% para que sea en alncho
+  	_@query 1000px ==> : definimos un width: 90% para que sea el ancho
   	_maximo de este contenedor en referencia al ancho de su contenedor 
   	_padre, finalmente margin: 0 auto para centrarlo de manera horizontal
   */
@@ -1664,11 +1619,6 @@
   */
 }
 .projects_component .projects_container .projects_flexbox .swiper {
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
-  /*
-  	_@query 768px ==> : definimos una grilla de 4 columnas 
-  	_para esta medida
-  */
   /*
   	swiper-wrapper
   */
@@ -1685,11 +1635,6 @@
   	podemos determinar la posicion de este icono
   */
 }
-@media (min-width: 768px) {
-  .projects_component .projects_container .projects_flexbox .swiper {
-    height: 450px;
-  }
-}
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper {
   /*
   	swiper-slide
@@ -1697,8 +1642,8 @@
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide {
   /*
-  	tag-img: definimos un width: 100% y height: 100% para que la img 
-  	se ajuste al ancho del contenedor padre
+  	tag-img: definimos un width: 100% y height: 100% para 
+  	que la img se ajuste al ancho del contenedor padre
   */
   /*
                         box_slide_content
@@ -1706,18 +1651,29 @@
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  height: 83%;
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 3px 8px 0 var(--shadowColor);
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content {
   text-align: center;
-  padding-top: 12px;
+  margin-top: 10px;
+  /*
+  	tag-a
+  */
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content a {
   text-decoration: underline;
-  color: var(--textColor);
+  color: rgb(71, 155, 227);
   font-size: 26px;
+  /*
+  	_cuando hacemos :hover sobre tag-a, modificamos
+  	_su propiedad color
+  */
+}
+.projects_component .projects_container .projects_flexbox .swiper .swiper-wrapper .swiper-slide .box_slide_content a:hover {
+  color: #cccccc;
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev,
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-next {
@@ -1730,8 +1686,8 @@
   	cambiar estas propiedades debemos definirlas en estas clases
   */
   /*
-  	swiper-button-disabled: modificando esta propiedad
-  	hacemos visible el icono del slider
+  	_@query 519px <== : modificamos el width: y el height de este
+  	_elemento para esta medida
   */
 }
 .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev:after,
@@ -1739,11 +1695,6 @@
   color: #fff;
   font-size: 22px;
   font-weight: bold;
-}
-.projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev.swiper-button-disabled,
-.projects_component .projects_container .projects_flexbox .swiper .swiper-button-next.swiper-button-disabled {
-  opacity: 1;
-  cursor: pointer;
 }
 @media (max-width: 519px) {
   .projects_component .projects_container .projects_flexbox .swiper .swiper-button-prev,
@@ -1759,6 +1710,10 @@
   right: 5%;
 }
 
+/*
+	swiper-button-disabled: modificando esta propiedad
+	hacemos visible el icono del slider
+*/
 /*
     customers_component
 */
@@ -1841,8 +1796,8 @@
 .customers_component .customers_container .customers_grid .customers_card_content {
   position: relative;
   padding: 20px;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
   border-radius: 30px 0;
+  box-shadow: 0 4px 8px -2px var(--shadowColor);
   /*
       .nth-child(): hacemos uso de este pseudo elemento para selecionar 
       .el segundo elemento con clase customers_card_content, y definimos
@@ -1929,7 +1884,7 @@
   height: 70px;
   border: 3px solid rgb(71, 155, 227);
   border-radius: 50%;
-  box-shadow: 0 5px 10px -3px var(--shadowColor);
+  box-shadow: 0 4px 10px -4px var(--shadowColor);
 }
 .customers_component .customers_container .customers_grid .customers_card_content .box_customers_profile .customers_name {
   margin-left: 8px;
@@ -2113,7 +2068,7 @@
   align-items: center;
   background-color: rgb(71, 155, 227);
   border-radius: 50%;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 3px 8px 0 var(--shadowColor);
   width: 38px;
   height: 38px;
   margin-right: 4px;
@@ -2140,7 +2095,7 @@
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media {
   background-color: rgb(71, 155, 227);
   border-radius: 100%;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 3px 8px 0 var(--shadowColor);
   padding: 5px 7px;
   margin: 0 -10px;
   opacity: 0;
@@ -2187,10 +2142,10 @@
 @media (min-width: 1000px) {
   .contacts_component .form_flexbox form {
     order: 1;
-    box-shadow: 0 5px 10px 0 var(--shadowColor);
     border-radius: 5px;
     width: 380px;
     padding: 50px 40px;
+    box-shadow: 0 2px 10px -3px var(--shadowColor);
   }
 }
 .contacts_component .form_flexbox form .box_inputs {
@@ -2240,7 +2195,7 @@
 }
 .contacts_component .form_flexbox form .box_inputs svg {
   position: absolute;
-  top: 6px;
+  top: 3px;
   right: 0;
   fill: #7e7b7c;
   width: 26px;
@@ -2346,7 +2301,7 @@
   letter-spacing: 1;
   width: inherit;
   padding: 6px 4px;
-  box-shadow: 0 3px 6px 0 var(--shadowColor);
+  box-shadow: 0 2px 8px -1px var(--shadowColor);
   /*
       .js_show_error: clase añadida desde 'src/js/contacts.js', 
       .cuando box_errors tiene esta clase le definimos display: block
@@ -2388,9 +2343,9 @@
   -webkit-animation: loaderMove 2s linear infinite;
           animation: loaderMove 2s linear infinite;
   /*
-      loaderMove: en 0% implementamos un transform: rotate(0deg)
-      finalmente en 100% un rotate(360deg) para que el loader
-      gire completamente 
+      .loaderMove: en 0% implementamos un transform: rotate(0deg)
+      .finalmente en 100% un rotate(360deg) para que el loader
+      .gire completamente 
   */
   /*
       .:before: definimos position: absolute y sus propiedades top y
@@ -2489,7 +2444,7 @@
   fill: #fff;
   background-color: rgb(71, 155, 227);
   border-radius: 50%;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 3px 8px 0 var(--shadowColor);
   visibility: visible;
   cursor: pointer;
 }
@@ -2507,10 +2462,10 @@
     -webkit-animation: animateGotop 1s ease 1s 3;
             animation: animateGotop 1s ease 1s 3;
     /*
-        _animateGotop: en 0% implementamos un transform: translateY(0)
-        _en 50% implementamos un transform: translateY(-30px) para 
-        _transladar el icono -30px hacia arriba finalmente en 100% vuelve 
-        _a su posicion original
+        .animateGotop: en 0% implementamos un transform: translateY(0)
+        .en 50% implementamos un transform: translateY(-30px) para 
+        .transladar el icono -30px hacia arriba finalmente en 100% vuelve 
+        .a su posicion original
     */
   }
   @-webkit-keyframes animateGotop {
@@ -2559,7 +2514,7 @@
   width: 35px;
   height: 25px;
   margin: 0 8px;
-  box-shadow: 0 5px 10px 0 var(--shadowColor);
+  box-shadow: 0 4px 6px 0 var(--shadowColor);
   transition: transform 0.3s;
   cursor: pointer;
   /*
@@ -2592,7 +2547,7 @@
 }
 @media (max-width: 476px) {
   .footer_component p {
-    max-width: 250px;
+    max-width: 271px;
   }
 }
 
@@ -2645,6 +2600,7 @@ body.js_hidden_scroll {
 */
 h1, h2 {
   color: rgb(71, 155, 227);
+  letter-spacing: -1px;
 }
 
 /*
@@ -2733,7 +2689,7 @@ p, li, input, textarea, label {
   letter-spacing: 0.5px;
   border-radius: 5px;
   padding: 10px 50px;
-  transition: transform 0.2s, box-shadow 0.5s;
+  transition: transform 0.2s, box-shadow 0.2s;
   /*
       .cuando hacemos :hover definimos transform: translateY() para
       .desplazar el boton -8px hacia arriba

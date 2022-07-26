@@ -72,8 +72,8 @@
             .customers_card_content {
                 position: relative;
                 padding: 20px;
-                box-shadow: 0 5px 10px 0 var(--shadowColor);
                 border-radius: 30px 0;
+                box-shadow: 0 4px 8px -2px var(--shadowColor);
 
                 /*
                     .nth-child(): hacemos uso de este pseudo elemento para selecionar 
@@ -154,7 +154,7 @@
                         height: 70px;
                         border: 3px solid $mainPageBorderColor;
                         border-radius: 50%;
-                        box-shadow: 0 5px 10px -3px var(--shadowColor);
+                        box-shadow: 0 4px 10px -4px var(--shadowColor);
                     }
                     
                     /*

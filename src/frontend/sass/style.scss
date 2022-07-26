@@ -63,6 +63,7 @@ body {
 */
 h1, h2 {
     color: $mainPageColor;
+    letter-spacing: -1px;
 }
 
 /*
@@ -147,7 +148,7 @@ p, li, input, textarea, label {
         letter-spacing: .5px;
         border-radius: 5px;
         padding: 10px 50px;
-        transition: transform .2s, box-shadow .5s;
+        transition: transform .2s, box-shadow .2s;
 
         /*
             .cuando hacemos :hover definimos transform: translateY() para

@@ -1,6 +1,6 @@
 # PORTAFOLIO WEB
 
-1. ESTRUCTURA DEL PROYECTO {
+## 1. ESTRUCTURA DEL PROYECTO
     <carpeta src>
         <carpeta backend>
             <carpeta database>
@@ -117,15 +117,10 @@
     * index.js: en este definimos el servidor local que corre el proyecto
 
     * README.md: en este definimos la guia de como esta estructurado este portafolio
-
-    * vercel.json: en este definimos la configuracion que necesita vercel para
-    levantar el servidor creado con node y express
-}
+## 
 
 
-
-
-2. ESTRUCTURA DE INDEX.EJS {
+## 2. ESTRUCTURA DE INDEX.EJS 
     <body>  
         //
             header_component: dentro de este definimos el activador del modo oscuro
@@ -162,9 +157,10 @@
         //
         <footer class="footer_component"></footer>  
     </body>
-}
+## 
 
-3. ESTRUCTURA DE PORTFOLIO.EJS { 
+
+## 3. ESTRUCTURA DE PORTFOLIO.EJS  
     <body>  
         //
             header_component: dentro de este definimos el activador del modo oscuro
@@ -265,9 +261,10 @@
         //
         <footer class="footer_component"></footer>  
     </body>
-}
+## 
 
-4. GUIA ARCHIVOS CSS {
+
+## 4. GUIA ARCHIVOS CSS 
     * estos estan nombrados de la misma manera que se nombraron los 
     componentes en cada archivo ejs
 
@@ -284,80 +281,80 @@
     (js_background_change, js_color_change, js_img_border_color_change, 
     js_icon_color_change y js_color_border_change) son clases exclusivas
     para javascript que solo estan definidas en algunas etiquetas ejs 
-}
+## 
 
 
-5. GUIA ARCHIVOS JS
+## 5. GUIA ARCHIVOS JS
+    main.js {
+        1. fija el header al hacer scroll
 
-## main.js {
-    1. fija el header al hacer scroll
+        2. activa el modo oscuro
 
-    2. activa el modo oscuro
+        3. guarda una clave en localstorage para conservar la 
+        configuracion del modo oscuro
 
-    3. guarda una clave en localstorage para conservar la 
-    configuracion del modo oscuro
+        4. añade el scroll reveal a los componentes
+    }
 
-    4. añade el scroll reveal a los componentes
-## }
+    index/header.js {
+        1. cambia el color principal de algunos componentes
+    }
 
-## index/header.js {
-    1. cambia el color principal de algunos componentes
-## }
+    portfolio/header.js {
+        1. abre el menu de navegacion
+    }
 
-## portfolio/header.js {
-    1. abre el menu de navegacion
-## }
+    navbar.js {
+        1. cierra el menu de navegacion
 
-## navbar.js {
-    1. cierra el menu de navegacion
+        2. deja activo el componente seleccionado
 
-    2. deja activo el componente seleccionado
+        3. realiza la redireccion a los componentes
 
-    3. realiza la redireccion a los componentes
+        4. cambia el color principal de algunos componentes
+    }
 
-    4. cambia el color principal de algunos componentes
-## }
+    banner.js {
+        1. abre el modal
+    }
 
-## banner.js {
-    1. abre el modal
-## }
+    modal.js {
+        1. cerrar el modal
+    }
 
-## modal.js {
-    1. cerrar el modal
-## }
+    certificates.js {
+        1. muestra la informacion del acordeon seleccionado 
+        a la vez que oculta la informacion del acordeon que 
+        dejo de ser seleccionado
+    }
 
-## certificates.js {
-    1. muestra la informacion del acordeon seleccionado 
-    a la vez que oculta la informacion del acordeon que 
-    dejo de ser seleccionado
-## }
+    projects.js {
+        1. realiza el despalzamiento cuando se da click en los 
+        iconos del slider permitiendo mostrar las demas tarjetas
 
-## projects.js {
-    1. realiza el despalzamiento cuando se da click en los 
-    iconos del slider permitiendo mostrar las demas tarjetas
+        2. crear un bucle infinito para repetir las tarjetas 
+        cada que estas terminen en su despalzamiento
+    }
 
-    2. crear un bucle infinito para repetir las tarjetas 
-    cada que estas terminen en su despalzamiento
-## }
+    contacts.js {
+        1. muestra la caja de errores de los campos del formulario
 
-## contacts.js {
-    1. muestra la caja de errores de los campos del formulario
+        2. muestra las redes sociales
 
-    2. muestra las redes sociales
+        3. envia los datos ingresados por el usuario en el formulario 
+        a un servidor construido en node js, mientras llega la respuesta 
+        del servidor muestra un loader y finalmente muestra una 
+        tarjeta alert segun sea el status de la respuesta
+    }
 
-    3. envia los datos ingresados por el usuario en el formulario 
-    a un servidor construido en node js, mientras llega la respuesta 
-    del servidor muestra un loader y finalmente muestra una 
-    tarjeta alert segun sea el status de la respuesta
-## }
+    footer.js {
+        1. muestra el icon gotop cuando el usuario hace scroll
 
-## footer.js {
-    1. muestra el icon gotop cuando el usuario hace scroll
+        2. redirige al usuario al inicio del portafolio al hacer clic en el 
+        icon gotop
 
-    2. redirige al usuario al inicio del portafolio al hacer clic en el 
-    icon gotop
+        3. cambia el idioma del portafolio
 
-    3. cambia el idioma del portafolio
-
-    4. determina el año actual del de construccion del portafolio
-## }
+        4. determina el año actual del de construccion del portafolio
+    }
+## 

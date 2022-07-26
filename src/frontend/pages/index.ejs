@@ -62,20 +62,35 @@
                 .es una clase manejada desde 'src/js/index/header.js', los atributos 
                 .data-section y data-value los implementamos para el cambio de lenguaje
             -->
-            <h1 class="js_color_change" data-section="jumbotronComponent" data-value="jumbotronBottomTitle">
+            <h1 class="js_color_change" data-section="jumbotronComponent" data-value="jumbotronButtonTitle">
                 Portafolio Web
             </h1>
 
             <!--  
-                .tag-p: en esta definimos una descripcion para el jumbotron, los atributos 
-                .data-section y data-value los implementamos para el cambio de lenguaje
+
             -->
-            <p data-section="jumbotronComponent" data-value="jumbotronSubTitle">
-                Antes de pasar al portafolio, quiero compartir contigo una guía que consta de 10 sencillos pasos 
-                que te ayudarán a entender cómo está estructurado y qué funcionalidades se han implementado en 
-                cada sección. Si desea omitir este paso, vaya al final de esta guía y haga clic en el botón 
-                VER PORTAFOLIO.
-            </p>
+            <div class="box_jumbotron_guide">
+                <!--  
+                    .tag-p: en esta definimos una descripcion para el jumbotron, los atributos 
+                    .data-section y data-value los implementamos para el cambio de lenguaje
+                -->
+                <p data-section="jumbotronComponent" data-value="jumbotronSubTitle">
+                    Antes de pasar al portafolio, quiero compartir contigo una guía que consta de 10 sencillos pasos 
+                    que te ayudarán a entender cómo está estructurado y qué funcionalidades se han implementado en 
+                    cada sección. Si desea omitir este paso haga 
+                </p>
+
+                <!--  
+                    .tag-a: en esta definimos un enlace de descarga del curriculo, la clase 
+                    .js_color_change es para implementar en 'src/js/portfolio/navbar.js', 
+                    .definimos un ID para manejar este elemento tambien desde 'src/js/portfolio/navbar.js'
+                -->
+                <a href="./portfolio" class="js_color_change"
+                    data-section="jumbotronComponent" data-value="jumbotronLink"
+                >
+                    Clic aquí.
+                </a>
+            </div>
 
             <!--  
                 box_jumbotron_icon: contenedor de 1 tag-svg, js_color_border_change 
@@ -108,128 +123,151 @@
                 -->
                 <div class="cards_grid">
                     <!--  
-                        box_cards_content: contenedor de 1 tag-h3 y de 1 tag-p
+                        swiper: contenedor de swiper-wrapper la clase
+                        mySwiper es exclusiva para usar en 'src\js\projects.js'
                     -->
-                    <div class="box_cards_content">
+                    <div class="swiper mySwiper">
                         <!--  
-                            .tag-h3: en esta definimos el titulo de la tarjeta, js_color_change 
-                            .es una clase trabajada desde 'src/js/index/header.js', los atributos 
-                            .data-section y data-value los implementamos para el cambio de lenguaje
+                            swiper-wrapper: contenedor de swiper-slide
                         -->
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="headerTitle">1. Cabecera</h3>
+                        <div class="swiper-wrapper">
+                            <!--  
+                                swiper-slide: contenedor de 1 tag-img y de
+                                box_slide_content
+                            -->
+                            <div class="swiper-slide">
+                                <!--  
+                                    box_cards_content: contenedor de 1 tag-h3 y de 1 tag-p
+                                -->
+                                <section class="box_cards_content">
+                                    <!--  
+                                        .tag-h3: en esta definimos el titulo de la tarjeta, js_color_change 
+                                        .es una clase trabajada desde 'src/js/index/header.js', los atributos 
+                                        .data-section y data-value los implementamos para el cambio de lenguaje
+                                    -->
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="headerTitle">1. Cabecera</h3>
+
+                                    <!--  
+                                        .tag-p: en esta definimos el parrafo de la tarjeta, los atributos 
+                                        .data-section y data-value los implementamos para el cambio de lenguaje
+                                    -->
+                                    <p data-section="cardsComponent" data-value="headerParagraph">
+                                        En esta sección hay un icono que indica el color actual del portafolio, 
+                                        también tienes la opción de elegir entre el modo claro y el modo oscuro. 
+                                        Finalmente, tenemos un icono que abre el menú.
+                                    </p>
+                                </section>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="navbarTitle">2. Menú</h3>
+            
+                                    <p data-section="cardsComponent" data-value="navbarParagraph">
+                                        En esta sección hay un icono (X) que cierra el menú, también tienes la opción de
+                                        navegar entre las diferentes secciones. Por último, con SKINS puedes cambiar el 
+                                        color principal del portafolio.
+                                    </p>
+                                </section>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="bannerTitle">3. Portada</h3>
+            
+                                    <p data-section="cardsComponent" data-value="bannerParagraph">
+                                        En esta sección, el botón LEER MÁS despliega un apartado que permite conocer 
+                                        más sobre mí, seguido del botón HDV el cual inicia una descarga de mi 
+                                        currículo.
+                                    </p>
+                                </section> 
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="modalTitle">4. Apartado</h3>
+            
+                                    <p data-section="cardsComponent" data-value="modalParagraph">
+                                        Una vez visible, esta sección se puede cerrar desde cualquier lugar de la pantalla o 
+                                        haciendo clic directamente en el icono (X) si se desea.
+                                    </p>
+                                </section>      
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="skillsTitle">5. Habilidades</h3>
+            
+                                    <p data-section="cardsComponent" data-value="skillsParagraph">
+                                        En esta sección encontrarás las diferentes tecnologías 
+                                        en las que me desempeño inclinandome más por el FRONTEND.
+                                    </p>
+                                </section>       
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="certificatesTitle">6. Certificados</h3>
+            
+                                    <p data-section="cardsComponent" data-value="certificatesParagraph">
+                                        En esta sección encontrarás información detallada de los diferentes estudios o 
+                                        cursos que he realizado. Por último, dejo un link de descarga por cada certificado.
+                                    </p>
+                                </section>       
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="projectsTitle">7. Proyectos</h3>
+            
+                                    <p data-section="cardsComponent" data-value="projectsParagraph">
+                                        En esta sección comparto algunos de los proyectos
+                                        personales y profesionales en los que he trabajado.
+                                    </p>
+                                </section>
+                            </div>
+                        
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="customersTitle">8. Clientes</h3>
+            
+                                    <p data-section="cardsComponent" data-value="customersParagraph">
+                                        En esta sección conocerás la opinión de dos personas con las que
+                                        he tenido la oportunidad de trabajar como desarrollador freelance.
+                                    </p>
+                                </section>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="contactsTitle">9. Contactos</h3>
+            
+                                    <p data-section="cardsComponent" data-value="contactsParagraph">
+                                        Esta sección cuenta con un formulario para el envío de mensajes. Finalmente, 
+                                        el ícono (+) muestra las redes sociales por las cuales también me pueden contactar.
+                                    </p>
+                                </section>        
+                            </div>
+
+                            <div class="swiper-slide">
+                                <section class="box_cards_content">
+                                    <h3 class="js_color_change" data-section="cardsComponent" data-value="footerTitle">10. Pie de página</h3>
+            
+                                    <p data-section="cardsComponent" data-value="footerParagraph">
+                                        Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. 
+                                        Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio.
+                                    </p>
+                                </section>     
+                            </div>
+                        </div>
 
                         <!--  
-                            .tag-p: en esta definimos el parrafo de la tarjeta, los atributos 
-                            .data-section y data-value los implementamos para el cambio de lenguaje
+                            swiper-pagination: tiene definido por defecto los circulos de desplazamiento 
+                            del slider, estas mismas clases son implementadas en 'src\js\cards.js'
                         -->
-                        <p data-section="cardsComponent" data-value="headerParagraph">
-                            En esta sección hay un icono que indica el color actual del portafolio, 
-                            también tienes la opción de elegir entre el modo claro y el modo oscuro. 
-                            Finalmente, tenemos un icono que abre el menú.
-                        </p>
+                        <div class="swiper-pagination js_background_change"></div>
                     </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="navbarTitle">2. Menú</h3>
-
-                        <p data-section="cardsComponent" data-value="navbarParagraph">
-                            En esta sección hay un icono (X) que cierra el menú, también tienes la opción de
-                            navegar entre las diferentes secciones. Por último, con SKINS puedes cambiar el 
-                            color principal del portafolio.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="bannerTitle">3. Portada</h3>
-
-                        <p data-section="cardsComponent" data-value="bannerParagraph">
-                            En esta sección, el botón LEER MÁS despliega un apartado que permite conocer 
-                            más sobre mí, seguido del botón HDV el cual inicia una descarga de mi 
-                            currículo.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="modalTitle">4. Apartado</h3>
-
-                        <p data-section="cardsComponent" data-value="modalParagraph">
-                            Una vez visible, esta sección se puede cerrar desde cualquier lugar de la pantalla o 
-                            haciendo clic directamente en el icono (X) si se desea.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="skillsTitle">5. Habilidades</h3>
-
-                        <p data-section="cardsComponent" data-value="skillsParagraph">
-                            En esta sección encontrarás las diferentes tecnologías 
-                            en las que me desempeño inclinandome más por el FRONTEND.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="certificatesTitle">6. Certificados</h3>
-
-                        <p data-section="cardsComponent" data-value="certificatesParagraph">
-                            En esta sección encontrarás información detallada de los diferentes estudios o 
-                            cursos que he realizado. Por último, dejo un link de descarga por cada certificado.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="projectsTitle">7. Proyectos</h3>
-
-                        <p data-section="cardsComponent" data-value="projectsParagraph">
-                            En esta sección comparto algunos de los proyectos
-                            personales y profesionales en los que he trabajado.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="customersTitle">8. Clientes</h3>
-
-                        <p data-section="cardsComponent" data-value="customersParagraph">
-                            En esta sección conocerás la opinión de dos personas con las que
-                            he tenido la oportunidad de trabajar como desarrollador freelance.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="contactsTitle">9. Contactos</h3>
-
-                        <p data-section="cardsComponent" data-value="contactsParagraph">
-                            Esta sección cuenta con un formulario para el envío de mensajes. Finalmente, 
-                            el ícono (+) muestra las redes sociales por las cuales también me pueden contactar.
-                        </p>
-                    </div>
-
-                    <div class="box_cards_content">
-                        <h3 class="js_color_change" data-section="cardsComponent" data-value="footerTitle">10. Pie de página</h3>
-
-                        <p data-section="cardsComponent" data-value="footerParagraph">
-                            Esta sección tiene la opción de cambiar el idioma seleccionando entre ES o EN. 
-                            Por último, cuenta con un icono (↑) para redirigir al usuario a la cabecera del portafolio.
-                        </p>
-                    </div>
-                </div>
-
-                <!--  
-                    box_btn: contenedor de 1 tag-a, le definimos un ID para implementar este
-                    elemento en Google Tag Manager
-                -->
-                <div class="box_btn" id="gtm-see-portfolio">
-                    <!--  
-                        .tag-a: en esta definimos un enlace de descarga del curriculo, la clase 
-                        .js_color_change es para implementar en 'src/js/portfolio/navbar.js', 
-                        .definimos un ID para manejar este elemento tambien desde 'src/js/portfolio/navbar.js'
-                    -->
-                    <a href="./portfolio" class="js_background_change">
-                        <!--  
-                            .tag-span: en esta definimos el titulo de la hoja de vida, los atributos 
-                            .data-section y data-value los implementamos para el cambio de lenguaje
-                        -->
-                        <spa data-section="cardsComponent" data-value="botonCards">Ver Portafolio</span> 
-                    </a>
                 </div>
             </div>
         </div>
@@ -246,5 +284,6 @@
         custom js to index.ejs
     -->
     <script src="./js/index/header.js"></script>
+    <script src="./js/index/cards.js"></script>
 </body>
 </html>

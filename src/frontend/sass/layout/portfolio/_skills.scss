@@ -74,7 +74,7 @@
             .box_skill_cards { 
                 position: relative;
                 text-align: center;
-                box-shadow: 0 5px 10px 0 var(--shadowColor);
+                box-shadow: 0 4px 8px -2px var(--shadowColor);
                 padding: 10px 12px;
 
                 /*
@@ -242,6 +242,22 @@
                 }
             }
 
+            .ui_ux {
+                animation: skillMoveBottom 2.5s infinite 1s;
+                
+                &::before, &::after {
+                    background-color: #83D8F4;
+                }
+            }
+
+            .git {
+                animation: skillMoveBottom 2.5s infinite .8s;
+                
+                &::before, &::after {
+                    background-color: #F4511E;
+                }
+            }
+
             .node {
                 animation: skillMoveBottom 2.5s infinite .2s;
                 
@@ -266,32 +282,16 @@
                 }
             }
 
-            .git {
-                animation: skillMoveBottom 2.5s infinite .8s;
-                
-                &::before, &::after {
-                    background-color: #F4511E;
-                }
-            }
-
-            .ui_ux {
-                animation: skillMoveBottom 2.5s infinite 1s;
-                
-                &::before, &::after {
-                    background-color: #83D8F4;
-                }
-            }
-
             /*
                 _@query 1200px ==> : definimos una animacion para
                 _este elemento en esta medida
             */
             @media (min-width: 1200px) {
                 /*
-                    skillMoveTop: en 0% implementamos un transform: translateY(0)
-                    en 50% implementamos un transform: translateY(0) para trasladar 
-                    elicono -10px hacia arriba finalmente en 100% vuelve a su 
-                    posicion original
+                    .skillMoveTop: en 0% implementamos un transform: translateY(0)
+                    .en 50% implementamos un transform: translateY(0) para trasladar 
+                    .elicono -10px hacia arriba finalmente en 100% vuelve a su 
+                    .posicion original
                 */
                 @keyframes skillMoveTop {
                     0% {
@@ -306,10 +306,10 @@
                 }
     
                 /*
-                    skillMoveBottom: en 0% implementamos un transform: translateY(0)
-                    en 50% implementamos un transform: translateY(0) para trasladar 
-                    el icono 10px hacia abajo finalmente en 100% vuelve a su 
-                    posicion original
+                    .skillMoveBottom: en 0% implementamos un transform: translateY(0)
+                    .en 50% implementamos un transform: translateY(0) para trasladar 
+                    .el icono 10px hacia abajo finalmente en 100% vuelve a su 
+                    .posicion original
                 */
                 @keyframes skillMoveBottom {
                     0% {

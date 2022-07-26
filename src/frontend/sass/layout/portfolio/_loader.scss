@@ -26,9 +26,9 @@
         animation: loaderMove 2s linear infinite;
 
         /*
-            loaderMove: en 0% implementamos un transform: rotate(0deg)
-            finalmente en 100% un rotate(360deg) para que el loader
-            gire completamente 
+            .loaderMove: en 0% implementamos un transform: rotate(0deg)
+            .finalmente en 100% un rotate(360deg) para que el loader
+            .gire completamente 
         */
         @keyframes loaderMove {
             0% {

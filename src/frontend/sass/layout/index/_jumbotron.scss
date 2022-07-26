@@ -85,20 +85,46 @@
     }
 
     /*
-        tag-p
+        box_jumbotron_guide: definimos la propiedad max-width: 900px
+        para que apartir de esta medida los elementos de tipo bloque
+        que este contiene dejen de crecer
     */
-    p {
+    .box_jumbotron_guide {
         max-width: 900px;
         margin: 14px auto 26px;
-        
+
         /*
             _@query 999px <== : definimos un espaciado para este 
             _elemento en esta medida
         */
         @media (max-width: 999px) {
-            padding: 0 14px;
+            padding: 0 20px;
+        }
+
+        /*
+            tag-p
+        */
+        p {
+            /*
+                _@query 645px ==> : definimos display: inline para 
+                _pasar este elemento de bloque a linea en esta medida
+            */
+            // @media (min-width: 645px) {
+                display: inline;
+            // }
+        }
+
+        /*
+            tag-a
+        */
+        a {
+            text-decoration: underline;
+            color: $mainPageColor;
+            font-size: 1.4rem;
+            margin-left: 2px;
         }
     }
+
 
     /*
         box_modal_icon: definimos display: inline-block para 
@@ -108,13 +134,14 @@
         display: inline-block;
         border: 3px solid $mainPageColor;
         border-radius: 50px;
+        box-shadow: 0 3px 8px -2px var(--shadowColor);
         animation: iconMove 1s 20 3s;
 
         /*
-            iconMove: en 0% implementamos un transform: translateY(0)
-            en 50% implementamos un transform: translateY(10px) para 
-            transladar el icono 20px hacia abajo finalmente en 100% 
-            vuelve a su posicion original
+            .iconMove: en 0% implementamos un transform: translateY(0)
+            .en 50% implementamos un transform: translateY(10px) para 
+            .transladar el icono 20px hacia abajo finalmente en 100% 
+            .vuelve a su posicion original
         */
         @keyframes iconMove {
             0% {

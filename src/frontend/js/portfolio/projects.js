@@ -1,22 +1,20 @@
-// __________ start code - show target slider __________ //
+// __________ start code - swiper slider __________ //
 
 /* 
 	swiper: alamacena el elemento html con la clase mySwiper
 */
 let swiper = new Swiper('.mySwiper', {
 	/*
-		simulateTouch: con esta propiedad en false evitamos
-		que el cambio de slider se haga con el tactil
+		simulateTouch: con esta propiedad evitamos que
+		el cambio de slider se haga con el tactil
 	*/
 	simulateTouch: false,
 
-	/* 
-        paginacion: es donde se define las guias para el
-		desplazamiento del slider
-    */
-	pagination: {
-		el: '.swiper-pagination',
-	},
+	/*
+		spaceBetween: con esta propiedad definimos la
+		separacion de slider a slider
+	*/
+	spaceBetween: 20,
 
 	/* 
 		navigation: implementa la funcionalidad de ir 
@@ -32,7 +30,7 @@ let swiper = new Swiper('.mySwiper', {
 		loop: esta propiedad nos permite repetir el slider de 
 		manera infinita
 	*/
-	loop: true,
+	loop: false,
 });
 
-// __________ start code - show target slider __________ //
+// __________ end code - swiper slider __________ //

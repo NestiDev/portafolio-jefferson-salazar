@@ -6,8 +6,8 @@
         certificates_section
     */
     .certificates_section {
-        box-shadow: 0 5px 10px 0 var(--shadowColor);
         border-radius: 10px;
+        box-shadow: 0 3px 12px -4px var(--shadowColor);
         cursor: pointer;
 
         /*
