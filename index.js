@@ -55,5 +55,5 @@ app.use('/contacts', message);
     configuracion del servidor
 */
 app.listen(port, (err) => {
-    (err) ? console.log(err):console.log('server running') ;
+    (err) ? console.log(err):console.log('server ok') ;
 });
