@@ -7,7 +7,7 @@ let express = require('express'),
     port = process.env.PORT || 3000;
 
 /* 
-    requerimiento del modulo path
+    requerimiento de path
 */
 let path = require('path');
 
@@ -31,7 +31,7 @@ let pages = require('./src/backend/routes/views/pages');
 let message = require('./src/backend/routes/api/message');
 
 /*
-    requerimiento de los modulos 'morgan' y 'cors' 
+    requerimiento de 'morgan' y 'cors' 
 */
 let morgan = require('morgan'),
     cors = require('cors');

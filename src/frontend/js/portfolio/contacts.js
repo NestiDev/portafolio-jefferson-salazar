@@ -253,7 +253,7 @@ $form.addEventListener('submit', async (e) => {
 
             Swal.fire({
                 icon: 'error',
-                title: 'Algo salió mal, revisa tu conexión a Internet e inténtalo de nuevo.',
+                title: 'El servidor no está activo en este momento. Recuerda que también puedes contactarme a través de mis redes sociales.',
                 position: 'center',
                 showConfirmButton: false,
                 padding: '0 0 3em',
