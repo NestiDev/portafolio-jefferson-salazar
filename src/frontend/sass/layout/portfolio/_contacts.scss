@@ -79,75 +79,38 @@
             }
 
             /*
-                box_socials_contacts: definimos flexbox y su propiedad align-items para 
-                centrar de manera vertical los elementos que este contiene
+                box_socials_contacts: definimos flexbox para poner en linea los
+                elementos que este contiene
             */
             .box_socials_contacts {
                 display: flex;
-                align-items: center;
 
                 /*
-                    tag-button: definimos display: inline-flex y sus propiedades
-                    justify-content y align-items junsto con un ancho y alto para 
-                    centrar de manera vertical y horizontal el icono que este 
-                    contiene
-                */
-                button {
-                    display: inline-flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: $mainPageBackgroundColor;
-                    border-radius: 50%;
-                    box-shadow: 0 3px 8px 0 var(--shadowColor);
-                    width: 38px;
-                    height: 38px;
-                    margin-right: 4px;
-
-                    /*
-                        .js_show_socials_media: cuando el boton tiene esta clase realciona a 
-                        .socials_media y modifica el margin y con opacity: 1 y visibility: visible
-                        .hacemos visibles los iconos de las redes sociales
-                    */
-                    &.js_show_socials_media ~ .socials_media {
-                        margin: 0 2px;
-                        opacity: 1;
-                        visibility: visible;
-                    }
-
-                    /*
-                        tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
-                        estilos principales de este elemento
-                    */
-                    svg {
-                        @include svgIconsStyle();
-                    }
-                }
-
-                /*
-                    socials_media: definimos margin: 0 -15px para juntar estos elementos 
-                    entre si, finalmente con opacity: 0 removemos de la vista los iconos
-                    para posteriormente hacerlos visible haciendo :hover sobre tag-button.
-                    Importante definir visibility: hidden para evitar que se pueda hacer
-                    click sobre los elementos cuando aun estan ocultos
+                    socials_media
                 */
                 .socials_media {
                     background-color: $mainPageBackgroundColor;
                     border-radius: 100%;
                     box-shadow: 0 3px 8px 0 var(--shadowColor);
                     padding: 5px 7px;
-                    margin: 0 -10px;
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: scale(0.9);
-                    transition: transform .3s, margin .3s;
+                    transition: transform .3s;
 
                     /*
                         .cuando hacemos :hover implementamos la propeidad
-                        .transform: scale() para aumentar el tamaño de
+                        .transform: scale() para disminuir el tamaño de
                         .los iconos
                     */
                     &:hover {
-                        transform: scale(1);
+                        transform: scale(0.9);
+                    }
+
+                    /*
+                        .haciendo uso de la propiedad nth-child() seleccionamos
+                        .el segundo elemento con clase socials_media y definimos
+                        .una margen lateral para separ los elementos 
+                    */
+                    &:nth-child(2) {
+                        margin: 0 8px;
                     }
 
                     /*

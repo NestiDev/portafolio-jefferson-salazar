@@ -1564,8 +1564,8 @@
 .certificates_component .certificates_section .box_certificates_content h4 {
   color: var(--textColor);
   font-family: "poppin-regular", sans-serif;
-  letter-spacing: 0.6px;
-  margin: 10px 0;
+  letter-spacing: 0.2px;
+  margin: 8px 0;
 }
 .certificates_component .certificates_section .box_certificates_content p {
   margin: 20px 0;
@@ -2024,8 +2024,8 @@
       tag-p
   */
   /*
-      box_socials_contacts: definimos flexbox y su propiedad align-items para 
-      centrar de manera vertical los elementos que este contiene
+      box_socials_contacts: definimos flexbox para poner en linea los
+      elementos que este contiene
   */
 }
 @media (max-width: 999px) {
@@ -2047,72 +2047,35 @@
 }
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts {
   display: flex;
-  align-items: center;
   /*
-      tag-button: definimos display: inline-flex y sus propiedades
-      justify-content y align-items junsto con un ancho y alto para 
-      centrar de manera vertical y horizontal el icono que este 
-      contiene
+      socials_media
   */
-  /*
-      socials_media: definimos margin: 0 -15px para juntar estos elementos 
-      entre si, finalmente con opacity: 0 removemos de la vista los iconos
-      para posteriormente hacerlos visible haciendo :hover sobre tag-button.
-      Importante definir visibility: hidden para evitar que se pueda hacer
-      click sobre los elementos cuando aun estan ocultos
-  */
-}
-.contacts_component .form_flexbox .box_form_card .box_socials_contacts button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(71, 155, 227);
-  border-radius: 50%;
-  box-shadow: 0 3px 8px 0 var(--shadowColor);
-  width: 38px;
-  height: 38px;
-  margin-right: 4px;
-  /*
-      .js_show_socials_media: cuando el boton tiene esta clase realciona a 
-      .socials_media y modifica el margin y con opacity: 1 y visibility: visible
-      .hacemos visibles los iconos de las redes sociales
-  */
-  /*
-      tag-svg: implementamos el mixin 'svgIconsStyle' que contiene los
-      estilos principales de este elemento
-  */
-}
-.contacts_component .form_flexbox .box_form_card .box_socials_contacts button.js_show_socials_media ~ .socials_media {
-  margin: 0 2px;
-  opacity: 1;
-  visibility: visible;
-}
-.contacts_component .form_flexbox .box_form_card .box_socials_contacts button svg {
-  fill: #fff;
-  width: 26px;
-  height: 26px;
 }
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media {
   background-color: rgb(71, 155, 227);
   border-radius: 100%;
   box-shadow: 0 3px 8px 0 var(--shadowColor);
   padding: 5px 7px;
-  margin: 0 -10px;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.9);
-  transition: transform 0.3s, margin 0.3s;
+  transition: transform 0.3s;
   /*
       .cuando hacemos :hover implementamos la propeidad
-      .transform: scale() para aumentar el tamaño de
+      .transform: scale() para disminuir el tamaño de
       .los iconos
+  */
+  /*
+      .haciendo uso de la propiedad nth-child() seleccionamos
+      .el segundo elemento con clase socials_media y definimos
+      .una margen lateral para separ los elementos 
   */
   /*
       tag-a
   */
 }
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media:hover {
-  transform: scale(1);
+  transform: scale(0.9);
+}
+.contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media:nth-child(2) {
+  margin: 0 8px;
 }
 .contacts_component .form_flexbox .box_form_card .box_socials_contacts .socials_media a {
   /*
@@ -2771,30 +2734,34 @@ svg, img, textarea {
 
 /* 
     box_title_border: estos estilos son tomados por todas las clases
-    box_title_border definidas en html, definimos un ancho de 200px
+    box_title_border definidas en html
 */
 .box_title_border {
-  width: 200px;
   /*
-      _@query 999px <== : definimos un un margen auto para centrar
-      _de manera horizontal e lborde y un margen en la parte inferior
-      _para este elemento en esta medida
+      _@query 999px <== : definimos un un margen en la parte
+      _inferior para este elemento en esta medida
   */
   /*
-      _@query 1000px ==> : definimos un un margen auto para centrar
-      _de manera horizontal el borde y un margen en la parte inferior
-      _para este elemento en esta medida
+      _@query 1000px ==> : definimos un un margen en la parte
+      _inferior para este elemento en esta medida
+  */
+  /*
+      tag-p
   */
 }
 @media (max-width: 999px) {
   .box_title_border {
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
   }
 }
 @media (min-width: 1000px) {
   .box_title_border {
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
   }
+}
+.box_title_border p {
+  text-align: center;
+  margin-top: 8px;
 }
 
 /*

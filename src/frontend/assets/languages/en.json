@@ -67,7 +67,6 @@
     "certificatesAccordeonOne": {
         "accordeonTitleOne": "Web design",
         "accordeonSubtitle": "Institute: Udemy",
-        "accordeonSubtitleOne": "Intensity: 77 Hours",
         "accordeonParagraphOne": "Construction of accessible and adaptable websites for mobile devices with html, css (sass), bootstrap, jquery, javascript (conditionals, functions, loops, arrays, objects, promises and apis consumption with fetch) and implementation of analysis and monitoring tools such as google analytics and google tag manager.",
         "accodeonLinkTextOne": "1. Download Certificates",
         "accodeonLinkTextTwo": "2. Download Certificates",
@@ -75,12 +74,10 @@
     },
 
     "certificatesAccordeonTwo": {
-        "accordeonSubtitleTwo": "Intensity: 55 Hours",
         "accordeonParagraphTwo": "Make SPA projects (single page application) with angular implement components, custom modules, directives, dependency injection, reactive forms, templates forms, form validation, routing, lazy loading, services, guards, classes and interfaces, apis consummation and unit tests."
     },
 
     "certificatesAccordeonThree": {
-        "accordeonSubtitleThree": "Intensity: 24 Hours",
         "accordeonParagraphThree": "Make servers with node.js using express framework and implementing modules like morgan, cors, mysql, mongoose, jwt, bcrypt, using environment variables, template engines like (ejs or handlebars), make apis for subsequent get, delete, and update requests, server-side data validation, and interaction with mysql or mongoDB databases."
     },
 
@@ -98,6 +95,7 @@
 
     "customersComponent": {
         "customersTitle": "Customers",
+        "customersSubTitle": "The images used in this section are illustrative.",
         "customersCardParagraphOne": "From the beginning I saw his desire to learn, so I decided to be his tutor and help him in his goal of being a software developer.",
         "customersCardRollOne": "Development boss",
         "customersCardParagraphTwo": "He has quickly adapted to our work team, follows and applies each instruction to carry out the development of the projects in which He has participated.",

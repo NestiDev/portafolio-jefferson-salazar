@@ -232,27 +232,31 @@ svg, img, textarea {
 
 /* 
     box_title_border: estos estilos son tomados por todas las clases
-    box_title_border definidas en html, definimos un ancho de 200px
+    box_title_border definidas en html
 */
 .box_title_border {
-    width: 200px;
-    
     /*
-        _@query 999px <== : definimos un un margen auto para centrar
-        _de manera horizontal e lborde y un margen en la parte inferior
-        _para este elemento en esta medida
+        _@query 999px <== : definimos un un margen en la parte
+        _inferior para este elemento en esta medida
     */
     @media (max-width: 999px) {
-        margin: 0 auto 30px;
+        margin-bottom: 30px;
     }
     
     /*
-        _@query 1000px ==> : definimos un un margen auto para centrar
-        _de manera horizontal el borde y un margen en la parte inferior
-        _para este elemento en esta medida
+        _@query 1000px ==> : definimos un un margen en la parte
+        _inferior para este elemento en esta medida
     */
     @media (min-width: 1000px) {
-        margin: 0 auto 50px;
+        margin-bottom: 50px;
+    }
+
+    /*
+        tag-p
+    */
+    p {
+        text-align: center;
+        margin-top: 8px;
     }
 }
 

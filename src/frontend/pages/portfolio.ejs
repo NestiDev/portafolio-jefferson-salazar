@@ -705,10 +705,6 @@
                     <section class="box_certificates_content">
                         <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
 
-                        <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitleOne">Intensidad: 77
-                            Horas
-                        </h4>
-
                         <p data-section="certificatesAccordeonOne" data-value="accordeonParagraphOne">
                             Construcción de sitios web accesibles y adaptables a dispositivos móviles con html,
                             css (sass), bootstrap, jquery, javascript (condicionales, funciones,
@@ -750,10 +746,6 @@
                     <section class="box_certificates_content">
                         <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
 
-                        <h4 data-section="certificatesAccordeonTwo" data-value="accordeonSubtitleTwo">
-                            Intensidad: 54 Horas
-                        </h4>
-
                         <p data-section="certificatesAccordeonTwo" data-value="accordeonParagraphTwo">
                             Creación de proyectos SPA (single page application) con angular
                             implementando componentes, módulos personalizados, directivas, inyección de dependencias,
@@ -789,10 +781,6 @@
 
                     <section class="box_certificates_content">
                         <h4 data-section="certificatesAccordeonOne" data-value="accordeonSubtitle">Instituto: Udemy</h4>
-
-                        <h4 data-section="certificatesAccordeonThree" data-value="accordeonSubtitleThree">
-                            Intensidad: 24 Horas
-                        </h4>
 
                         <p data-section="certificatesAccordeonThree" data-value="accordeonParagraphThree">
                             Creación de servidores con node.js haciendo uso del framework express e implementando
@@ -947,7 +935,16 @@
                     los titulos de seccion y el contenido de la seccion, su hoja de estilos
                     'src/sass/style.scss'
                 -->
-                <div class="box_title_border"></div>
+                <div class="box_title_border">
+                    <!--  
+                        .tag-p: en esta definimos el subtitulo de la seccion,
+                        .los atributos data-section y data-value los implementamos 
+                        .para el cambio de lenguaje
+                    -->
+                    <p data-section="customersComponent" data-value="customersSubTitle">
+                        Las imágenes utilizadas en esta sección son ilustrativas.
+                    </p>
+                </div>
 
                 <!--  
                     customers_container: contenedor definido para manejar el responsive
@@ -989,7 +986,7 @@
                                     .tag-img: en esta definimos la imagen del cliente, la clase
                                     .js_color_border_change es exclusiva para usar en 'src\js\navbar.js'
                                 -->
-                                <img src="./assets/images/customer.png" alt="Elberth Agreda"
+                                <img src="../assets/images/customer.png" alt="Elberth Agreda"
                                     class="js_color_border_change" loading="lazy">
 
                                 <!--  
@@ -1080,7 +1077,7 @@
                             </div>
 
                             <div class="box_customers_profile">
-                                <img src="./assets/images/customer.png" alt="Carlos Jimenez" class="js_color_border_change" loading="lazy">
+                                <img src="../assets/images/customer.png" alt="Carlos Jimenez" class="js_color_border_change" loading="lazy">
 
                                 <section class="customers_name">
                                     <h3 class="js_color_change">Carlos Jiménez</h3>
@@ -1172,23 +1169,9 @@
                         </p>
 
                         <!--  
-                            box_socials_contacts: contenedor de 1 tag-button y de 3 socials_media
+                            box_socials_contacts: contenedor de 3 socials_media
                         -->
                         <div class="box_socials_contacts">
-                            <!--  
-                                .tag-button: contiene 1 tag-svg, la clase js_background_change es 
-                                .exclusiva para usar en 'src/js/navbar.js', le definimos un ID para
-                                .manejar este elemento en 'src/js/contacts.js'
-                            -->
-                            <button class="js_background_change" id="btn-socials-media">
-                                <!--  
-                                    .tag-svg: en esta definimos el icono plus para mostrar las redes
-                                -->
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-                                </svg>
-                            </button>
-
                             <!--  
                                 socials_media: contenedor de 1 tag-a
                             -->

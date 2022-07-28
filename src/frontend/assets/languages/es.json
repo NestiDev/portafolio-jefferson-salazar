@@ -67,7 +67,6 @@
     "certificatesAccordeonOne": {
         "accordeonTitleOne": "Diseño web",
         "accordeonSubtitle": "Instituto: Udemy",
-        "accordeonSubtitleOne": "Intensidad: 77 Horas",
         "accordeonParagraphOne": "Construcción de sitios web accesibles y adaptables a dispositivos móviles con html, css (sass), bootstrap, jquery, javascript (condicionales, funciones, bucles, arreglos, objetos, promesas y consumo de apis con fetch) e implementación de herramientas de análisis y seguimiento como google analytics y google tag manager.",
         "accodeonLinkTextOne": "1. Descargar Certificados",
         "accodeonLinkTextTwo": "2. Descargar Certificados",
@@ -75,12 +74,10 @@
     },
 
     "certificatesAccordeonTwo": {
-        "accordeonSubtitleTwo": "Intensidad: 55 Horas",
         "accordeonParagraphTwo": "Creación de proyectos SPA (single page application) con angular implementando componentes, módulos personalizados, directivas, inyección de dependencias, formularios reactivos, formularios por plantilla, validación de formularios, enrutamiento, carga perezosa, servicios, guardianes, clases e interfaces, consumo de apis y realización de pruebas unitarias."
     },
 
     "certificatesAccordeonThree": {
-        "accordeonSubtitleThree": "Intensidad: 24 Horas",
         "accordeonParagraphThree": "Creación de servidores con node.js haciendo uso del framework express e implementando módulos como morgan, cors, mysql, mongoose, jwt, bcrypt, uso de variables de entorno, motores de plantillas (ejs o handlebars), construcción de apis para peticiones post get, delete y update, validación de datos del lado del servidor e interacción con bases de datos mysql o mongoDB."
     },
 
@@ -98,6 +95,7 @@
 
     "customersComponent": {
         "customersTitle": "Clientes",
+        "customersSubTitle": "Las imágenes utilizadas en esta sección son ilustrativas.",
         "customersCardParagraphOne": "Desde el comienzo noté su deseo por aprender, entonces decidí ser su tutor y ayudarlo en su meta de ser un desarrollador de software.",
         "customersCardRollOne": "Jefe de desarrollo",
         "customersCardParagraphTwo": "Se ha adaptado rápidamente a nuestro equipo de trabajo, sigue y aplica cada instrucción para llevar a cabo el desarrollo de los proyectos en los que ha participado.",
